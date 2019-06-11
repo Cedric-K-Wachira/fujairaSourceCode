@@ -1,0 +1,11 @@
+if (code.Equals("c779")) { return "عرض جميع المعاهد التعليمية."; } //  View all educational institutes.
+if (code.Equals("c780")) { return "مجموع المعاهد التعليمية"; } //  Total Educational Institutes
+if (code.Equals("c781")) { return "المعهد التربوي"; } //  Educational Institute [En]
+if (code.Equals("c782")) { return "المعهد التربوي"; } //  Educational Institute [Ar]
+if (code.Equals("c783")) { return "إدارة المعهد التربوي"; } //  Educational Institute Management
+if (code.Equals("c784")) { return "إضافة معهد تعليمي جديد"; } //  Add New Educational Institute
+if (code.Equals("c785")) { return "خضع"; } //  submit
+if (code.Equals("c786")) { return "تحرير المعهد التربوي"; } //  Edit Educational Institute
+if (code.Equals("c787")) { return "المعهد التعليمي [En] فارغ. الرجاء إدخال المعهد التربوي [En]."; } //  Educational Institute [En] is blank. Please enter Educational Institute [En].
+
+

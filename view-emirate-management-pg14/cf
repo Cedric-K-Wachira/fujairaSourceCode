@@ -1,0 +1,11 @@
+@CF.trans_code("en", "c797", "View all emirate.") 
+@CF.trans_code("en", "c798", "Total Emirate")
+@CF.trans_code("en", "c799", "Emirate [En]") 
+@CF.trans_code("en", "c800", "Emirate [Ar]") 
+@CF.trans_code("en", "c801", "Emirate Management")
+@CF.trans_code("en", "c802", "Add New Emirate")
+@CF.trans_code("en", "c803", "Submit") 
+@CF.trans_code("en", "c804", "Edit Emirate")
+@CF.trans_code("en", "c805", "Emirate [En] is blank. Please enter Emirate [En].") 
+@CF.trans_code("en", "c806", "Emirate [Ar] is blank. Please enter Emirate [Ar].")
+

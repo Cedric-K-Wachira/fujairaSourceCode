@@ -1,0 +1,5 @@
+if (code.Equals("c950")) { return "عرض جميع اللغات."; } // View all languages.
+if (code.Equals("c951")) { return "مجموع اللغات"; } // Total Languages
+if (code.Equals("c952")) { return "اللغة [En] فارغة. الرجاء إدخال اللغة [En]."; } // Language [En] is blank. Please enter Language [En].
+if (code.Equals("c953")) { return "اللغة [Ar] فارغة. الرجاء إدخال اللغة"; } //  Language [Ar] is blank. Please enter Language [Ar].
+

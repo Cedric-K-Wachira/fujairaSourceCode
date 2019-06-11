@@ -1,0 +1,11 @@
+if (code.Equals("c797")) { return "عرض كل الإمارة."; } // View all emirate.
+if (code.Equals("c798")) { return "مجموع الإمارة"; } // Total Emirate
+if (code.Equals("c799")) { return "الإمارة [و]"; } // Emirate [En]
+if (code.Equals("c800")) { return "الإمارة"; } // Emirate [Ar]
+if (code.Equals("c801")) { return "إدارة الإمارة"; } // Emirate Management
+if (code.Equals("c802")) { return "أضف إمارة جديدة"; } // Add New Emirate
+if (code.Equals("c803")) { return "خضع"; } // Submit
+if (code.Equals("c804")) { return "تحرير الإمارة"; } // Edit Emirate
+if (code.Equals("c805")) { return "طيران الإمارات [و] فارغة. الرجاء إدخال الإمارة."; } // Emirate [En] is blank. Please enter Emirate [En].
+if (code.Equals("c806")) { return "الإمارة فارغة. الرجاء إدخال الإمارة."; } // Emirate [Ar] is blank. Please enter Emirate [Ar].
+

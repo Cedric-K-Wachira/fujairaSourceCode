@@ -1,0 +1,15 @@
+if (code.Equals("c807")) { return "صاحب العمل"; } // Employer
+if (code.Equals("c808")) { return "عرض كل صاحب العمل."; } // View all employer.
+if (code.Equals("c809")) { return "مجموع صاحب العمل"; } // Total Employer
+if (code.Equals("c810")) { return "استخدم [في]"; } // Employer [En]
+if (code.Equals("c811")) { return "صاحب العمل"; } // Employer [Ar]
+if (code.Equals("c812")) { return "الحالة"; } // Status
+if (code.Equals("c813")) { return "إدارة صاحب العمل"; } // Employer Management
+if (code.Equals("c814")) { return "إضافة صاحب عمل جديد"; } // Add New Employer
+if (code.Equals("c815")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c816")) { return "خضع"; } // Submit
+if (code.Equals("c817")) { return "إدارة صاحب العمل"; } // Employer Management
+if (code.Equals("c818")) { return "تحرير صاحب العمل"; } // Edit Employer
+if (code.Equals("c819")) { return "صاحب العمل [En] فارغ. الرجاء إدخال صاحب العمل [En]."; } // Employer [En] is blank. Please enter Employer [En].
+if (code.Equals("c820")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.", "green
+

@@ -1,0 +1,12 @@
+@CF.trans_code("en", "c1007", "Speciality")
+@CF.trans_code("en", "c1008", "View all speciality.")
+@CF.trans_code("en", "c1009", "Total Speciality")
+@CF.trans_code("en", "c1010", "Speciality [En]")
+@CF.trans_code("en", "c1011", "Speciality [Ar]")
+@CF.trans_code("en", "c1012", "Status")
+@CF.trans_code("en", "c1013", "Speciality Management")
+@CF.trans_code("en", "c1014", "Add New Speciality")
+@CF.trans_code("en", "c1015", "Submit")
+@CF.trans_code("en", "c1016", "Edit Speciality")
+@CF.trans_code("en", "c1017", "Speciality [En] is blank. Please enter Speciality [En].")
+

@@ -1,0 +1,13 @@
+@CF.trans_code("en", "c954", "Marital Status")
+@CF.trans_code("en", "c955", "View all marital status.")
+@CF.trans_code("en", "c956", "Total Marital Status")
+@CF.trans_code("en", "c957", "Marital Status [En]")
+@CF.trans_code("en", "c958", "Marital Status [Ar]")
+@CF.trans_code("en", "c959", "Status")
+@CF.trans_code("en", "c960", "Marital Status Management")
+@CF.trans_code("en", "c961", "Add New Marital Status")
+@CF.trans_code("en", "c962", "Edit Marital Status")
+@CF.trans_code("en", "c963", "Submit")
+@CF.trans_code("en", "c964", "Marital Status [En] is blank. Please enter Marital Status [En].")
+@CF.trans_code("en", "c965", "Marital Status [Ar] is blank. Please enter Marital Status [Ar].")
+

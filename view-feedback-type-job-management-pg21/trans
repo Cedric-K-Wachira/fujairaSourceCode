@@ -1,0 +1,12 @@
+if (code.Equals("c874")) { return "نوع الأنطباع"; } // Feedback Type
+if (code.Equals("c875")) { return "عرض كل نوع التعليقات."; } // View all feedback type.
+if (code.Equals("c876")) { return "مجموع ردود الفعل النوع"; } // Total Feedback Type
+if (code.Equals("c877")) { return "نوع التعليقات"; } // Feedback Type [En]
+if (code.Equals("c878")) { return "نوع التعليقات"; } // Feedback Type [Ar]
+if (code.Equals("c879")) { return "الحالة"; } // Status
+if (code.Equals("c880")) { return "ردود الفعل إدارة النوع"; } // Feedback Type Management
+if (code.Equals("c881")) { return "إضافة نوع ملاحظات جديد"; } // Add New Feedback Type
+if (code.Equals("c882")) { return "خضع"; } // Submit
+if (code.Equals("c883")) { return "تحرير نوع التعليقات"; } // Edit Feedback Type
+if (code.Equals("c884")) { return "نوع التعليقات [En] فارغ. الرجاء إدخال نوع التعليقات [En]."; } // Feedback Type [En] is blank. Please enter Feedback Type [En].
+if (code.Equals("c885")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.", "green

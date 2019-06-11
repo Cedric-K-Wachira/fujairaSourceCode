@@ -1,0 +1,14 @@
+if (code.Equals("c821")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c822")) { return "عرض كل حالة التوظيف."; } // View all employment status.
+if (code.Equals("c823")) { return "حالة التوظيف الكلية"; } // Total Employment Status
+if (code.Equals("c824")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c825")) { return "حالة التوظيف [En]"; } // Employment Status [En]
+if (code.Equals("c826")) { return "الوضع الوظيفي"; } // Employment Status [Ar]
+if (code.Equals("c827")) { return "الحالة"; } // Status
+if (code.Equals("c828")) { return "إدارة حالة التوظيف"; } // Employment Status Management
+if (code.Equals("c829")) { return "إضافة حالة توظيف جديدة"; } // Add New Employment Status
+if (code.Equals("c830")) { return "خضع"; } // Submit
+if (code.Equals("c831")) { return "تحرير حالة التوظيف"; } // Edit Employment Status
+if (code.Equals("c832")) { return "حالة التوظيف [En] فارغة. الرجاء إدخال حالة التوظيف [En]."; } // Employment Status [En] is blank. Please enter Employment Status [En].
+if (code.Equals("c833")) { return "حالة التوظيف [Ar] فارغة. الرجاء إدخال حالة التوظيف."; } // Employment Status [Ar] is blank. Please enter Employment Status [Ar].
+

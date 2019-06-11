@@ -1,0 +1,3 @@
+if (code.Equals("c834")) { return "الاحصائيات الحية"; } // Live Statistics
+if (code.Equals("c835")) { return "معاق"; } // Disabled
+

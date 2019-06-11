@@ -1,0 +1,13 @@
+if (code.Equals("c886")) { return "تصنيف الوظيفة"; } // Job Category 
+if (code.Equals("c887")) { return "عرض كل فئة الوظيفة."; } // View all job category.
+if (code.Equals("c888")) { return "مجموع فئة الوظيفة"; } // Total Job Category
+if (code.Equals("c889")) { return "فئة الوظيفة"; } // Job Category [En]
+if (code.Equals("c890")) { return "فئة الوظيفة"; } // Job Category [Ar]
+if (code.Equals("c891")) { return "الحالة"; } // Status
+if (code.Equals("c892")) { return "إدارة فئة الوظيفة"; } // Job Category Management
+if (code.Equals("c893")) { return "إضافة فئة وظيفة جديدة"; } // Add New Job Category
+if (code.Equals("c894")) { return "خضع"; } // Submit
+if (code.Equals("c895")) { return "تحرير فئة الوظيفة"; } // Edit Job Category
+if (code.Equals("c896")) { return "فئة الوظيفة [En] فارغة. الرجاء إدخال فئة الوظيفة [En]."; } // Job Category [En] is blank. Please enter Job Category [En].
+if (code.Equals("c897")) { return "فئة الوظيفة [Ar] فارغة. الرجاء إدخال فئة الوظيفة."; } // Job Category [Ar] is blank. Please enter Job Category [Ar].
+

@@ -1,0 +1,12 @@
+if (code.Equals("c863")) { return "ردود الفعل"; } // Feedback
+if (code.Equals("c864")) { return "عرض كل التعليقات."; } // View all feedback.
+if (code.Equals("c865")) { return "مجموع ردود الفعل"; } // Total Feedback
+if (code.Equals("c866")) { return "عنوان IP"; } // IP Address
+if (code.Equals("c867")) { return "الحالة"; } // Status
+if (code.Equals("c868")) { return "إدارة ردود الفعل"; } // Feedback Management
+if (code.Equals("c869")) { return "إضافة ملاحظات جديدة"; } // Add New Feedback
+if (code.Equals("c870")) { return "خضع"; } // Submit
+if (code.Equals("c871")) { return "تحرير التعليق"; } // Edit Feedback
+if (code.Equals("c872")) { return "ردود الفعل فارغة. الرجاء إدخال الملاحظات."; } // Feedback is blank. Please enter Feedback.
+if (code.Equals("c873")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.", "green
+

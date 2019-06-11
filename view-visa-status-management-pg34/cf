@@ -1,0 +1,13 @@
+@CF.trans_code("en", "c1030", "Visa Status")
+@CF.trans_code("en", "c1031", "View all visa status.")
+@CF.trans_code("en", "c1032", "Total Visa Status")
+@CF.trans_code("en", "c1033", "Visa Status [En]")
+@CF.trans_code("en", "c1034", "Visa Status [Ar]")
+@CF.trans_code("en", "c1035", "Status")
+@CF.trans_code("en", "c1036", "Visa Status Management")
+@CF.trans_code("en", "c1037", "Add New Visa Status")
+@CF.trans_code("en", "c1038", "Visa Status [En]")
+@CF.trans_code("en", "c1039", "Submit")
+@CF.trans_code("en", "c1040", "Visa Status [En] is blank. Please enter Visa Status [En].")
+@CF.trans_code("en", "c1041", "Visa Status [Ar] is blank. Please enter Visa Status [Ar].")
+

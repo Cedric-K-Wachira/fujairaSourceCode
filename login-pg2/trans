@@ -1,0 +1,18 @@
+if (code.Equals("c143")) { return "تسجيل الدخول"; } // Login
+if (code.Equals("c144")) { return "البريد الإلكتروني"; } // Email
+if (code.Equals("c145")) { return "كلمه السر"; } // Password
+if (code.Equals("c146")) { return "تسجيل الدخول"; } // Login
+if (code.Equals("c147")) { return "تذكرنى"; } // Remember Me
+if (code.Equals("c148")) { return "نجاح"; } // Success
+if (code.Equals("c149")) { return "حسنا"; } // Okay
+if (code.Equals("c150")) { return "وجه الفتاة"; } // Oops
+if (code.Equals("c151")) { return "حسنا"; } // Okay
+if (code.Equals("c272")) { return "البريد الإلكتروني فارغ. الرجاء إدخال البريد الإلكتروني."; } //Email is blank. Please enter email.
+if (code.Equals("c273")) { return "بريد إلكتروني خاطئ"; } // Invalid Email.
+if (code.Equals("c274")) { return "تنسيق بريد إلكتروني غير صالح." ، "أحمر"; } // "Invalid Email format.", "red"
+if (code.Equals("c275")) { return "كلمة المرور فارغة الرجاء إدخال كلمة المرور"; } // "Password is blank. Please enter password."
+if (code.Equals("c276")) { return "البريد الإلكتروني أو كلمة السر خاطئة"; } // "Invalid Email or Password"
+
+
+
+

@@ -1,0 +1,41 @@
+if (code.Equals("c898")) { return "إدارة الوظائف"; } // Jobs Management
+if (code.Equals("c899")) { return "عرض جميع إعلانات الوظائف."; } // View all job postings.
+if (code.Equals("c900")) { return "مجموع الوظائف"; } // Total Jobs
+if (code.Equals("c901")) { return "صاحب العمل"; } // Employer
+if (code.Equals("c902")) { return "تخصص"; } // Specialization
+if (code.Equals("c903")) { return "حالة النشر"; } // Publication Status
+if (code.Equals("c904")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c905")) { return "تصنيف الوظيفة"; } // Job Category
+if (code.Equals("c906")) { return "حالة النشر"; } // Publication Status
+if (code.Equals("c907")) { return "المرشحون للحصول على الوظيفة"; } // Candidates For Job
+if (code.Equals("c908")) { return "الموعد النهائي"; } // Closing Date
+if (code.Equals("c909")) { return "تاريخ"; } // Date of
+if (code.Equals("c910")) { return "منشور"; } // Publication
+if (code.Equals("c911")) { return "عنوان وظيفي"; } // Job Title
+if (code.Equals("c912")) { return "الشفرة"; } // Code
+if (code.Equals("c913")) { return "اسم التخصص"; } // Specialization Name
+if (code.Equals("c914")) { return "اسم الموظف"; } // Employer Name
+if (code.Equals("c915")) { return "الحالة"; } // Status
+if (code.Equals("c916")) { return "مدير الوظيفة"; } // Job Manager
+if (code.Equals("c917")) { return "أضف وظيفة جديدة"; } // Add New Job
+if (code.Equals("c918")) { return "تخصص"; } // Specialization
+if (code.Equals("c919")) { return "عنوان"; } // Title
+if (code.Equals("c920")) { return "صاحب العمل"; } // Employer
+if (code.Equals("c921")) { return "تفاصيل الوظيفة"; } // Job Details
+if (code.Equals("c922")) { return "المتطلبات"; } // Requirements
+if (code.Equals("c923")) { return "الراتب المقدر"; } // Estimated Salary
+if (code.Equals("c924")) { return "عدد الوظائف الشاغرة"; } // Number of Vacancies
+if (code.Equals("c925")) { return "تاريخ النشر"; } // Date of Publication
+if (code.Equals("c926")) { return "الموعد النهائي"; } // Closing Date
+if (code.Equals("c927")) { return "تصنيف الوظيفة"; } // Job Category
+if (code.Equals("c928")) { return "خاص"; } // Special
+if (code.Equals("c929")) { return "حالة النشر"; } // Publication Status
+if (code.Equals("c930")) { return "نشرت"; } // Published
+if (code.Equals("c931")) { return "قيد الانتظار"; } // Pending
+if (code.Equals("c932")) { return "مدير الوظيفة"; } // Job Manager
+if (code.Equals("c933")) { return "تحرير الوظيفة"; } // Edit Job
+if (code.Equals("c934")) { return "الشفرة"; } // Code
+if (code.Equals("c935")) { return "عنوان"; } // Title
+if (code.Equals("c936")) { return "تفاصيل الوظيفة"; } // Job Details
+if (code.Equals("c937")) { return "خضع"; } // Submit
+if (code.Equals("c938")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // Description is blank. Please enter Description.

@@ -1,0 +1,15 @@
+if (code.Equals("c985")) { return "قائمة طعام"; } //   Menu    
+if (code.Equals("c986")) { return "عرض كل القائمة [تذييل]."; } //   View all menu [footer].    
+if (code.Equals("c987")) { return "القائمة الكاملة [تذييل]"; } //   Total Menu [Footer]
+if (code.Equals("c988")) { return "القائمة [En]"; } //    Menu [En]
+if (code.Equals("c989")) { return "القائمة"; } //    Menu [Ar]
+if (code.Equals("c990")) { return "حلقة الوصل"; } //    Link
+if (code.Equals("c991")) { return "إدارة القائمة [تذييل]"; } //    Menu Management [Footer]
+if (code.Equals("c992")) { return "أضف قائمة جديدة"; } //    Add New Menu
+if (code.Equals("c993")) { return "عنوان القائمة"; } //    Menu URL
+if (code.Equals("c994")) { return "تحميل الصورة"; } //    Upload Picture
+if (code.Equals("c995")) { return "خضع"; } //    Submit
+if (code.Equals("c996")) { return "عدل القائمة"; } //    Edit Menu
+if (code.Equals("c997")) { return "القائمة [En] فارغة. الرجاء إدخال القائمة [En]."; } //    Menu [En] is blank. Please enter Menu [En].
+if (code.Equals("c998")) { return "تم حذف الصورة بنجاح. "،" green"; } //    Picture has been deleted successfully.", "green
+  

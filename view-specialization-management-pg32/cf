@@ -1,0 +1,13 @@
+@CF.trans_code("en", "c1018", "Specialization")
+@CF.trans_code("en", "c1019", "View all specialization.")
+@CF.trans_code("en", "c1020", "Total Specialization")
+@CF.trans_code("en", "c1021", "Specialization [En]")
+@CF.trans_code("en", "c1022", "Specialization [Ar]")
+@CF.trans_code("en", "c1023", "Status")
+@CF.trans_code("en", "c1024", "Specialization Management")
+@CF.trans_code("en", "c1025", "Add New Specialization")
+@CF.trans_code("en", "c1026", "Submit")
+@CF.trans_code("en", "c1027", "Edit Specialization")
+@CF.trans_code("en", "c1028", "Specialization [En] is blank. Please enter Specialization [En].")
+@CF.trans_code("en", "c1029", "Specialization [Ar] is blank. Please enter Specialization [Ar].")
+

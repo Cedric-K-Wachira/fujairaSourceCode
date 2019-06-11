@@ -1,0 +1,17 @@
+if (code.Equals("c185")) { return "إخطارات"; } // Notifications
+if (code.Equals("c186")) { return "اليوم"; } // today
+if (code.Equals("c187")) { return "جميع الأنظمة التشغيلية"; } // All systems operational
+if (code.Equals("c188")) { return "تحميل الملف بنجاح"; } // File upload successful
+if (code.Equals("c189")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c190")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c191")) { return "إعادة تعيين كلمة المرور"; } // Reset Password
+if (code.Equals("c192")) { return "مساعدة"; } // Help
+if (code.Equals("c193")) { return "الخروج"; } // Logout
+if (code.Equals("c194")) { return "التخصص الأكاديمي"; } // Academic Speciality
+if (code.Equals("c195")) { return "الاحصائيات الحية"; } // Live Statistics
+if (code.Equals("c196")) { return "مجموع مواطني دولة الإمارات"; } // Total UAE Nationals
+if (code.Equals("c197")) { return "الذكر"; } // Male
+if (code.Equals("c198")) { return "إناثا"; } // Female
+
+
+

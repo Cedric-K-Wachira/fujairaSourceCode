@@ -1,0 +1,14 @@
+@CF.trans_code("en", "c669", "View all countries.")
+@CF.trans_code("en", "c670", "Total Countries.")
+
+@CF.trans_code("en", "c671", "Country Name [En]")
+@CF.trans_code("en", "c672", "Country Name [Ar]")
+@CF.trans_code("en", "c673", "Country Code")
+
+@CF.trans_code("en", "c674", "Country Management")
+@CF.trans_code("en", "c675", "Add New Country")
+@CF.trans_code("en", "c676", "Submit")
+@CF.trans_code("en", "c677", "Edit Country")
+@CF.trans_code("en", "c678", "Country Name [En] is blank. Please enter Country Name [En].")
+
+

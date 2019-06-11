@@ -1,0 +1,10 @@
+@CF.trans_code("en", "c779", "View all educational institutes.")
+@CF.trans_code("en", "c780", "Total Educational Institutes") 
+@CF.trans_code("en", "c781", "Educational Institute [En]")
+@CF.trans_code("en", "c782", "Educational Institute [Ar]")
+@CF.trans_code("en", "c783", "Educational Institute Management")
+@CF.trans_code("en", "c784", " Add New Educational Institute")
+@CF.trans_code("en", "c785", "submit") 
+@CF.trans_code("en", "c786", "Edit Educational Institute")
+@CF.trans_code("en", "c787", "Educational Institute [En] is blank. Please enter Educational Institute [En].")
+

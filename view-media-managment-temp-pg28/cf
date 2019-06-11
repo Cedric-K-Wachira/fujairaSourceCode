@@ -1,0 +1,4 @@
+@CF.trans_code("en", "c982", "Easy Tree Example")
+@CF.trans_code("en", "c983", "File has been uploaded successfully.", "green")
+@CF.trans_code("en", "c984", "File could not be uploaded. Please try again.")
+

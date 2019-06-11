@@ -1,0 +1,9 @@
+if (code.Equals("c679")) { return "عرض جميع المستويات التعليمية."; } // View all educational levels.
+if (code.Equals("c680")) { return "مجموع مستويات التعليم ") مجموع مستويات التعليم"; } // Total Educational Levels")Total Educational Levels
+if (code.Equals("c681")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c682")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c683")) { return "إدارة المستوى التعليمي"; } // Educational Level Management
+if (code.Equals("c684")) { return "أضف مستوى تعليمي جديد"; } // Add New Educational Level
+if (code.Equals("c685")) { return "تحرير المستوى التعليمي"; } // Edit Educational Level
+if (code.Equals("c686")) { return "اسم المستوى [En] فارغ. الرجاء إدخال اسم المستوى [En]."; } // Level Name [En] is blank. Please enter Level Name [En].
+if (code.Equals("c687")) { return "اسم المستوى [Ar] فارغ. الرجاء إدخال اسم المستوى"; } // Level Name [Ar] is blank. Please enter Level Name [Ar]

@@ -1,0 +1,73 @@
+if (code.Equals("c103")) { return "جميع الأنظمة التشغيلية"; } // All systems operational
+if (code.Equals("c104")) { return "تحميل الملف بنجاح"; } // File upload successful
+if (code.Equals("c106")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c107")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c108")) { return "إعادة تعيين كلمة المرور"; } // Reset Password
+if (code.Equals("c109")) { return "الخروج"; } // Logout
+if (code.Equals("c110")) { return "إدارة المادة"; } // Article Management
+if (code.Equals("c111")) { return "عرض جميع المقالات"; } // View all articles
+if (code.Equals("c112")) { return "مجموع المقالات"; } // Total Articles
+if (code.Equals("c113")) { return "حذف"; } // Delete
+if (code.Equals("c114")) { return "الجديد"; } // New
+if (code.Equals("c115")) { return "تصحيح"; } // Edit
+if (code.Equals("c116")) { return "نشر"; } // Publish
+if (code.Equals("c117")) { return "إلغاء النشر"; } // Unpublish
+if (code.Equals("c118")) { return "طلب"; } // Order
+if (code.Equals("c119")) { return "عنوان"; } // Title
+if (code.Equals("c120")) { return "وصف"; } // Description
+if (code.Equals("c121")) { return "الحالة"; } // Status
+if (code.Equals("c122")) { return "طلب"; } // Order
+if (code.Equals("c123")) { return "عنوان"; } // Title
+if (code.Equals("c124")) { return "وصف"; } // Description
+if (code.Equals("c125")) { return "الحالة"; } // Status
+if (code.Equals("c126")) { return "عمل"; } // Action
+if (code.Equals("c127")) { return "مدير المادة"; } // Article Manager
+if (code.Equals("c128")) { return "إضافة مقال جديد"; } // Add New Article
+if (code.Equals("c129")) { return "عنوان"; } // Title
+if (code.Equals("c130")) { return "الفئة"; } // Category
+if (code.Equals("c131")) { return "تحديد"; } // SELECT
+if (code.Equals("c132")) { return "نص المادة"; } // Article Text
+if (code.Equals("c133")) { return "خضع"; } // Submit
+if (code.Equals("c134")) { return "مدير المادة"; } // Article Manager
+if (code.Equals("c135")) { return "تحرير المادة"; } // Edit Article
+if (code.Equals("c136")) { return "عنوان"; } // Title
+if (code.Equals("c137")) { return "الفئة"; } // Category
+if (code.Equals("c138")) { return "تحديد"; } // SELECT
+if (code.Equals("c139")) { return "نص المادة"; } // Article Text
+if (code.Equals("c140")) { return "خضع"; } // Submit
+if (code.Equals("c141")) { return "مساعدة"; } // Help
+if (code.Equals("c142")) { return "عمل"; } // Action 
+
+
+if (code.Equals("c244")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى"; } // "There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further."
+if (code.Equals("c245")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى"; } // "There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further."
+if (code.Equals("c246")) { return "النقر"; } // "clicked"
+if (code.Equals("c247")) { return "يرجى تحديد سجل واحد على الأقل للمتابعة,أحمر"; } // "Please select at least one record to proceed.", "red"
+if (code.Equals("c248")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى"; } // "There was an error processing your request. Please try again"
+if (code.Equals("c249")) { return "يرجى تحديد سجل واحد على الأقل للمتابعة,أحمر"; } // "Please select at least one record to proceed.", "red"
+if (code.Equals("c250")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // "Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c251")) { return "تم حفظ المعلومات بنجاح,أخضر"; } // "Information has been saved successfully.", "green"
+if (code.Equals("c252")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى.,أحمر"; } // "There was an error processing your request. Please try again.", "red"
+if (code.Equals("c253")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى,أحمر"; } // "There was an error processing your request. Please try again.", "red"
+if (code.Equals("c254")) { return "يرجى تحديد سجل واحد على الأقل للمتابعة, أحمر"; } // "Please select at least one record to proceed.", "red"
+if (code.Equals("c255")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // "Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c256")) { return "تم حفظ المعلومات بنجاح.,أخضر"; } // "Information has been saved successfully.", "green"
+if (code.Equals("c257")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى.,أحمر"; } // "There was an error processing your request. Please try again.", "red"
+if (code.Equals("c258")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى., أحمر"; } // "There was an error processing your request. Please try again.", "red"
+if (code.Equals("c259")) { return "يرجى تحديد سجل واحد على الأقل للمتابعة., أحمر"; } // "Please select at least one record to proceed.", "red"
+if (code.Equals("c260")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // "Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c261")) { return "تم حذف المعلومات بنجاح. أخضر"; } // "Information has been deleted successfully.", "green"
+if (code.Equals("c262")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // "There was an error processing your request. Please try again."
+if (code.Equals("c263")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // "There was an error processing your request. Please try again."
+if (code.Equals("c264")) { return "العنوان فارغ. الرجاء إدخال العنوان."; } // "Title is blank. Please enter Title."
+if (code.Equals("c265")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // "Description is blank. Please enter Description."
+if (code.Equals("c266")) { return "تم حفظ المعلومات بنجاح.,أخضر "; } // "Information has been saved successfully.", "green"
+if (code.Equals("c267")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // "There was an error processing your request. Please try again."
+if (code.Equals("c268")) { return "العنوان فارغ. الرجاء إدخال العنوان."; } // "Title is blank. Please enter Title."
+if (code.Equals("c269")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // "Description is blank. Please enter Description."
+if (code.Equals("c270")) { return "تم حفظ المعلومات بنجاح. أخضر"; } // "Information has been saved successfully.", "green"
+if (code.Equals("c271")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // "There was an error processing your request. Please try again."
+
+
+
+

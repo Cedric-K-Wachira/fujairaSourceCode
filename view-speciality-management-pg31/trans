@@ -1,0 +1,13 @@
+if (code.Equals("c1007")) { return "تخصص"; } //    Speciality
+if (code.Equals("c1008")) { return "عرض جميع التخصصات."; } //    View all speciality.
+if (code.Equals("c1009")) { return "التخصص الكلي"; } //    Total Speciality
+if (code.Equals("c1010")) { return "التخصص [En]"; } //    Speciality [En]
+if (code.Equals("c1011")) { return "التخصص"; } //    Speciality [Ar]
+if (code.Equals("c1012")) { return "الحالة"; } //    Status
+if (code.Equals("c1013")) { return "إدارة التخصص"; } //    Speciality Management
+if (code.Equals("c1014")) { return "إضافة تخصص جديد"; } //    Add New Speciality
+if (code.Equals("c1015")) { return "خضع"; } //    Submit
+if (code.Equals("c1016")) { return "تحرير التخصص"; } //    Edit Speciality
+if (code.Equals("c1017")) { return "التخصص [En] فارغ. الرجاء إدخال التخصص [En]."; } //    speciality [En] is blank. Please enter Speciality [En].
+
+

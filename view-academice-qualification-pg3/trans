@@ -1,0 +1,68 @@
+if (code.Equals("c152")) { return "إخطارات"; } // Notifications
+if (code.Equals("c153")) { return "اليوم"; } // today
+if (code.Equals("c154")) { return "جميع الأنظمة التشغيلية"; } // All systems operational
+if (code.Equals("c155")) { return "تحميل الملف بنجاح"; } // File upload successful
+if (code.Equals("c156")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c157")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c158")) { return "إعادة تعيين كلمة المرور"; } // Reset Password
+if (code.Equals("c159")) { return "مساعدة"; } // Help
+if (code.Equals("c160")) { return "الخروج"; } // Logout
+if (code.Equals("c161")) { return "المستوى التعليمي"; } // Educational Level
+if (code.Equals("c162")) { return "عرض جميع المستويات التعليمية"; } // View all educational levels
+if (code.Equals("c163")) { return "مجموع المستويات التعليمية"; } // Total Educational Levels
+if (code.Equals("c164")) { return "حذف"; } // Delete
+if (code.Equals("c165")) { return "الجديد"; } // New
+if (code.Equals("c166")) { return "تصحيح"; } // Edit
+if (code.Equals("c167")) { return "نشر"; } // Publish
+if (code.Equals("c168")) { return "إلغاء النشر"; } // Unpublish
+if (code.Equals("c169")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c170")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c171")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c172")) { return "الحالة"; } // Status
+if (code.Equals("c173")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c174")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c175")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c176")) { return "الحالة"; } // Status
+if (code.Equals("c177")) { return "إدارة المستوى التعليمي"; } // Educational Level Management
+if (code.Equals("c178")) { return "أضف مستوى تعليمي جديد"; } // Add New Educational Level
+if (code.Equals("c179")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c180")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c181")) { return "إدارة المستوى التعليمي"; } // Educational Level Management
+if (code.Equals("c182")) { return "تحرير المستوى التعليمي"; } // Edit Educational Level
+if (code.Equals("c183")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c184")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c277")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c278")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c279")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red"
+if (code.Equals("c280")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again."
+if (code.Equals("c281")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red"
+if (code.Equals("c282")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c283")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green"
+if (code.Equals("c284")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red"
+if (code.Equals("c285")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red"
+if (code.Equals("c286")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red"
+if (code.Equals("c287")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c288")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green"
+if (code.Equals("c289")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red"
+if (code.Equals("c290")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red"
+if (code.Equals("c291")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red"
+if (code.Equals("c292")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again."
+if (code.Equals("c293")) { return "تم حذف المعلومات بنجاح. "،" green"; } // Information has been deleted successfully.", "green"
+if (code.Equals("c294")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again."
+if (code.Equals("c295")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again."
+if (code.Equals("c296")) { return "اسم المستوى [En] فارغ. الرجاء إدخال اسم المستوى [En]."; } // Level Name [En] is blank. Please enter Level Name [En]."
+if (code.Equals("c297")) { return "اسم المستوى [Ar] فارغ. الرجاء إدخال اسم المستوى."; } // Level Name [Ar] is blank. Please enter Level Name [Ar]."
+if (code.Equals("c298")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green"
+if (code.Equals("c299")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again."
+if (code.Equals("c300")) { return "اسم المستوى [En] فارغ. الرجاء إدخال اسم المستوى [En]."; } // Level Name [En] is blank. Please enter Level Name [En]."
+if (code.Equals("c301")) { return "اسم المستوى [Ar] فارغ. الرجاء إدخال اسم المستوى"; } // Level Name [Ar] is blank. Please enter Level Name [Ar]"
+if (code.Equals("c302")) { return "تم حفظ المعلومات بنجاح. "،" green ""; } // Information has been saved successfully.", "green"
+if (code.Equals("c303")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again."
+
+
+
+
+
+
+
+

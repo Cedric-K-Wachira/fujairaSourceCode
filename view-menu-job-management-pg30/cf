@@ -1,0 +1,9 @@
+@CF.trans_code("en", "c999", "Menu")
+@CF.trans_code("en", "c1000", "View all menu.")
+@CF.trans_code("en", "c1001", "Total Menu")
+@CF.trans_code("en", "c1002", "Menu Management")
+@CF.trans_code("en", "c1003", "Add New Menu")
+@CF.trans_code("en", "c1004", "Parent")
+@CF.trans_code("en", "c1005", "Menu [Ar] is blank. Please enter Menu [Ar].")
+@CF.trans_code("en", "c1006", "Parent menu cannot be self assigned to itself.")
+

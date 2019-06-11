@@ -1,0 +1,205 @@
+if (code.Equals("c465")) { return "إخطارات"; } // Notifications
+if (code.Equals("c466")) { return "اليوم"; } // today
+if (code.Equals("c467")) { return "جميع الأنظمة التشغيلية."; } // All systems operational.
+if (code.Equals("c468")) { return "تحميل الملف بنجاح."; } // File upload successful.
+if (code.Equals("c469")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c470")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c471")) { return "إعادة تعيين كلمة المرور"; } // Reset Password
+if (code.Equals("c472")) { return "مساعدة"; } // Help
+if (code.Equals("c473")) { return "الخروج"; } // Logout
+if (code.Equals("c474")) { return "إدارة المرشحين"; } // Candidates Management
+if (code.Equals("c475")) { return "عرض جميع منشورات المرشح."; } // View all candidate postings.
+if (code.Equals("c476")) { return "مجموع المرشحين"; } // Total Candidates
+if (code.Equals("c477")) { return "حذف"; } // Delete
+if (code.Equals("c478")) { return "الجديد"; } // New
+if (code.Equals("c479")) { return "تصحيح"; } // Edit
+if (code.Equals("c480")) { return "نشر"; } // Publish
+if (code.Equals("c481")) { return "إلغاء النشر"; } // Unpublish
+if (code.Equals("c482")) { return "جنسية"; } // Nationality
+if (code.Equals("c483")) { return "أبناء المواطن الإماراتي"; } // UAE Citizen Sons
+if (code.Equals("c484")) { return "جنس"; } // Gender
+if (code.Equals("c485")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c486")) { return "الإمارة"; } // Emirate
+if (code.Equals("c487")) { return "مستوى التعليم"; } // Education Level
+if (code.Equals("c488")) { return "معهد التعليم"; } // Education Institute
+if (code.Equals("c489")) { return "تخصص"; } // Speciality
+if (code.Equals("c490")) { return "اللغات"; } // Languages
+if (code.Equals("c491")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c492")) { return "معطل"; } // Is Disabled
+if (code.Equals("c493")) { return "عمر"; } // Age
+if (code.Equals("c494")) { return "الحالة"; } // Status
+if (code.Equals("c495")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c496")) { return "الإمارة"; } // Emirate
+if (code.Equals("c497")) { return "جنس"; } // Gender
+if (code.Equals("c498")) { return "عمر"; } // Age
+if (code.Equals("c499")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c500")) { return "الإمارة"; } // Emirate
+if (code.Equals("c501")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c502")) { return "معطل"; } // Is Disabled
+if (code.Equals("c503")) { return "لغة"; } // Language
+if (code.Equals("c504")) { return "حالة المرشح"; } // Candidate Status
+if (code.Equals("c505")) { return "معرف الإمارات"; } // Emirates Id
+if (code.Equals("c506")) { return "موبايل 1"; } // Mobile 1
+if (code.Equals("c507")) { return "موبايل 2"; } // Mobile 2
+if (code.Equals("c508")) { return "تاريخ الولادة"; } // Birth Date
+if (code.Equals("c509")) { return "تخصص"; } // Speciality
+if (code.Equals("c510")) { return "التعليم"; } // Education
+if (code.Equals("c511")) { return "معهد"; } // Institute
+if (code.Equals("c512")) { return "التعليم"; } // Education
+if (code.Equals("c513")) { return "مستوى"; } // Level
+if (code.Equals("c514")) { return "مواطن دولة الإمارات العربية المتحدة"; } // UAE Citizen
+if (code.Equals("c515")) { return "أبناء"; } // Sons
+if (code.Equals("c516")) { return "جنسية"; } // Nationality
+if (code.Equals("c517")) { return "اسم"; } // Name
+if (code.Equals("c518")) { return "الشفرة"; } // Code
+if (code.Equals("c519")) { return "الحالة"; } // Status
+if (code.Equals("c520")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c521")) { return "الإمارة"; } // Emirate
+if (code.Equals("c522")) { return "جنس"; } // Gender
+if (code.Equals("c523")) { return "عمر"; } // Age
+if (code.Equals("c524")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c525")) { return "الإمارة"; } // Emirate
+if (code.Equals("c526")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c527")) { return "معطل"; } // Is Disabled
+if (code.Equals("c528")) { return "لغة"; } // Language
+if (code.Equals("c529")) { return "حالة المرشح"; } // Candidate Status
+if (code.Equals("c530")) { return "معرف الإمارات"; } // Emirates Id
+if (code.Equals("c531")) { return "موبايل 1"; } // Mobile 1
+if (code.Equals("c532")) { return "موبايل 2"; } // Mobile 2
+if (code.Equals("c533")) { return "تاريخ الولادة"; } // Birth Date
+if (code.Equals("c534")) { return "تخصص"; } // Speciality
+if (code.Equals("c535")) { return "التعليم"; } // Education
+if (code.Equals("c536")) { return "معهد"; } // 	Institute
+if (code.Equals("c537")) { return "التعليم"; } // Education
+if (code.Equals("c538")) { return "مستوى"; } // Level
+if (code.Equals("c539")) { return "مواطن دولة الإمارات العربية المتحدة"; } // UAE Citizen
+if (code.Equals("c540")) { return "أبناء"; } // Sons
+if (code.Equals("c541")) { return "جنسية"; } // Nationality
+if (code.Equals("c542")) { return "اسم"; } // Name
+if (code.Equals("c543")) { return "الشفرة"; } // Code
+if (code.Equals("c544")) { return "الحالة"; } // Status
+if (code.Equals("c545")) { return "مدير مرشح"; } // Candidate Manager
+if (code.Equals("c546")) { return "إضافة مرشح جديد"; } // Add New Candidate
+if (code.Equals("c547")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c548")) { return "التعاقد"; } // Hired
+if (code.Equals("c549")) { return "أرشيف"; } // Archieve
+if (code.Equals("c550")) { return "نشيط"; } // Active
+if (code.Equals("c551")) { return "تاريخ"; } // Date
+if (code.Equals("c552")) { return "مكان"; } // Place
+if (code.Equals("c553")) { return "تم توضيفه عن طريق"; } // Hired By
+if (code.Equals("c554")) { return "تسجيل البيانات"; } // Register Data
+if (code.Equals("c555")) { return "ملاحظات"; } // Notes
+if (code.Equals("c556")) { return "بيانات شخصية"; } // Personal Data
+if (code.Equals("c557")) { return "المؤهلات العلمية"; } // Academic Qualifications
+if (code.Equals("c558")) { return "تجربة"; } // Experience
+if (code.Equals("c559")) { return "الدورات"; } // Courses
+if (code.Equals("c560")) { return "اللغات"; } // Languages
+if (code.Equals("c561")) { return "مرفقات"; } // Attachments
+if (code.Equals("c562")) { return "اسم"; } // Name
+if (code.Equals("c563")) { return "الاسم الثاني"; } // Second Name
+if (code.Equals("c564")) { return "الاسم الثالث"; } // Third Name
+if (code.Equals("c565")) { return "الاسم الثالث"; } // Third Name
+if (code.Equals("c566")) { return "الكنية"; } // Last Name
+if (code.Equals("c567")) { return "معرف الإمارات"; } // Emirates ID
+if (code.Equals("c568")) { return "البريد الإلكتروني"; } // Email
+if (code.Equals("c569")) { return "كلمه السر"; } // Password
+if (code.Equals("c570")) { return "تأكيد كلمة المرور"; } // Confirm Password
+if (code.Equals("c571")) { return "حفظ"; } // Save
+if (code.Equals("c572")) { return "جنسية"; } // Nationality
+if (code.Equals("c573")) { return "أبناء مواطني دولة الإمارات العربية المتحدة"; } // UAE Citizens Sons
+if (code.Equals("c574")) { return "حالة التأشيرة"; } // Visa Status
+if (code.Equals("c575")) { return "جواز سفر"; } // Passport
+if (code.Equals("c576")) { return "جنس"; } // Gender
+if (code.Equals("c577")) { return "الذكر"; } // Male
+if (code.Equals("c578")) { return "إناثا"; } // Female
+if (code.Equals("c579")) { return "تاريخ الولادة"; } // Birth Date
+if (code.Equals("c580")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c581")) { return "الإمارة"; } // Emirate
+if (code.Equals("c582")) { return "أبو ظبي"; } // Abu Dhabi
+if (code.Equals("c583")) { return "دبي"; } // Dubai
+if (code.Equals("c584")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c585")) { return "رأس الخيمة"; } // Ras Al Khaimah
+if (code.Equals("c586")) { return "الشارقة"; } // Sharjah
+if (code.Equals("c587")) { return "أم القيوين"; } // Umm Al Quwain
+if (code.Equals("c588")) { return "مدينة"; } // City
+if (code.Equals("c589")) { return "رقم الجوال 1"; } // Mobile No 1
+if (code.Equals("c590")) { return "رقم الجوال 2"; } // Mobile No 2
+if (code.Equals("c591")) { return "رخصة قيادة"; } // Driver License
+if (code.Equals("c592")) { return "هل انت معاق"; } // Are You Disabled?
+if (code.Equals("c593")) { return "نعم فعلا"; } // Yes
+if (code.Equals("c594")) { return "لا"; } // No
+if (code.Equals("c595")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c596")) { return "حفظ"; } // Save
+if (code.Equals("c597")) { return "أريد أن أكمل دراستي"; } // I want to complete my studies
+if (code.Equals("c598")) { return "نعم فعلا"; } // Yes
+if (code.Equals("c599")) { return "لا"; } // No
+if (code.Equals("c600")) { return "المستوى التعليمي"; } // Educational Level
+if (code.Equals("c601")) { return "المستوى التعليمي"; } // Educational Institute
+if (code.Equals("c602")) { return "تخصص"; } // Speciality
+if (code.Equals("c603")) { return "تفاصيل التخصص"; } // Speciality Details
+if (code.Equals("c604")) { return "سنة التخرج"; } // Year of Graduation
+if (code.Equals("c605")) { return "كيان"; } // Entity
+if (code.Equals("c606")) { return "عنوان وظيفي"; } // Job Title
+if (code.Equals("c607")) { return "بلد"; } // Country
+if (code.Equals("c608")) { return "مدينة"; } // City
+if (code.Equals("c609")) { return "من عند"; } // From
+if (code.Equals("c610")) { return "إلى"; } // To
+if (code.Equals("c611")) { return "سبب الاستقالة"; } // Reason For Resigning
+if (code.Equals("c612")) { return "حفظ"; } // Save
+if (code.Equals("c613")) { return "اسم الدورة التدريبية"; } // Course Name
+if (code.Equals("c614")) { return "موقع الدورة"; } // Course Location
+if (code.Equals("c615")) { return "طول المسار"; } // Course Length
+if (code.Equals("c616")) { return "حفظ"; } // Save
+if (code.Equals("c617")) { return "اللغات"; } // Languages
+if (code.Equals("c618")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c619")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c620")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c621")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c622")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c623")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c624")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c625")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c626")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c627")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c628")) { return "تم حذف المعلومات بنجاح. "،" green"; } // Information has been deleted successfully.", "green
+if (code.Equals("c629")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c630")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c631")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c632")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c633")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c634")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c635")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c636")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c637")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c638")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c639")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c640")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c641")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c642")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c643")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c644")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c645")) { return "تم حذف المعلومات بنجاح. "،" green"; } // Information has been deleted successfully.", "green
+if (code.Equals("c646")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c647")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c648")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c649")) { return "اسم المرشح فارغ. الرجاء إدخال اسم المرشح."; } // Candidate Name is blank. Please enter Candidate Name.
+if (code.Equals("c650")) { return "اسم المرشح الثاني فارغ. الرجاء إدخال الاسم الثاني للمرشح."; } // Candidate Second Name is blank. Please enter Candidate Second Name.
+if (code.Equals("c651")) { return "تم حفظ المعلومات بنجاح. يرجى ملء التفاصيل في علامات تبويب أخرى لإكمال عملية التسجيل. "،" أخضر"; } // Information has been saved successfully. Please fill out details in other tabs to complete the registration process.", "green
+if (code.Equals("c652")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c653")) { return "العنوان فارغ. الرجاء إدخال العنوان."; } // Title is blank. Please enter Title.
+if (code.Equals("c654")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // Description is blank. Please enter Description.
+if (code.Equals("c655")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c656")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c657")) { return "يرجى تقديم الملاحظات."; } // Please provide notes.
+if (code.Equals("c658")) { return "تم حفظ المعلومات بنجاح. "، "أخضر"; } // Information has been saved successfully. ", "green
+if (code.Equals("c659")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c660")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c661")) { return "تم حفظ المعلومات بنجاح. "، "أخضر"; } // Information has been saved successfully. ", "green
+if (code.Equals("c662")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c663")) { return "تم حفظ المعلومات بنجاح. "، "أخضر"; } // Information has been saved successfully. ", "green
+if (code.Equals("c664")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c665")) { return "تم حفظ المعلومات بنجاح. "، "أخضر"; } // Information has been saved successfully. ", "green
+if (code.Equals("c666")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c667")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.","green
+if (code.Equals("c668")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+

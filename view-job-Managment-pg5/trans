@@ -1,0 +1,77 @@
+if (code.Equals("c199")) { return "إخطارات"; } // Notifications
+if (code.Equals("c200")) { return "اليوم"; } // today
+if (code.Equals("c201")) { return "جميع الأنظمة التشغيلية"; } // All systems operational
+if (code.Equals("c202")) { return "تحميل الملف بنجاح"; } // File upload successful
+if (code.Equals("c203")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c204")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c205")) { return "إعادة تعيين كلمة المرور"; } // 	Reset Password
+if (code.Equals("c206")) { return "مساعدة"; } // Help
+if (code.Equals("c207")) { return "الخروج"; } // Logout
+if (code.Equals("c208")) { return "إدارة التطبيقات"; } // Apps Management
+if (code.Equals("c209")) { return "عرض جميع التطبيقات"; } // View all apps
+if (code.Equals("c210")) { return "مجموع التطبيقات"; } // Total Apps
+if (code.Equals("c211")) { return "حذف"; } // Delete
+if (code.Equals("c212")) { return "الجديد"; } // New
+if (code.Equals("c213")) { return "تصحيح"; } // Edit
+if (code.Equals("c214")) { return "نشر"; } // Publish
+if (code.Equals("c215")) { return "إلغاء النشر"; } // Unpublish
+if (code.Equals("c216")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c217")) { return "العنوان"; } // Title [En]
+if (code.Equals("c218")) { return "العنوان"; } // Title [Ar]
+if (code.Equals("c219")) { return "عنوان URL [IOS]"; } // URL [IOS]
+if (code.Equals("c220")) { return "عنوان URL [Android]"; } // URL [Android]
+if (code.Equals("c221")) { return "الحالة"; } // Status
+if (code.Equals("c222")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c223")) { return "العنوان"; } // Title [En]
+if (code.Equals("c224")) { return "العنوان"; } // Title [Ar]
+if (code.Equals("c225")) { return "عنوان URL [IOS]"; } // URL [IOS]
+if (code.Equals("c226")) { return "عنوان URL [Android]"; } // URL [Android]
+if (code.Equals("c227")) { return "الحالة"; } // Status
+if (code.Equals("c228")) { return "إدارة التطبيقات"; } // Apps Management
+if (code.Equals("c229")) { return "إضافة تطبيقات جديدة"; } // Add New Apps
+if (code.Equals("c230")) { return "العنوان"; } // Title [En]
+if (code.Equals("c231")) { return "العنوان"; } // Title [Ar]
+if (code.Equals("c232")) { return "عنوان URL [IOS]"; } // URL [IOS]
+if (code.Equals("c233")) { return "عنوان URL [Android]"; } // URL [Android]
+if (code.Equals("c234")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c235")) { return "خضع"; } // Submit
+if (code.Equals("c236")) { return "إدارة التطبيقات"; } // Apps Management
+if (code.Equals("c237")) { return "تحرير التطبيقات"; } // Edit Apps
+if (code.Equals("c238")) { return "العنوان"; } // Title [En]
+if (code.Equals("c239")) { return "العنوان"; } // Title [Ar]
+if (code.Equals("c240")) { return "عنوان URL [IOS]"; } // URL [IOS]
+if (code.Equals("c241")) { return "عنوان URL [Android]"; } // URL [Android]
+if (code.Equals("c242")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c243")) { return "خضع"; } // Submit
+if (code.Equals("c304")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c305")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c306")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c307")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c308")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c309")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c310")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c311")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c312")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c313")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c314")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c315")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c316")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c317")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+if (code.Equals("c318")) { return "الرجاء تحديد سجل واحد على الأقل للمتابعة. "،" أحمر"; } // Please select at least one record to proceed.", "red
+if (code.Equals("c319")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c320")) { return "تم حذف المعلومات بنجاح. "،" green"; } // Information has been deleted successfully.", "green
+if (code.Equals("c321")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c322")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c323")) { return "العنوان [En] فارغ. الرجاء إدخال العنوان"; } // Title [En] is blank. Please enter Title [En].
+if (code.Equals("c324")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // Description is blank. Please enter Description.
+if (code.Equals("c325")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c326")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c327")) { return "العنوان [En] فارغ. الرجاء إدخال العنوان [En]."; } // Title [En] is blank. Please enter Title [En].
+if (code.Equals("c328")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // Description is blank. Please enter Description.
+if (code.Equals("c329")) { return "تم حفظ المعلومات بنجاح. "،" أخضر"; } // Information has been saved successfully.", "green
+if (code.Equals("c330")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c331")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.", "green
+if (code.Equals("c332")) { return "كان هناك خطأ في معالجة طلبك. يرجى المحاولة مرة أخرى"; } // There was an error processing your request. Please try again.", "red
+
+
+

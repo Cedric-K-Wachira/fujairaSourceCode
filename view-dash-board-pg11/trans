@@ -1,0 +1,91 @@
+if (code.Equals("c687")) { return "إضافة مقال جديد"; } // Add New Article
+if (code.Equals("c689")) { return "انقر لإضافة مقال جديد"; } // Click to add a new article
+if (code.Equals("c690")) { return "مدير القائمة"; } // Menu Manager
+if (code.Equals("c691")) { return "انقر لعرض جميع القوائم"; } // Click to view all menus
+if (code.Equals("c692")) { return "مدير المادة"; } // Article Manager
+if (code.Equals("c693")) { return "انقر هنا لإدارة المقالات"; } // Click here to manage the articles
+if (code.Equals("c694")) { return "مدير المستخدم"; } // User Manager
+if (code.Equals("c695")) { return "انقر هنا لإدارة جميع المستخدمين"; } // Click here to manage all users
+if (code.Equals("c696")) { return "مدير فئة"; } // Category Manager
+if (code.Equals("c697")) { return "انقر هنا لإدارة الفئات"; } // Click here to manage the categories
+if (code.Equals("c698")) { return "مدير اللغة"; } // Language Manager
+if (code.Equals("c699")) { return "انقر هنا لإدارة بيانات اللغة"; } // Click here to manage language data
+if (code.Equals("c700")) { return "مدير الإعلام"; } // Media Manager
+if (code.Equals("c701")) { return "انقر هنا لإدارة ملفات الوسائط"; } // Click here to manage the media files
+if (code.Equals("c702")) { return "التكوين العالمي"; } // Global Configuration
+if (code.Equals("c703")) { return "انقر هنا لإدارة التكوينات العالمية"; } // Click here to manage the global configurations
+if (code.Equals("c704")) { return "أبجد هوز دولور الجلوس امات، consectetur adipiscing إيليت."; } // Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+if (code.Equals("c705")) { return "أبجد هوز دولور الجلوس امات، consectetur adipiscing إيليت. عندما حرص الفيلم على التخلي عن"; } // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque cupiditate deserunt
+if (code.Equals("c706")) { return "وصول وسائل الإعلام"; } // Media Reach
+if (code.Equals("c707")) { return "نشاط أكثر من المعتاد."; } // More activity than usual.
+if (code.Equals("c708")) { return "وحدات جديدة"; } // New Modules
+if (code.Equals("c709")) { return "نشاط أقل من المعتاد."; } // Less activity than usual.
+if (code.Equals("c710")) { return "عمل"; } // Action
+if (code.Equals("c711")) { return "عمل آخر"; } // Another action
+if (code.Equals("c712")) { return "شيء آخر هنا"; } // Something else here
+if (code.Equals("c713")) { return "حالة المشروع"; } // Project Status
+if (code.Equals("c714")) { return "عمل"; } // Action
+if (code.Equals("c715")) { return "عمل آخر"; } // Another action
+if (code.Equals("c716")) { return "شيء آخر هنا"; } // Something else here
+if (code.Equals("c717")) { return "تصميم العلامات التجارية وتصميم المنتجات"; } // Branding & Product DesignDeveloper
+if (code.Equals("c718")) { return "5 أعضاء"; } // 5 Members
+if (code.Equals("c719")) { return "عرض مشروع"; } // View Project
+if (code.Equals("c720")) { return "اشخاص"; } // People
+if (code.Equals("c721")) { return "عمل"; } // Action
+if (code.Equals("c722")) { return "عمل آخر"; } // Another action
+if (code.Equals("c723")) { return "شيئا ما"; } // Something
+if (code.Equals("c724")) { return "اليكس جونسون"; } // Alex Johnson
+if (code.Equals("c725")) { return "مصمم بصري"; } // Visual Designer
+if (code.Equals("c726")) { return "بيكيت براون"; } // Beckett Brown
+if (code.Equals("c727")) { return "مدير المشروع"; } // Project Manager
+if (code.Equals("c728")) { return "إتبع"; } // Follow
+if (code.Equals("c729")) { return "بريل كوت"; } // Brielle Cote
+if (code.Equals("c730")) { return "مطور ويب"; } // Web Developer
+if (code.Equals("c731")) { return "إتبع"; } // Follow
+if (code.Equals("c732")) { return "ليام ليفك"; } // Liam Lévesque
+if (code.Equals("c733")) { return "مصمم المنتج"; } // Product Designer
+if (code.Equals("c734")) { return "إتبع"; } // Follow
+if (code.Equals("c735")) { return "باركر روي"; } // Parker Roy
+if (code.Equals("c736")) { return "مصمم بصري"; } // Visual Designer
+if (code.Equals("c737")) { return "إتبع"; } // Follow
+if (code.Equals("c738")) { return "تكلف ألواح"; } // Costing Slabs
+if (code.Equals("c739")) { return "عمل"; } // Action
+if (code.Equals("c740")) { return "عمل آخر"; } // Another action
+if (code.Equals("c741")) { return "شيء آخر هنا"; } // Something else here
+if (code.Equals("c742")) { return "ميزانية المشروع"; } // Project Budget
+if (code.Equals("c743")) { return "يشمل الضرائب والخصوم الأخرى"; } // Includes Tax and other liabilities
+if (code.Equals("c744")) { return "$ 5900"; } // $5900
+if (code.Equals("c745")) { return "تكاليف الاستضافة"; } // Hosting Costs
+if (code.Equals("c746")) { return "خادم و CDN استضافة"; } // Server and CDN Hosting
+if (code.Equals("c747")) { return "$ 563"; } // $563
+if (code.Equals("c748")) { return "المدفوعات"; } // Payments
+if (code.Equals("c749")) { return "البنية التحتية والإيجار"; } // Infrastructure and Rent
+if (code.Equals("c750")) { return "$ 720"; } // $720
+if (code.Equals("c751")) { return "الخدمات اللوجستية"; } // Logistics
+if (code.Equals("c752")) { return "اللوجستية الإقليمية الشاملة"; } // Overall Regional Logistics
+if (code.Equals("c753")) { return "-15٪"; } // -15%
+if (code.Equals("c754")) { return "بحث"; } // Search
+if (code.Equals("c755")) { return "النتائج"; } // results
+if (code.Equals("c756")) { return "اريك تشن"; } // Eric Chen
+if (code.Equals("c757")) { return "مطور"; } // Developer
+if (code.Equals("c758")) { return "شون فالديز"; } // Sean Valdez
+if (code.Equals("c759")) { return "تسويق"; } // Marketing
+if (code.Equals("c760")) { return "ماري أرنولد"; } // Marie Arnold
+if (code.Equals("c761")) { return "مطور"; } // Developer
+if (code.Equals("c762")) { return "وثيقة SRS"; } // SRS Document
+if (code.Equals("c763")) { return "25.5 ميغابايت"; } // 25.5 Mb
+if (code.Equals("c764")) { return "دليل التصميم"; } // Design Guide.pdf
+if (code.Equals("c765")) { return "9 ميغابايت"; } // 9 Mb
+if (code.Equals("c766")) { return "response.json"; } // response.json
+if (code.Equals("c767")) { return "15 كيلوبايت"; } // 15 Kb
+if (code.Equals("c768")) { return "حسابات يونيو"; } // June Accounts.xls
+if (code.Equals("c769")) { return "6 ميجابايت"; } // 6 Mb
+if (code.Equals("c770")) { return "لوحة القيادة"; } // DASHBOARD
+if (code.Equals("c771")) { return "نظرة عامة"; } // Overview
+if (code.Equals("c772")) { return "حالة المشروع"; } // Project Status
+if (code.Equals("c773")) { return "+ 0.65٪"; } // +0.65%
+if (code.Equals("c774")) { return "16K"; } // 16k
+if (code.Equals("c775")) { return "مائة و عشرون"; } // 120
+if (code.Equals("c776")) { return "+ 0.65٪"; } // +0.65%
+if (code.Equals("c777")) { return "نشاط أقل من المعتاد."; } // Less activity than usual.
+if (code.Equals("c778")) { return "تذاكر"; } // Tickets

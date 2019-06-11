@@ -1,0 +1,13 @@
+@CF.trans_code("en", "c863", "Feedback") 
+@CF.trans_code("en", "c864", "View all feedback.") 
+@CF.trans_code("en", "c865", "Total Feedback") 
+@CF.trans_code("en", "c866", "IP Address") 
+@CF.trans_code("en", "c867", "Status") 
+@CF.trans_code("en", "c868", "Feedback Management") 
+@CF.trans_code("en", "c869", "Add New Feedback") 
+@CF.trans_code("en", "c870", "Submit") 
+@CF.trans_code("en", "c871", "Edit Feedback") 
+@CF.trans_code("en", "c872", "Feedback is blank. Please enter Feedback.") 
+@CF.trans_code("en", "c873", "Picture has been deleted successfully.", "green") 
+
+

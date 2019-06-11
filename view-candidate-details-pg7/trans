@@ -1,0 +1,71 @@
+if (code.Equals("c333")) { return "شكل"; } // Form
+if (code.Equals("c395")) { return "الاسم الاول"; } // First Name
+if (code.Equals("c396")) { return "تنازل"; } // Afsal
+if (code.Equals("c397")) { return "الاسم الثاني"; } // Second Name
+if (code.Equals("c398")) { return "الرحمن"; } // Rahman
+if (code.Equals("c399")) { return "الاسم الثالث"; } // Third Name
+if (code.Equals("c400")) { return "تنازل"; } // Afsal
+if (code.Equals("c401")) { return "الكنية"; } // Last Name
+if (code.Equals("c402")) { return "الرحمن"; } // Rahman
+if (code.Equals("c403")) { return "رقم الهوية الإماراتية"; } // Emirates ID No
+if (code.Equals("c404")) { return "784-1985-1649452-6"; } // 784-1985-1649452-6
+if (code.Equals("c405")) { return "البريد الإلكتروني"; } // Email
+if (code.Equals("c406")) { return "sample@gmail.com"; } // sample@gmail.com
+if (code.Equals("c407")) { return "كلمه السر"; } // Password
+if (code.Equals("c408")) { return "جنسية"; } // Nationality
+if (code.Equals("c409")) { return "الإمارات العربية المتحدة"; } // United Arab Emirates
+if (code.Equals("c410")) { return "رقم جواز السفر"; } // Passport Number
+if (code.Equals("c411")) { return "P3845852035"; } // P3845852035
+if (code.Equals("c412")) { return "جنس"; } // Gender
+if (code.Equals("c413")) { return "الذكر"; } // Male
+if (code.Equals("c414")) { return "تاريخ الولادة"; } // Birth Date
+if (code.Equals("c415")) { return "25 مارس 1985";}
+if (code.Equals("c416")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c417")) { return "غير مرتبطة"; } // Single
+if (code.Equals("c418")) { return "الإمارة"; } // Emirate
+if (code.Equals("c419")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c420")) { return "رقم الجوال 1"; } // Mobile No. 1
+if (code.Equals("c421")) { return "00971 00 0000 000"; } // 00971 00 0000 000
+if (code.Equals("c422")) { return "رقم الجوال 2"; } // Mobile No. 2
+if (code.Equals("c423")) { return "00971 00 0000 000"; } // 00971 00 0000 000
+if (code.Equals("c424")) { return "رخصة السائق"; } // Drivers License
+if (code.Equals("c425")) { return "نعم فعلا"; } // Yes
+if (code.Equals("c426")) { return "هل انت معاق"; } // Are you disabled
+if (code.Equals("c427")) { return "لا"; } // No
+if (code.Equals("c428")) { return "الحالة الوظيفية"; } // Employment status
+if (code.Equals("c429")) { return "لا شيء"; } // None
+if (code.Equals("c430")) { return "المستوى التعليمي"; } // Educational Level
+if (code.Equals("c431")) { return "الدبلوم التقني الثانوي"; } // Technical Secondary Diploma
+if (code.Equals("c432")) { return "معهد تعليمي"; } // Educational Institute
+if (code.Equals("c433")) { return "كلية جامعة سكاي لاين"; } // Skyline University College
+if (code.Equals("c434")) { return "تخصص"; } // Specialty
+if (code.Equals("c435")) { return "لا شيء"; } // None
+if (code.Equals("c436")) { return "هل انت معاق"; } // Are you disabled
+if (code.Equals("c437")) { return "لا شيء"; } // None
+if (code.Equals("c438")) { return "سنة التخرج"; } // Year of Graduation
+if (code.Equals("c439")) { return "2017-2018"; } // 2017-2018
+if (code.Equals("c440")) { return "أريد أن أكمل دراستي"; } // I want to complete my studies
+if (code.Equals("c441")) { return "سنة التخرج"; } // Year of Graduation
+if (code.Equals("c442")) { return "مسؤول العلاقات"; } // Relations Officer
+if (code.Equals("c443")) { return "بلد"; } // Country
+if (code.Equals("c444")) { return "الإمارات العربية المتحدة"; } // United Arab Emirates
+if (code.Equals("c445")) { return "مدينة"; } // City
+if (code.Equals("c446")) { return "دبي"; } // Dubai
+if (code.Equals("c447")) { return "من عند"; } // From
+if (code.Equals("c448")) { return "دبي"; } // Dubai
+if (code.Equals("c449")) { return "إلى"; } // To
+if (code.Equals("c450")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c451")) { return "أسباب الاستقالة"; } // Reasons for resigning
+if (code.Equals("c452")) { return "سأرحل لأنني أريد تغيير مهنتي من صناعتي الحالية إلى صناعة مختلفة."; } // I am leaving because I want to make a career change from my current industry to a different one.
+if (code.Equals("c453")) { return "اسم الدورة التدريبية"; } // Course name
+if (code.Equals("c454")) { return "الدبلوم التقني الثانوي"; } // Technical Secondary Diploma
+if (code.Equals("c455")) { return "موقع الدورة"; } // Course location
+if (code.Equals("c456")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c457")) { return "طول المسار"; } // Course length
+if (code.Equals("c458")) { return "سأرحل لأنني أريد تغيير مهنتي من صناعتي الحالية إلى صناعة مختلفة."; } // I am leaving because I want to make a career change from my current industry to a different one.
+if (code.Equals("c459")) { return "اللغات"; } // Languages
+if (code.Equals("c460")) { return "عربى"; } // Arabic
+if (code.Equals("c461")) { return "الإنجليزية"; } // English
+if (code.Equals("c462")) { return "الأردية"; } // Urdu
+if (code.Equals("c463")) { return "يرجى كتابة تفاصيل محددة حول مهاراتك"; } // Please write specific details about your skills
+if (code.Equals("c464")) { return "أنا الشخص الذي يعمل بجد لتحقيق أهدافي. لطالما كانت القدرة على التغلب على العقبات ومتابعة الأمور حتى الانتهاء نقطة قوية بالنسبة لي ، وهذا هو السبب في أنني تمكنت من الازدهار في موضوع درجة تنافسية من هذا القبيل."; } // I'm a driven person who works hard to attain my goals. The ability to overcome obstacles and follow things through to completion has always been a strong point of mine, which is why I've managed to thrive in such a competitive degree subject.

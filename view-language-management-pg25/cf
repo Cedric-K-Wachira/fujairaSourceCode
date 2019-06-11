@@ -1,0 +1,8 @@
+@CF.trans_code("en", "c950", "View all languages.")
+@CF.trans_code("en", "c951", "Total Languages")
+@CF.trans_code("en", "c952", "Language [En] is blank. Please enter Language [En].")
+@CF.trans_code("en", "c953", "Language [Ar] is blank. Please enter Language [Ar].")
+
+
+
+

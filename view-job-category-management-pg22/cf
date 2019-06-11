@@ -1,0 +1,14 @@
+@CF.trans_code("en", "c886", "Job Category") 
+@CF.trans_code("en", "c887", "View all job category.") 
+@CF.trans_code("en", "c888", "Total Job Category") 
+@CF.trans_code("en", "c889", "Job Category [En]") 
+@CF.trans_code("en", "c890", "Job Category [Ar]") 
+@CF.trans_code("en", "c891", "Status") 
+@CF.trans_code("en", "c892", "Job Category Management") 
+@CF.trans_code("en", "c893", "Add New Job Category") 
+@CF.trans_code("en", "c894", "Submit") 
+@CF.trans_code("en", "c895", "Edit Job Category") 
+@CF.trans_code("en", "c896", "Job Category [En] is blank. Please enter Job Category [En].") 
+@CF.trans_code("en", "c897", "Job Category [Ar] is blank. Please enter Job Category [Ar].") 
+ 
+

@@ -1,0 +1,17 @@
+if (code.Equals("c966")) { return "إدارة وسائل الإعلام"; } //    Media Management
+if (code.Equals("c967")) { return "عرض جميع ملفات الوسائط."; } //    View all media files.
+if (code.Equals("c968")) { return "مجموع المقالات"; } //    Total Articles
+if (code.Equals("c969")) { return "رفع"; } //    Upload
+if (code.Equals("c970")) { return "إنشاء دليل"; } //    Create Directory
+if (code.Equals("c971")) { return "مثال 1"; } //    Example 1
+if (code.Equals("c972")) { return "مثال 2"; } //    Example 2
+if (code.Equals("c973")) { return "مثال 3"; } //    Example 3
+if (code.Equals("c974")) { return "مثال 4"; } //    Example 4 
+if (code.Equals("c975")) { return "مثال 0"; } //    Example 0  
+if (code.Equals("c976")) { return "وسائل الإعلام"; } //    Media 
+if (code.Equals("c977")) { return "اسم الدليل فارغ. الرجاء إدخال اسم الدليل."; } //    Directory name is blank. Please enter directory name.  
+if (code.Equals("c978")) { return "اسم الدليل يحتوي على أحرف غير صالحة."; } //    Directory name contains invalid characters.  
+if (code.Equals("c979")) { return "تم إنشاء الدليل بنجاح. "،" أخضر"; } //    Directory has been created successfully.", "green  
+if (code.Equals("c980")) { return "تم تحميل الملف بنجاح. "،" أخضر"; } //    File has been uploaded successfully.", "green  
+if (code.Equals("c981")) { return "لا يمكن تحميل الملف. حاول مرة اخرى."; } //    File could not be uploaded. Please try again.  
+

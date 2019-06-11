@@ -1,0 +1,16 @@
+if (code.Equals("c669")) { return "عرض جميع البلدان."; } // View all countries.
+
+if (code.Equals("c670")) { return "مجموع الدول."; } // Total Countries.
+if (code.Equals("c671")) { return "اسم البلد [En]"; } // Country Name [En]
+if (code.Equals("c672")) { return "اسم البلد"; } // Country Name [Ar]
+if (code.Equals("c673")) { return "الرقم الدولي"; } // Country Code
+if (code.Equals("c674")) { return "إدارة البلد"; } // Country Management
+
+if (code.Equals("c675")) { return "أضف بلد جديد"; } // Add New Country
+if (code.Equals("c676")) { return "خضع"; } // Submit
+if (code.Equals("c677")) { return "تحرير البلد"; } // Edit Country
+if (code.Equals("c678")) { return "اسم البلد [En] فارغ. الرجاء إدخال اسم البلد [En]."; } // Country Name [En] is blank. Please enter Country Name [En].
+
+
+
+

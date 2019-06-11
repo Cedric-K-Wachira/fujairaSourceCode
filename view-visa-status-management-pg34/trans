@@ -1,0 +1,13 @@
+if (code.Equals("c1030")) { return "حالة التأشيرة"; } // Visa Status   
+if (code.Equals("c1031")) { return "عرض كل حالة التأشيرة."; } // View all visa status.   
+if (code.Equals("c1032")) { return "حالة التأشيرة الكلية"; } //  Total Visa Status  
+if (code.Equals("c1033")) { return "عرض الحالة [واحد]"; } // Visa Status [En]   
+if (code.Equals("c1034")) { return "حالة التأشيرة"; } // Visa Status [Ar]   
+if (code.Equals("c1035")) { return "الحالة"; } // Status   
+if (code.Equals("c1036")) { return "إدارة حالة التأشيرة"; } //  Visa Status Management
+if (code.Equals("c1037")) { return "إضافة حالة تأشيرة جديدة"; } //  Add New Visa Status  
+if (code.Equals("c1038")) { return "عرض الحالة [واحد]"; } // Visa Status [En]   
+if (code.Equals("c1039")) { return "خضع"; } //  Submit  
+if (code.Equals("c1040")) { return "حالة التأشيرة [En] فارغة. الرجاء إدخال حالة التأشيرة [En]."; } // Visa Status [En] is blank. Please enter Visa Status [En].   
+if (code.Equals("c1041")) { return "حالة التأشيرة فارغة. الرجاء إدخال حالة التأشيرة."; } // Visa Status [Ar] is blank. Please enter Visa Status [Ar].   
+  

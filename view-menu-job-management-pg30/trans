@@ -1,0 +1,9 @@
+if (code.Equals("c999")) { return "قائمة طعام"; } //   Menu  
+if (code.Equals("c1000")) { return "عرض كل القائمة."; } //  View all menu.    
+if (code.Equals("c1001")) { return "القائمة الكاملة"; } //  Total Menu 
+if (code.Equals("c1002")) { return "إدارة القائمة"; } //  Menu Management  
+if (code.Equals("c1003")) { return "أضف قائمة جديدة"; } //  Add New Menu  
+if (code.Equals("c1004")) { return "الأبوين"; } //  Parent  
+if (code.Equals("c1005")) { return "القائمة [Ar] فارغة. الرجاء إدخال القائمة"; } //   Menu [Ar] is blank. Please enter Menu [Ar]. 
+if (code.Equals("c1006")) { return "لا يمكن تخصيص القائمة الرئيسية لنفسها."; } //   Parent menu cannot be self assigned to itself. 
+

@@ -1,0 +1,3 @@
+if (code.Equals("c982")) { return "مثال سهل الشجرة"; } //  Easy Tree Example    
+if (code.Equals("c983")) { return "تم تحميل الملف بنجاح. "،" أخضر"; } //  File has been uploaded successfully.", "green
+if (code.Equals("c984")) { return "لا يمكن تحميل الملف. حاول مرة اخرى."; } //  File could not be uploaded. Please try again.

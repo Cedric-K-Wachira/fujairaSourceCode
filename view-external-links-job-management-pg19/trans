@@ -1,0 +1,16 @@
+if (code.Equals("c847")) { return "روابط خارجية"; } // External Links
+if (code.Equals("c848")) { return "عرض جميع الروابط الخارجية."; } // View all external links.
+if (code.Equals("c849")) { return "مجموع الروابط الخارجية"; } // Total External Links
+if (code.Equals("c850")) { return "الروابط الخارجية"; } // External Links [En]
+if (code.Equals("c851")) { return "الروابط الخارجية"; } // External Links [Ar]
+if (code.Equals("c852")) { return "URL"; } // URL
+if (code.Equals("c853")) { return "صورة"; } // Image
+if (code.Equals("c854")) { return "إدارة الروابط الخارجية"; } // External Links Management
+if (code.Equals("c855")) { return "إضافة روابط خارجية جديدة"; } // Add New External Links
+if (code.Equals("c856")) { return "الروابط الخارجية URL"; } // External Links URL
+if (code.Equals("c857")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c858")) { return "تحرير الروابط الخارجية"; } // Edit External Links
+if (code.Equals("c859")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c860")) { return "خضع"; } // Submit
+if (code.Equals("c861")) { return "الروابط الخارجية [En] فارغة. الرجاء إدخال الروابط الخارجية [En]."; } // External Links [En] is blank. Please enter External Links [En]. 
+if (code.Equals("c862")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.", "green

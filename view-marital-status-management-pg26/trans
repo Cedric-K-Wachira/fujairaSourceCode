@@ -1,0 +1,13 @@
+if (code.Equals("c954")) { return "الحالة الحالة الإجتماعية"; } //  Marital Status
+if (code.Equals("c955")) { return "عرض كل الحالة الزوجية."; } //  View all marital status.
+if (code.Equals("c956")) { return "الحالة الاجتماعية الكلية"; } //  Total Marital Status
+if (code.Equals("c957")) { return "الحالة الزوجية"; } //  Marital Status [En]
+if (code.Equals("c958")) { return "الحالة الزوجية"; } // Marital Status [Ar]
+if (code.Equals("c959")) { return "الحالة"; } //  Status
+if (code.Equals("c960")) { return "إدارة الحالة الاجتماعية"; } //  Marital Status Management  
+if (code.Equals("c961")) { return "الحالة الاجتماعية [En] فارغة. الرجاء إدخال الحالة الاجتماعية [En]."; } //  Marital Status [En] is blank. Please enter Marital Status [En].  
+if (code.Equals("c962")) { return "الحالة الزواجية فارغة. الرجاء إدخال الحالة الاجتماعية."; } //  Marital Status [Ar] is blank. Please enter Marital Status [Ar].  
+if (code.Equals("c963")) { return "خضع"; } //  Submit
+if (code.Equals("c964")) { return "الحالة الاجتماعية [En] فارغة. الرجاء إدخال الحالة الاجتماعية [En]."; } //  Marital Status [En] is blank. Please enter Marital Status [En]. 
+if (code.Equals("c965")) { return "الحالة الزواجية فارغة. الرجاء إدخال الحالة الاجتماعية."; } //  Marital Status [Ar] is blank. Please enter Marital Status [Ar].
+

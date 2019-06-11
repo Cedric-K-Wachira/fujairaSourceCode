@@ -1,0 +1,12 @@
+@CF.trans_code("en", "c939", "View all educational levels.")
+@CF.trans_code("en", "c940", "Total Educational Levels")
+@CF.trans_code("en", "c941", "Level Name [En]")
+@CF.trans_code("en", "c942", "Level Name [Ar]")
+@CF.trans_code("en", "c943", "Status")
+@CF.trans_code("en", "c944", "Educational Level Management")
+@CF.trans_code("en", "c945", "Add New Educational Level")
+@CF.trans_code("en", "c946", "Submit")
+@CF.trans_code("en", "c947", "Edit Educational Level")
+@CF.trans_code("en", "c948", "Level Name [En] is blank. Please enter Level Name [En].")
+@CF.trans_code("en", "c949", "Level Name [Ar] is blank. Please enter Level Name [Ar].")
+
