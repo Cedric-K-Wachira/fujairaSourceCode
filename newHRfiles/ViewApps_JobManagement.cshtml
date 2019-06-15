@@ -1,0 +1,1149 @@
+﻿@using FujairahHR.Models;
+@{
+    var data_rs = (List<Dictionary<string, string>>)ViewBag.data_rs;
+}
+<main class="admin-main">
+    <!---->
+    <!--site header begins-->
+    <header class="admin-header">
+        <a href="#" class="sidebar-toggle" data-toggleclass="sidebar-open" data-target="body"> </a>
+        <nav class=" mr-auto my-auto">
+            <ul class="nav align-items-center">
+                <li class="nav-item"> <a class="nav-link  " data-target="#siteSearchModal" data-toggle="modal" href="#"> <i class=" mdi mdi-magnify mdi-24px align-middle"></i> </a> </li>
+            </ul>
+        </nav>
+        <nav class=" ml-auto">
+            <ul class="nav align-items-center">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-24px mdi-bell-outline"></i> <span class="notification-counter"></span> </a>
+                        <div class="dropdown-menu notification-container dropdown-menu-right">
+                            <div class="d-flex p-all-15 bg-white justify-content-between border-bottom "> <a href="#!" class="mdi mdi-18px mdi-settings text-muted"></a> <span class="h5 m-0">Notifications</span> <a href="#!" class="mdi mdi-18px mdi-notification-clear-all text-muted"></a> </div>
+                            <div class="notification-events bg-gray-300">
+                                <div class="text-overline m-b-5">today</div>
+                                <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-circle text-success"></i> All systems operational.</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-upload-multiple "></i> File upload successful.</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-cancel text-danger"></i> Your holiday has been denied </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-sm avatar-online"> <span class="avatar-title rounded-circle bg-dark">V</span> </div>
+                    </a>
+                    <div class="dropdown-menu  dropdown-menu-right">
+                        <a class="dropdown-item" href="#"> Add Account </a> <a class="dropdown-item" href="#"> Reset Password</a> <a class="dropdown-item" href="#"> Help </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--site header ends -->
+    <!---->
+    <section class="admin-content">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row p-b-60 p-t-60">
+
+                    <div class="col-md-4 text-white p-b-30">
+                        <div class="media">
+                            <div class="avatar avatar mr-3">
+                                <div class="avatar-title bg-success rounded-circle mdi mdi-newspaper">
+
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h1>Apps Management</h1>
+                                <p class="opacity-75">
+                                    View all apps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center m-b-30 ml-auto">
+                        <div class="rounded text-white bg-white-translucent">
+                            <div class="p-all-15">
+                                <div class="row">
+                                    <div class="col-md-12 my-2 m-md-0">
+                                        <div class="text-overline opacity-75">Total Apps</div>
+                                        <h3 class="m-0 text-success" id="total_records"> @data_rs.Count()</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 text-white">
+
+                        <div style="text-align:right; padding-top:40px;">
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-secondary" onclick="javascript:ajax_delete()">
+                                <i class="mdi mdi-close"></i> Delete
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-warning" onclick="javascript:show_add_form()">
+                                <i class="mdi mdi-plus"></i> New
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-info" onclick="javascript:show_edit_form()">
+                                <i class="mdi mdi-border-color"></i> Edit
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-success" onclick="javascript:ajax_activate()">
+                                <i class="mdi mdi-arrow-up"></i> Publish
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-danger" onclick="javascript:ajax_deactivate()">
+                                <i class="mdi mdi-arrow-down"></i> Unpublish
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--DT START-->
+        <div class="container  pull-up">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive p-t-10">
+
+                                <table id="tbl_listing" class="display" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Serial No</th>
+                                            <th>Title [En]</th>
+                                            <th>Title [Ar]</th>
+                                            <th>URL [IOS]</th>
+                                            <th>URL [Android]</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center"><input type="checkbox" id="checkbox_row_all" class="checkbox_row_all" name="checkbox_row_all" />  </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="text-center">Serial No</th>
+                                            <th>Title [En]</th>
+                                            <th>Title [Ar]</th>
+                                            <th>URL [IOS]</th>
+                                            <th>URL [Android]</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center"> </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DT END-->
+    </section>
+</main>
+
+<!-- MODAL ADD START -->
+<div id="modal_add" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="modal_add" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="m-b-0">
+                        Apps Management
+                    </h5>
+                    <p class="m-b-0 text-muted">
+                        Add New Apps
+                    </p>
+                </div>
+                <div class="card-body ">
+                    <form id="frm_add" name="frm_add">
+                        <div class="form-group">
+                            <label for="inputAddress">Title [En]</label>
+                            <input type="text" class="form-control" id="apps_job_title_en" placeholder="Title [En]">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Title [Ar]</label>
+                            <input type="text" class="form-control" id="apps_job_title_ar" placeholder="Title [Ar]">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">URL [IOS]</label>
+                            <input type="text" class="form-control" id="url_ios" placeholder="URL [IOS]">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="inputZip">URL [Android]</label>
+                            <input type="text" class="form-control" id="url_android" placeholder="URL [Android]">
+                        </div>
+
+                        <br>
+
+                        <div class="card-title">
+                            <span style="position:relative; top:-10px;">
+                                <div class="picture-box" id="picture" style="display:none"></div>
+                                <div class="input-icon" id="fu-picture-image">
+                                    <span>
+                                        <label for="file_upload_picture" class="btn btn-primary btn-bordered">Upload Picture</label>
+                                        <input type="file" id="file_upload_picture" class="btn-default" style="display:none" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="ajax_create()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL ADD END -->
+<!-- MODAL EDIT START -->
+<div id="modal_edit" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="modal_edit" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="m-b-0">
+                        Apps Management
+                    </h5>
+                    <p class="m-b-0 text-muted">
+                        Edit Apps
+                    </p>
+                </div>
+                <div class="card-body ">
+                    <form id="frm_edit" name="frm_edit">
+                        <div class="form-group">
+                            <label for="inputAddress">Title [En]</label>
+                            <input type="text" class="form-control" id="apps_job_title_en" placeholder="Title [En]">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Title [Ar]</label>
+                            <input type="text" class="form-control" id="apps_job_title_ar" placeholder="Title [Ar]">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">URL [IOS]</label>
+                            <input type="text" class="form-control" id="url_ios" placeholder="URL [IOS]">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">URL [Android]</label>
+                            <input type="text" class="form-control" id="url_android" placeholder="URL [Android]">
+                        </div>
+
+                        <br>
+
+                        <div class="card-title">
+                            @*<img src="~/Content/uploads/5a.jpg" style="border-radius:50%; width:80px; height:80px; padding:2px; border:1px solid #E2EAF6" />*@
+                            <span style="position:relative; top:-10px;">
+                                <div class="picture-box" id="picture" style="display:none"></div>
+                                <div class="input-icon" id="fu-picture-image">
+                                    <span>
+                                        <label for="file_upload_picture" class="btn btn-primary btn-bordered">Upload Picture</label>
+                                        <input type="file" id="file_upload_picture" class="btn-default" style="display:none" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <input type="hidden" name="tbl_apps_job_id_edit" id="tbl_apps_job_id_edit" value="" />
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="ajax_save()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL EDIT END -->
+<br />
+<br />
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.flash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+<script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+<script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css">
+
+@*<script>
+
+    tinymce.init({
+        selector: '#apps_job_title_ar',
+        plugins: 'print preview powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('apps_job_title_ar').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { apps_job_title_en: 'My page 1', value: 'http://www.tinymce.com' },
+            { apps_job_title_en: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { apps_job_title_en: 'My page 1', value: 'http://www.tinymce.com' },
+            { apps_job_title_en: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { apps_job_title_en: 'None', value: '' },
+            { apps_job_title_en: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { apps_job_title_en: 'Some apps_job_title_en 1', description: 'Some desc 1', content: 'My content' },
+            { apps_job_title_en: 'Some apps_job_title_en 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>*@
+
+@*<script>
+    tinymce.init({
+        selector: '#apps_job_title_ar_edit',
+        plugins: 'print preview powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('apps_job_title_ar_edit').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { apps_job_title_en: 'My page 1', value: 'http://www.tinymce.com' },
+            { apps_job_title_en: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { apps_job_title_en: 'My page 1', value: 'http://www.tinymce.com' },
+            { apps_job_title_en: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { apps_job_title_en: 'None', value: '' },
+            { apps_job_title_en: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { apps_job_title_en: 'Some apps_job_title_en 1', description: 'Some desc 1', content: 'My content' },
+            { apps_job_title_en: 'Some apps_job_title_en 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>*@
+
+<script>
+    //$(document).ready(function () {
+    //    setTimeout(function () { $('select[name*=tbl_listing_length]').val(5); }, 500);
+    //});
+</script>
+
+<script language="javascript">
+
+    var table = "";
+    var apps_job_id_enc = random_number(16);
+
+    $(document).ready(function () {
+        $('.checkbox_row_all').change(function () {
+            if ($(this).is(":checked")) {
+                $(".checkbox_row").each(function () {
+                    var is_checked = $(this).prop("checked", true);
+                    if (is_checked == true) {
+                        record_id_str = record_id_str + $(this).val() + ",";
+                    }
+                });
+
+            } else {
+                $(".checkbox_row").each(function () {
+                    var is_checked = $(this).prop("checked", false);
+                    if (is_checked == true) {
+                        record_id_str = record_id_str + $(this).val() + ",";
+                    }
+                });
+            }
+        });
+
+        $('input[type="checkbox"]').on('click', function () {
+        });
+
+    });
+
+    var exportOptions = {
+        columns: ':visible:not(.not-exported)',
+        rows: '.selected'
+    }
+
+    var table = "";
+    $(document).ready(function () {
+       
+        table = $('#tbl_listing').DataTable({
+            dom: 'lBfrtip',
+            ajax: '/Admin/Apps_Job/get_all_apps_data_table/',
+            "pageLength": 50,
+            "bSort": true,
+            "bFilter": true,
+            'scrollX': true,
+            "bPaginate": true,
+            "bFilter": true,
+            "bLengthChange": true,
+            autoFilter: true,
+            "oLanguage": {
+                "sLengthMenu": "  _MENU_  "
+            },
+            columns: [
+                { data: 'readingOrder', className: 'reorder' },
+                { data: 'apps_job_title_en' },
+                { data: 'apps_job_title_ar' },
+                { data: 'url_ios' },
+                { data: 'url_android' },
+                { data: 'status' },
+                { data: 'checkbox' },
+            ],
+            columnDefs: [
+                { orderable: true, targets: [1, 2, 3] },
+                {
+                    "targets": 0,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+                {
+                    "targets": 5,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+                {
+                    "targets": 6,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+            ],
+
+            select: true,
+            rowReorder: {
+                dataSrc: 'readingOrder',
+
+            }, buttons: [
+                'colvis',
+                'selectAll',
+                'selectNone',
+                {
+                    extend: 'collection',
+                    text: 'Export Selected',
+                    buttons: [
+                        {
+                            extend: 'copy',
+                            exportOptions: exportOptions
+                        },
+                        {
+                            extend: 'csv',
+                            exportOptions: exportOptions
+                        },
+                        {
+                            extend: 'print',
+                            exportOptions: exportOptions
+                        }
+                    ]
+                }
+            ],
+        });
+
+        $('#tbl_listing').on('row-reorder.dt', function (e, details, edit) {
+            var sort_order_max = 0;
+            var sort_id_str = "";
+            $(".checkbox_row").each(function () {
+                var sort_order = $(this).attr("data-sortorder");
+                if (sort_order > sort_order_max) { sort_order_max = sort_order; }
+                var elem_id = $(this).attr("data-id");
+                sort_id_str = sort_id_str + elem_id + ",";
+            });
+
+            ajax_set_sort_order(sort_id_str, sort_order_max);
+        });
+    });
+
+    $(document).ready(function () {
+        $('#tbl_listing').on('click', 'tr', function () {
+            $(this).toggleClass("selected");
+        });
+    });
+
+
+    function show_add_form() {
+        $("#frm_add #apps_job_title_en").val("");
+        $("#frm_add #apps_job_title_ar").val("");
+        $("#frm_add #url_ios").val("");
+        $("#frm_add #url_android").val("");
+        apps_job_id_enc = random_number(16);
+
+        $("#picture").hide();
+        $("#fu-picture-image").show();
+        $("#modal_add").modal('show');
+    }
+
+    var edit_mode = "";
+
+    function show_edit_form() {
+
+        frm_name = "#frm_edit ";
+        edit_mode = "_edit";
+
+        var record_id = "", flg = 0;
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true && flg == 0) {
+                record_id = $(this).val();
+                flg = 1;
+            }
+        });
+
+        if (record_id == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Apps_Job/edit",
+            data: {
+                record_id: record_id,
+                is_ajax: true
+            },
+            success: function (data) {
+                if (data.code == "SE") {
+                    my_alert("There was an error processing your request. Please try again.");
+                    return;
+                }
+
+                frm_name = "#frm_edit ";
+                var tbl_apps_job_id = data.obj.tbl_apps_job_id;
+                var apps_job_title_en = data.obj.apps_job_title_en;
+                var apps_job_title_ar = data.obj.apps_job_title_ar;
+                var url_ios = data.obj.url_ios;
+                var tbl_apps_job_id = data.obj.tbl_apps_job_id;
+                var added_date = data.obj.added_date;
+                var is_active = data.obj.is_active;
+                var sort_order = data.obj.sort_order;
+
+                apps_job_id_enc = tbl_apps_job_id;
+
+                $("#tbl_apps_job_id_edit").val(tbl_apps_job_id);
+                $("#frm_edit #apps_job_title_en").val(apps_job_title_en);
+                $("#frm_edit #apps_job_title_ar").val(apps_job_title_ar);
+                $("#frm_edit #url_ios").val(url_ios);
+                $("#frm_edit #tbl_apps_job_id").val(tbl_apps_job_id);
+
+                $("#frm_edit #picture").hide();
+                $("#frm_edit #fu-picture-image").show();
+
+                if (data.data_picture_rs.length > 0) {
+                    var file_name_updated = data.data_picture_rs[0].file_name_updated;
+                    var tbl_item_id = data.data_picture_rs[0].tbl_item_id;
+
+                    if (file_name_updated != "") {
+                        $(frm_name + "#picture").html('<i data-tblitemid="' + tbl_item_id + '" class="img-del img-del-picture mdi mdi-close-circle"></i>' + '<img src="/Content/Uploads/' + file_name_updated + '">');
+                        $(frm_name + "#picture").show();
+                        $(frm_name + "#fu-picture-image").hide();
+                    }
+                }
+
+                $("#modal_edit").modal("show");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function ajax_activate() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "/Admin/Apps_Job/Activate";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+
+                            $(".checkbox_row").each(function () {
+                                var is_checked = $(this).prop("checked");
+                                if (is_checked == true) {
+                                    $("#status_row_" + $(this).val()).removeClass("status_row_unpublished").addClass("status_row_published");
+                                    $(this).prop("checked", false);
+                                }
+                            });
+
+                            my_alert("Information has been saved successfully.", "green");
+
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_deactivate() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+                preloader("show", "");
+
+                var url = "/Admin/Apps_Job/Deactivate";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+                            $(".checkbox_row").each(function () {
+                                var is_checked = $(this).prop("checked");
+                                if (is_checked == true) {
+                                    $("#status_row_" + $(this).val()).removeClass("status_row_published").addClass("status_row_unpublished");
+                                    $(this).prop("checked", false);
+                                }
+                            });
+
+                            my_alert("Information has been saved successfully.", "green");
+
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_delete() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+                preloader("show", "");
+
+                var url = "/Apps_Job/Delete";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+                            deselect_rows();
+                            table.ajax.reload();
+                            $("#total_records").html(data.total_records);
+                            my_alert("Information has been deleted successfully.", "green");
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_create() {
+        var str = "";
+        var regExp = / /g;
+
+        var apps_job_title_en = $("#frm_add #apps_job_title_en").val();
+        var apps_job_title_ar = $("#frm_add #apps_job_title_ar").val();
+        var url_ios = $("#frm_add #url_ios").val();
+        var url_android = $("#frm_add #url_android").val();
+        
+        str = apps_job_title_en;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Title [En] is blank. Please enter Title [En].");
+            return false;
+        }
+
+        str = strip_html(apps_job_title_ar);
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Description is blank. Please enter Description.");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Apps_Job/create",
+            data: {
+                apps_job_id_enc: apps_job_id_enc,
+                apps_job_title_en: apps_job_title_en,
+                apps_job_title_ar: apps_job_title_ar,
+                url_ios: url_ios,
+                url_android: url_android,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+                    $("#modal_add").modal('hide');
+                    $("#total_records").html(data.total_records);
+                    deselect_rows();
+                    table.ajax.reload();
+                    my_alert("Information has been saved successfully.", "green");
+
+                } else {
+                    my_alert("There was an error processing your request. Please try again.");
+                }
+
+                $('#apps_job_title_en').val("");
+                $('#apps_job_title_ar').val("");
+                $('#url_ios').val("");
+                $('#url_android').val("");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function ajax_save() {
+        var str = "";
+        var regExp = / /g;
+
+        var tbl_apps_job_id = $("#tbl_apps_job_id_edit").val();
+        var apps_job_title_en = $("#frm_edit #apps_job_title_en").val();
+        var apps_job_title_ar = $("#frm_edit #apps_job_title_ar").val();
+        var url_ios = $("#frm_edit #url_ios").val();
+        var url_android = $("#frm_edit #url_android").val();
+
+        str = apps_job_title_en;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Title [En] is blank. Please enter Title [En].");
+            return false;
+        }
+
+        str = strip_html(apps_job_title_ar);
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Description is blank. Please enter Description.");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Apps_Job/save",
+            data: {
+                tbl_apps_job_id: tbl_apps_job_id,
+                apps_job_title_en: apps_job_title_en,
+                apps_job_title_ar: apps_job_title_ar,
+                url_ios: url_ios,
+                url_android: url_android,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+                    $("#modal_edit").modal('hide');
+                    $("#total_records").html(data.total_records);
+                    deselect_rows();
+                    table.ajax.reload();
+                    my_alert("Information has been saved successfully.", "green");
+
+                } else {
+                    my_alert("There was an error processing your request. Please try again.");
+                }
+
+                $('#apps_job_title_en').val("");
+                $('#apps_job_title_ar').val("");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+
+    function ajax_set_sort_order(sort_id_str, sort_order_max) {
+
+        $.ajax({
+            type: "POST",
+            url: "Apps_Job/set_sort_order",
+            data: {
+                sort_id_str: sort_id_str,
+                sort_order_max: sort_order_max,
+                is_ajax: true
+            },
+            success: function (data) {
+                //if(data.code == "Y") {
+                //    my_alert("Information has been saved successfully.", "green");
+                //} else {
+                //    my_alert("There was an error processing your request. Please try again.");
+                //}
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function deselect_rows() {
+        table.rows({ selected: true }).deselect();
+    }
+
+    var frm_name = "#frm_add ";
+
+    $(document).ready(function () {
+
+        $(frm_name + '#file_upload_picture').fileupload({
+            dataType: 'json',
+
+            url: '/File_Upload/Upload/',
+            formData: {  },
+            autoUpload: true,
+            done: function (e, data) {
+                var file_name_original = data.result.file_name_original;
+                var file_name_updated = data.result.file_name_updated;
+                var tbl_item_id = data.result.tbl_item_id;
+                $(frm_name +"#picture").html('<i data-tblitemid="' + tbl_item_id + '" class="img-del img-del-picture mdi mdi-close-circle"></i>' + '<img src="/Content/Uploads/' + file_name_updated + '">');
+                $(frm_name +"#picture").show();
+                $(frm_name +"#fu-picture-image").hide();
+            }, drop: function (e, data) {
+            }, add: function (e, data) {
+                //var tbl_item_id = "@ViewBag.apps_job_id_enc" + "_picture";
+
+                var tbl_item_id = apps_job_id_enc + "_picture";
+                
+
+                data.formData = {
+                    'tbl_item_id': tbl_item_id,
+                    'section_name': "apps"
+                };
+                data.submit();
+            },
+
+            }).on('fileuploadprogressall', function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                //$('#progress_bar'+ii).css('width', progress + '%');
+            });
+        $(document).on("click", ".img-del-picture", function () {
+            this_elem = $(this)
+            //$(this_elem).closest("tr").remove();
+            delete_option_picture();
+        });
+
+
+        //var this_elem = "";
+        function delete_option_picture() {
+
+            swal({
+                title: "Message",
+                text: "Are you sure?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes",
+                closeOnConfirm: true
+            },
+                function () {
+                    preloader("show", "");
+                    delete_picture();
+                });
+        }
+
+        function delete_picture() {
+
+            var tbl_item_id = $(this_elem).attr("data-tblitemid");
+            var url = "/File_Upload/Delete";
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "JSON",
+                data: { tbl_item_id: tbl_item_id, is_admin: "Y" },
+                success: function (data) {
+
+                    preloader("hide", "");
+                    if (data.status == "Y") {
+                        my_alert("Picture has been deleted successfully.", "green");
+                        $(frm_name + "#picture").hide();
+                        $(frm_name + "#fu-picture-image").show();
+                    } else {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                    }
+                },
+                error: function () {
+                    preloader("hide", "");
+                }
+            });
+        }
+    });
+
+    function random_number(limit) {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+        for (var i = 0; i < limit; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+</script>
+
+<style type="text/css">
+    .status_row {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+
+    .status_row_published {
+        background-color: #00A47C;
+    }
+
+    .status_row_unpublished {
+        background-color: #EF2E30;
+    }
+
+    .mdi-drag-variant {
+        cursor: move;
+    }
+
+    .ml-2, .mx-2 {
+        margin-left: 0px !important;
+        margin-right: 5px !important;
+    }
+</style>
+
+
+<script language="javascript">
+
+</script>
+<script language="javascript">
+    function strip_html(html) {
+        var tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return $.trim(tmp.textContent) || $.trim(tmp.innerText) || "";
+    }
+</script>
+
+

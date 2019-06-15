@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+    ViewBag.css = "";
+}
+
+@RenderPage("~/Views/Admin/Include/header.cshtml")
+@RenderPage("~/Views/Admin/Include/left.cshtml")
+
+
+<!--Page START-->
+@RenderPage(@ViewBag.page)
+<!--Page END-->
+
+
+@RenderPage("~/Views/Admin/Include/footer.cshtml")

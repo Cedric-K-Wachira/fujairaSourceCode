@@ -1,0 +1,1576 @@
+﻿@using FujairahHR.Models;
+@using System.Text.RegularExpressions;
+@{
+    var data_rs = (List<Dictionary<string, string>>)ViewBag.data_rs;
+}
+
+<style type="text/css">
+    .ddm {
+        width: 100%;
+        padding: 6px;
+    }
+
+    .padd-btm {
+        padding-bottom: 6px;
+    }
+</style>
+
+<main class="admin-main">
+    <!---->
+    <!--site header begins-->
+    <header class="admin-header">
+        <a href="#" class="sidebar-toggle" data-toggleclass="sidebar-open" data-target="body"> </a>
+        <nav class=" mr-auto my-auto">
+            <ul class="nav align-items-center">
+                <li class="nav-item"> <a class="nav-link  " data-target="#siteSearchModal" data-toggle="modal" href="#"> <i class=" mdi mdi-magnify mdi-24px align-middle"></i> </a> </li>
+            </ul>
+        </nav>
+        <nav class=" ml-auto">
+            <ul class="nav align-items-center">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-24px mdi-bell-outline"></i> <span class="notification-counter"></span> </a>
+                        <div class="dropdown-menu notification-container dropdown-menu-right">
+                            <div class="d-flex p-all-15 bg-white justify-content-between border-bottom "> <a href="#!" class="mdi mdi-18px mdi-settings text-muted"></a> <span class="h5 m-0">Notifications</span> <a href="#!" class="mdi mdi-18px mdi-notification-clear-all text-muted"></a> </div>
+                            <div class="notification-event_jobs bg-gray-300">
+                                <div class="text-overline m-b-5">today</div>
+                                <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-circle text-success"></i> All systems operational.</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-upload-multiple "></i> File upload successful.</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-cancel text-danger"></i> Your holiday has been denied </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-sm avatar-online"> <span class="avatar-title rounded-circle bg-dark">V</span> </div>
+                    </a>
+                    <div class="dropdown-menu  dropdown-menu-right">
+                        <a class="dropdown-item" href="#"> Add Account </a> <a class="dropdown-item" href="#"> Reset Password</a> <a class="dropdown-item" href="#"> Help </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--site header ends -->
+    <!---->
+    <section class="admin-content">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row p-b-60 p-t-60">
+
+                    <div class="col-md-4 text-white p-b-30">
+                        <div class="media">
+                            <div class="avatar avatar mr-3">
+                                <div class="avatar-title bg-success rounded-circle mdi mdi-newspaper">
+
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h1>Articles Management </h1>
+                                <p class="opacity-75">
+                                    View all articles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center m-b-30 ml-auto">
+                        <div class="rounded text-white bg-white-translucent">
+                            <div class="p-all-15">
+                                <div class="row">
+                                    <div class="col-md-12 my-2 m-md-0">
+                                        <div class="text-overline    opacity-75">Total Articles</div>
+                                        <h3 class="m-0 text-success" id="total_records"> @data_rs.Count()</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 text-white">
+
+                        <div style="text-align:right; padding-top:40px;">
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-secondary" onclick="javascript:ajax_delete()">
+                                <i class="mdi mdi-close"></i> Delete
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-warning" onclick="javascript:show_add_form()">
+                                <i class="mdi mdi-plus"></i> New
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-info" onclick="javascript:show_edit_form()">
+                                <i class="mdi mdi-border-color"></i> Edit
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-success" onclick="javascript:ajax_activate()">
+                                <i class="mdi mdi-arrow-up"></i> Publish
+                            </button>
+                            <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-danger" onclick="javascript:ajax_deactivate()">
+                                <i class="mdi mdi-arrow-down"></i> Unpublish
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--DT START-->
+        <div class="container  pull-up">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive p-t-10">
+                                <div class="row padd-btm" style="display:none">
+                                    <div class="col-sm-2">
+                                        Employer:
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <div id="employer_name"></div>
+                                    </div>
+
+                                    <div class="col-sm-1">&nbsp;</div>
+
+                                    <div class="col-sm-2">
+                                        Specialization:
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <div id="specialization_name"></div>
+                                    </div>
+
+                                    <div class="col-sm-1">&nbsp;</div>
+
+                                    <div class="col-sm-2">
+                                        Publication Status:
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <div id="publication_status"></div>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <table id="tbl_listing" class="display" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Serial No</th>
+                                            <th>Article Title</th>
+                                            <th>Category</th>
+                                            <th>Featured</th>
+                                            <th>Article</th>
+                                            <th>Publishing Date</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center"><input type="checkbox" id="checkbox_row_all" class="checkbox_row_all" name="checkbox_row_all" />  </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="text-center">Serial No</th>
+                                            <th>Article Title</th>
+                                            <th>Category</th>
+                                            <th>Featured</th>
+                                            <th>Article</th>
+                                            <th>Publishing Date</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center"> </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DT END-->
+    </section>
+</main>
+
+<!-- MODAL ADD START -->
+<div id="modal_add" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="modal_add" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="m-b-0">
+                        Article Management
+                    </h5>
+                    <p class="m-b-0 text-muted">
+                        Add New Article
+                    </p>
+                </div>
+                <div class="card-body ">
+                    <form id="frm_add" name="frm_add">
+                        <div class="form-group">
+                            <label for="inputAddress">Article Title</label>
+                            <input type="text" class="form-control" id="article_job_title" placeholder="Article Title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Short Description</label>
+                            <textarea id="article_job_short_description" name="article_job_short_description" style="width:100%"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Description</label>
+                            <textarea id="article_job_description" name="article_job_description" style="width:100%"></textarea>
+                        </div>
+
+                        <div class="form-group" style="display:none">
+                            <label for="inputZip">Alias</label>
+                            <input type="text" class="form-control" id="article_job_alias" placeholder="Alias">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Category</label>
+                            <select id="tbl_category_id" class="form-control">
+                                <option value=""></option>
+                                @{
+                                    int serial_no = 0;
+                                    string[] category_arr = Regex.Split(ViewBag.category_str_, ",");
+                                    foreach (string category_item in category_arr)
+                                    {
+                                        if (string.IsNullOrEmpty(category_item)) { continue; }
+
+                                        string[] category_item_arr = Regex.Split(category_item, "~");
+                                        string tbl_category_id = category_item_arr[0];
+                                        string category_name_en = category_item_arr[1];
+                                        string category_name_ar = category_item_arr[2];
+                                        string level = category_item_arr[3];
+                                        string is_active = category_item_arr[4];
+                                        string sort_order = category_item_arr[5];
+                                        serial_no = serial_no + 1;
+
+                                        string article_job_levels_all_str = "";
+                                        for (int j = 0; j < Convert.ToInt32(level); j++)
+                                        {
+                                            article_job_levels_all_str = article_job_levels_all_str + " |— ";
+                                        }
+                                        <option value="@tbl_category_id">@article_job_levels_all_str @category_name_en</option>
+                                    }
+                                }
+
+                                @{
+                                    @*serial_no = 0;
+                                    string[] menu_arr = Regex.Split(ViewBag.menu_str_, ",");
+                                    foreach (string menu_item in menu_arr)
+                                    {
+                                        if (string.IsNullOrEmpty(menu_item)) { continue; }
+
+                                        string[] menu_item_arr = Regex.Split(menu_item, ":");
+                                        string tbl_menu_job_id = menu_item_arr[0];
+                                        string menu_job_name_en = menu_item_arr[1];
+                                        string menu_job_name_ar = menu_item_arr[2];
+                                        string level = menu_item_arr[3];
+                                        string is_active = menu_item_arr[4];
+                                        string sort_order = menu_item_arr[5];
+                                        serial_no = serial_no + 1;
+
+                                        string article_job_levels_all_str = "";
+                                        for (int j = 0; j < Convert.ToInt32(level); j++)
+                                        {
+                                            article_job_levels_all_str = article_job_levels_all_str + " |— ";
+                                        }
+                                        <option value="@tbl_menu_job_id">@article_job_levels_all_str @menu_job_name_en</option>
+                                    }*@
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Status</label>
+                            <select id="article_job_status" class="form-control">
+                                <option value="P">Published</option>
+                                <option value="U">Unpublished</option>
+                                <option value="A">Archieved</option>
+                                <option value="T">Trashed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Featured</label>
+                            <select id="article_job_is_featured" class="form-control">
+                                <option value=""></option>
+                                <option value="Y">Yes</option>
+                                <option value="N">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Language</label>
+                            <select id="lan" class="form-control">
+                                <option value="ar">Arabic</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Start Publishing Date</label>
+                            <input type="text" class="form-control datepicker" id="start_publishing_date" placeholder="Start Publishing Date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Finish Publishing Date</label>
+                            <input type="text" class="form-control datepicker" id="finish_publishing_date" placeholder="Finish Publishing Date">
+                        </div>
+
+                        <div class="card-title">
+                            <span style="position:relative; top:-10px;">
+                                <div class="picture-box" id="picture" style="display:none"></div>
+                                <div class="input-icon" id="fu-picture-image">
+                                    <span>
+                                        <label for="file_upload_picture" class="btn btn-primary btn-bordered">Upload Picture</label>
+                                        <input type="file" id="file_upload_picture" class="btn-default" style="display:none" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="ajax_create()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL ADD END -->
+<!-- MODAL EDIT START -->
+<div id="modal_edit" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="modal_edit" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="m-b-0">
+                        Article Management
+                    </h5>
+                    <p class="m-b-0 text-muted">
+                        Edit Article
+                    </p>
+                </div>
+                <div class="card-body ">
+                    <form id="frm_edit" name="frm_edit">
+                        <div class="form-group">
+                            <label for="inputAddress">Article Title</label>
+                            <input type="text" class="form-control" id="article_job_title" placeholder="Article Title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Short Description</label>
+                            <textarea id="article_job_short_description_edit" name="article_job_short_description_edit" style="width:100%"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Description</label>
+                            <textarea id="article_job_description_edit" name="article_job_description_edit" style="width:100%"></textarea>
+                        </div>
+
+                        <div class="form-group" style="display:none">
+                            <label for="inputZip">Alias</label>
+                            <input type="text" class="form-control" id="article_job_alias" placeholder="Alias">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Category</label>
+                            <select id="tbl_category_id" class="form-control">
+                                <option value=""></option>
+                                @{
+                                    serial_no = 0;
+                                    category_arr = Regex.Split(ViewBag.category_str_, ",");
+                                    foreach (string category_item in category_arr)
+                                    {
+                                        if (string.IsNullOrEmpty(category_item)) { continue; }
+
+                                        string[] category_item_arr = Regex.Split(category_item, "~");
+                                        string tbl_category_id = category_item_arr[0];
+                                        string category_name_en = category_item_arr[1];
+                                        string category_name_ar = category_item_arr[2];
+                                        string level = category_item_arr[3];
+                                        string is_active = category_item_arr[4];
+                                        string sort_order = category_item_arr[5];
+                                        serial_no = serial_no + 1;
+
+                                        string article_job_levels_all_str = "";
+                                        for (int j = 0; j < Convert.ToInt32(level); j++)
+                                        {
+                                            article_job_levels_all_str = article_job_levels_all_str + " |— ";
+                                        }
+                                        <option value="@tbl_category_id">@article_job_levels_all_str @category_name_en</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Status</label>
+                            <select id="article_job_status" class="form-control">
+                                <option value="P">Published</option>
+                                <option value="U">Unpublished</option>
+                                <option value="A">Archieved</option>
+                                <option value="T">Trashed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Featured</label>
+                            <select id="article_job_is_featured" class="form-control">
+                                <option value=""></option>
+                                <option value="Y">Yes</option>
+                                <option value="N">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip">Language</label>
+                            <select id="lan" class="form-control">
+                                <option value="ar">Arabic</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Start Publishing Date</label>
+                            <input type="text" class="form-control datepicker" id="start_publishing_date_edit" placeholder="Start Publishing Date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Finish Publishing Date</label>
+                            <input type="text" class="form-control datepicker" id="finish_publishing_date_edit" placeholder="Finish Publishing Date">
+                        </div>
+
+                        <div class="card-title">
+                            @*<img src="~/Content/uploads/5a.jpg" style="border-radius:50%; width:80px; height:80px; padding:2px; border:1px solid #E2EAF6" />*@
+                            <span style="position:relative; top:-10px;">
+                                <div class="picture-box" id="picture" style="display:none"></div>
+                                <div class="input-icon" id="fu-picture-image">
+                                    <span>
+                                        <label for="file_upload_picture" class="btn btn-primary btn-bordered">Upload Picture</label>
+                                        <input type="file" id="file_upload_picture" class="btn-default" style="display:none" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZip"><strong>Reference Link</strong></label>
+                            <div id="reference_link"></div>
+                        </div>
+
+                        <input type="hidden" name="tbl_article_job_id_edit" id="tbl_article_job_id_edit" value="" />
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="ajax_save()">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL EDIT END -->
+<br />
+<br />
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.flash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+<script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+<script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css">
+
+<script>
+
+    $(".datepicker").datepicker({
+        dateFormat: 'yy-mm-dd',
+        defaultDate: new Date(),
+        changeMonth: true,
+        changeYear: true
+    });
+
+    $('.datepicker').css("z-index", "0");
+</script>
+
+
+<script>
+
+    tinymce.init({
+        selector: '#article_job_short_description',
+        plugins: 'print preview  powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('article_job_short_description').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { job_title: 'None', value: '' },
+            { job_title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { job_title: 'Some job_title 1', description: 'Some desc 1', content: 'My content' },
+            { job_title: 'Some job_title 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>
+
+<script>
+    /*
+    tinymce.init({
+        selector: '#mytextarea',
+        plugins: "image",
+        menubar: "insert",
+        toolbar: "image imagetools",
+        image_list: [
+            { job_title: 'My image 1', value: 'https://www.tinymce.com/my1.gif' },
+            { job_title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
+        ]
+    });
+    */
+    tinymce.init({
+        selector: '#article_job_description',
+        plugins: 'print preview  powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('article_job_description').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { job_title: 'None', value: '' },
+            { job_title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { job_title: 'Some job_title 1', description: 'Some desc 1', content: 'My content' },
+            { job_title: 'Some job_title 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>
+
+<script>
+
+    tinymce.init({
+        selector: '#article_job_short_description_edit',
+        plugins: 'print preview  powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('article_job_short_description_edit').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { job_title: 'None', value: '' },
+            { job_title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { job_title: 'Some job_title 1', description: 'Some desc 1', content: 'My content' },
+            { job_title: 'Some job_title 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>
+
+<script>
+    /*
+    tinymce.init({
+        selector: '#mytextarea',
+        plugins: "image",
+        menubar: "insert",
+        toolbar: "image imagetools",
+        image_list: [
+            { job_title: 'My image 1', value: 'https://www.tinymce.com/my1.gif' },
+            { job_title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
+        ]
+    });
+    */
+    tinymce.init({
+        selector: '#article_job_description_edit',
+        plugins: 'print preview  powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help',
+        toolbar: 'mybutton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+        setup: function (editor) {
+
+            /* example, adding a toolbar menu button */
+            editor.ui.registry.addMenuButton('mybutton', {
+                text: 'Read More',
+                fetch: function (callback) {
+                    var con = tinyMCE.get('article_job_description_edit').getContent();
+                    var index = con.indexOf('<hr class="read_more" />');
+                    if (index == -1) {//Not found
+                        editor.insertContent('<hr class="read_more" />');
+                    } else {
+                        alert("There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.")
+                    }
+                }
+            });
+        },
+        link_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { job_title: 'My page 1', value: 'http://www.tinymce.com' },
+            { job_title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { job_title: 'None', value: '' },
+            { job_title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        height: 400,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        templates: [
+            { job_title: 'Some job_title 1', description: 'Some desc 1', content: 'My content' },
+            { job_title: 'Some job_title 2', description: 'Some desc 2', content: '<div class="mceTmpl"><span class="cdate">cdate</span><span class="mdate">mdate</span>My content2</div>' }
+        ],
+        template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
+        image_caption: true,
+
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode']
+    });
+
+</script>
+
+<script article="javascript">
+
+    var table = "";
+    var article_job_id_enc = "";
+
+    $(document).ready(function () {
+        $('.checkbox_row_all').change(function () {
+            if ($(this).is(":checked")) {
+                $(".checkbox_row").each(function () {
+                    var is_checked = $(this).prop("checked", true);
+                    if (is_checked == true) {
+                        record_id_str = record_id_str + $(this).val() + ",";
+                    }
+                });
+
+            } else {
+                $(".checkbox_row").each(function () {
+                    var is_checked = $(this).prop("checked", false);
+                    if (is_checked == true) {
+                        record_id_str = record_id_str + $(this).val() + ",";
+                    }
+                });
+            }
+        });
+
+        $('input[type="checkbox"]').on('click', function () {
+        });
+
+    });
+
+    var exportOptions = {
+        columns: ':visible:not(.not-exported)',
+        rows: '.selected'
+    }
+
+    var table = "";
+    $(document).ready(function () {
+
+        table = $('#tbl_listing').DataTable({
+            dom: 'lBfrtip',
+            ajax: '/admin/article_job/get_all_article_job_data_table/',
+            "pageLength": 50,
+            "bSort": true,
+            "bFilter": true,
+            'scrollX': true,
+            "bPaginate": true,
+            "bFilter": true,
+            "bLengthChange": true,
+            autoFilter: true,
+            "oLanguage": {
+                "sLengthArticle": "  _MENU_  "
+            },
+            columns: [
+                { data: 'readingOrder', className: 'reorder' },
+                { data: 'article_job_title' },
+                { data: 'category_name' },
+                { data: 'featured' },
+                { data: 'article_job_status' },
+                { data: 'start_publishing_date' },
+                { data: 'status' },
+                { data: 'checkbox' },
+            ],
+            columnDefs: [
+                { orderable: true, targets: [1, 2, 3] },
+                {
+                    "targets": 6,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+                {
+                    "targets": 0,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+                {
+                    "targets": 7,
+                    "className": "text-center",
+                    "width": "8%"
+                },
+            ],
+
+            select: true,
+            rowReorder: {
+                dataSrc: 'readingOrder',
+
+            }, buttons: [
+                'colvis',
+                'selectAll',
+                'selectNone',
+                {
+                    extend: 'collection',
+                    text: 'Export Selected',
+                    buttons: [
+                        {
+                            extend: 'copy',
+                            exportOptions: exportOptions
+                        },
+                        {
+                            extend: 'csv',
+                            exportOptions: exportOptions
+                        },
+                        {
+                            extend: 'print',
+                            exportOptions: exportOptions
+                        }
+                    ]
+                }
+            ],
+        });
+
+        $('#tbl_listing').on('row-reorder.dt', function (e, details, edit) {
+            var sort_order_max = 0;
+            var sort_id_str = "";
+            $(".checkbox_row").each(function () {
+                var sort_order = $(this).attr("data-sortorder");
+                if (sort_order > sort_order_max) { sort_order_max = sort_order; }
+                var elem_id = $(this).attr("data-id");
+                sort_id_str = sort_id_str + elem_id + ",";
+            });
+
+            ajax_set_sort_order(sort_id_str, sort_order_max);
+        });
+    });
+
+    $(document).ready(function () {
+        $('#tbl_listing').on('click', 'tr', function () {
+            $(this).toggleClass("selected");
+        });
+
+        $('#tbl_listing').on('click', 'input[type="checkbox"]', function (event_job) {
+            event_job.stopPropagation()
+        });
+
+        $('#tbl_listing').on('click', 'input[type="button"]', function (event_job) {
+            event_job.stopPropagation()
+            //alert($(this).parent().find("span").html());
+
+            var current_article_job_id = $(this).parent().find("span").html();
+            var parent_article_job_id = $(this).parent().find("span").html();
+            //alert($(this).closest("tr").prev().find("span.parent_article").html());
+
+            //alert($(this).closest("tr").find("td:nth-child(2)").html());
+            var class_name = $(this).attr("class");
+            if (class_name == "article_job_move_right") {
+                $(this).closest("tr").find("td:nth-child(2)").find("span.article_job_levels").append("<span class='article_job_level'><span class='mdi mdi-arrow-right-box'></span></span>");
+            } else if (class_name == "article_job_move_left") {
+                $(this).closest("tr").find("td:nth-child(2)").find("span.article_job_levels").find("span.article_job_level:nth-child(1)").remove();
+            }
+        });
+    });
+
+    function show_add_form() {
+        $("#frm_add #article_job_title").val("");
+        tinyMCE.get('article_job_short_description').setContent("");
+        tinyMCE.get('article_job_description').setContent("");
+        
+        $("#frm_add #article_job_alias").val("");
+        $("#frm_add #tbl_category_id").val("");
+        $("#frm_add #article_job_status").val("");
+        $("#frm_add #article_job_is_featured").val("");
+        $("#frm_add #lan").val("");
+        $("#frm_add #start_publishing_date").val("");
+        $("#frm_add #finish_publishing_date").val("");
+
+        article_job_id_enc = random_number(16);
+
+        $("#picture").hide();
+        $("#fu-picture-image").show();
+        $("#modal_add").modal('show');
+    }
+
+    function show_edit_form() {
+
+        var record_id = "", flg = 0;
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true && flg == 0) {
+                record_id = $(this).val();
+                flg = 1;
+            }
+        });
+
+        if (record_id == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/admin/Article_Job/edit",
+            data: {
+                record_id: record_id,
+                is_ajax: true
+            },
+            success: function (data) {
+                if (data.code == "SE") {
+                    my_alert("There was an error processing your request. Please try again.");
+                    return;
+                }
+
+                frm_name = "#frm_edit ";
+
+                var tbl_article_job_id = data.obj.tbl_article_job_id;
+                var article_job_title = data.obj.article_job_title;
+                var article_job_short_description = data.obj.article_job_short_description;
+                var article_job_description = data.obj.article_job_description;
+                var article_job_alias = data.obj.article_job_alias;
+                var tbl_category_id = data.obj.tbl_category_id;
+                var article_job_status = data.obj.article_job_status;
+                var article_job_is_featured = data.obj.article_job_is_featured;
+                var lan = data.obj.lan;
+                var start_publishing_date = data.obj.start_publishing_date;
+                var finish_publishing_date = data.obj.finish_publishing_date;
+
+                article_job_id_enc = tbl_article_job_id;
+
+                var reference_link = data.obj.reference_link;
+                $("#frm_edit #reference_link").html(reference_link);
+
+                $("#tbl_article_job_id_edit").val(tbl_article_job_id);
+                $("#frm_edit #article_job_title").val(article_job_title);
+                tinyMCE.get('article_job_short_description_edit').setContent(article_job_short_description);
+                tinyMCE.get('article_job_description_edit').setContent(article_job_description);
+                $("#frm_edit #article_job_alias").val(article_job_alias);
+                $("#frm_edit #tbl_category_id").val(tbl_category_id);
+                $("#frm_edit #article_job_status").val(article_job_status);
+                $("#frm_edit #article_job_is_featured").val(article_job_is_featured);
+                $("#frm_edit #lan").val(lan);
+                $("#frm_edit #start_publishing_date_edit").val(start_publishing_date);
+                $("#frm_edit #finish_publishing_date_edit").val(finish_publishing_date);
+
+                                //alert(frm_name);
+                if (data.data_picture_rs.length > 0) {
+                    var file_name_updated = data.data_picture_rs[0].file_name_updated;
+                    var tbl_item_id = data.data_picture_rs[0].tbl_item_id;
+                    //alert(file_name_updated);
+                    if (file_name_updated != "") {
+                        $(frm_name + "#picture").html('<i data-tblitemid="' + tbl_item_id + '" class="img-del img-del-picture mdi mdi-close-circle"></i>' + '<img src="/Content/Uploads/' + file_name_updated + '">');
+                        $(frm_name + "#picture").show();
+                        $(frm_name + "#fu-picture-image").hide();
+                    }
+                }
+
+                
+
+                $("#modal_edit").modal("show");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function ajax_activate() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "admin/Article_Job/Activate";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+
+                            $(".checkbox_row").each(function () {
+                                var is_checked = $(this).prop("checked");
+                                if (is_checked == true) {
+                                    $("#status_row_" + $(this).val()).removeClass("status_row_unpublished").addClass("status_row_published");
+                                    $(this).prop("checked", false);
+                                }
+                            });
+
+                            my_alert("Information has been saved successfully.", "green");
+
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_deactivate() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+                preloader("show", "");
+
+                var url = "/Article_Job/Deactivate";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+                            $(".checkbox_row").each(function () {
+                                var is_checked = $(this).prop("checked");
+                                if (is_checked == true) {
+                                    $("#status_row_" + $(this).val()).removeClass("status_row_published").addClass("status_row_unpublished");
+                                    $(this).prop("checked", false);
+                                }
+                            });
+
+                            my_alert("Information has been saved successfully.", "green");
+
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_delete() {
+
+        var record_id_str = "";
+        $(".checkbox_row").each(function () {
+            var is_checked = $(this).prop("checked");
+            if (is_checked == true) {
+                record_id_str = record_id_str + $(this).val() + ",";
+            }
+        });
+
+        if (record_id_str == "") {
+            my_alert("Please select at least one record to proceed.", "red");
+            return;
+        }
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+                preloader("show", "");
+
+                var url = "/Admin/Article_Job/Delete";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        record_id_str: record_id_str,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("Your session is invalid or it has expired. Kindly log in again.");
+                        } else if (data.code == "Y") {
+                            deselect_rows();
+                            table.ajax.reload();
+                            $("#total_records").html(data.total_records);
+                            my_alert("Information has been deleted successfully.", "green");
+                        } else {
+                            my_alert("There was an error processing your request. Please try again.");
+                        }
+                    },
+                    error: function () {
+                        my_alert("There was an error processing your request. Please try again.");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        return;
+    }
+
+    function ajax_create() {
+        var str = "";
+        var regExp = / /g;
+
+        var article_job_title = $("#frm_add #article_job_title").val();
+        var tbl_category_id = $("#frm_add #tbl_category_id").val();
+        var article_job_short_description = tinyMCE.get('article_job_short_description').getContent();
+        var article_job_description = tinyMCE.get('article_job_description').getContent();
+        var article_job_alias = $("#frm_add #article_job_alias").val();
+        var tbl_category_id = $("#frm_add #tbl_category_id").val();
+        var article_job_status = $("#frm_add #article_job_status").val();
+        var article_job_is_featured = $("#frm_add #article_job_is_featured").val();
+        var lan = $("#frm_add #lan").val();
+        var start_publishing_date = $("#frm_add #start_publishing_date").val();
+        var finish_publishing_date = $("#frm_add #finish_publishing_date").val();
+        
+        str = article_job_title;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Article Title is blank. Please enter Article Title.");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/Article_Job/create",
+            data: {
+                article_job_id_enc: article_job_id_enc,
+                article_job_title: article_job_title,
+                tbl_category_id: tbl_category_id,
+                article_job_short_description: article_job_short_description,
+                article_job_description: article_job_description,
+                article_job_alias: article_job_alias,
+                tbl_category_id: tbl_category_id,
+                article_job_status: article_job_status,
+                article_job_is_featured: article_job_is_featured,
+                lan: lan,
+                start_publishing_date: start_publishing_date,
+                finish_publishing_date: finish_publishing_date,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+                    $("#modal_add").modal('hide');
+                    $("#total_records").html(data.total_records);
+                    deselect_rows();
+                    table.ajax.reload();
+                    my_alert("Information has been saved successfully.", "green");
+
+                } else {
+                    my_alert("There was an error processing your request. Please try again.");
+                }
+
+                $('#article_job_title').val("");
+                $('#article_job_short_description').val("");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function ajax_save() {
+        var str = "";
+        var regExp = / /g;
+
+        var tbl_article_job_id = $("#tbl_article_job_id_edit").val();
+        var tbl_category_id = $("#frm_edit #tbl_category_id").val();
+        var article_job_title = $("#frm_edit #article_job_title").val();
+        var article_job_short_description = tinyMCE.get('article_job_short_description_edit').getContent();
+        var article_job_description = tinyMCE.get('article_job_description_edit').getContent();
+        var article_job_alias = $("#frm_edit #article_job_alias").val();
+        var article_job_status = $("#frm_edit #article_job_status").val();
+        var article_job_is_featured = $("#frm_edit #article_job_is_featured").val();
+        var lan = $("#frm_edit #lan").val();
+        var start_publishing_date = $("#frm_edit #start_publishing_date_edit").val();
+        var finish_publishing_date = $("#frm_edit #finish_publishing_date_edit").val();
+
+        str = article_job_title;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Article Title is blank. Please enter Article Title.");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/Article_Job/save",
+            data: {
+                tbl_article_job_id: tbl_article_job_id,
+                tbl_category_id: tbl_category_id,
+                article_job_title: article_job_title,
+                article_job_short_description: article_job_short_description,
+                article_job_description: article_job_description,
+                article_job_alias: article_job_alias,
+                article_job_status: article_job_status,
+                article_job_is_featured: article_job_is_featured,
+                lan: lan,
+                start_publishing_date: start_publishing_date,
+                finish_publishing_date: finish_publishing_date,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+                    $("#modal_edit").modal('hide');
+                    $("#total_records").html(data.total_records);
+                    deselect_rows();
+                    table.ajax.reload();
+                    my_alert("Information has been saved successfully.", "green");
+
+                } else {
+                    my_alert("There was an error processing your request. Please try again.");
+                }
+
+                $('#article_job_title').val("");
+                $('#article_job_title').val("");
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+
+    function ajax_set_sort_order(sort_id_str, sort_order_max) {
+
+        $.ajax({
+            type: "POST",
+            url: "Article_Job/set_sort_order",
+            data: {
+                sort_id_str: sort_id_str,
+                sort_order_max: sort_order_max,
+                is_ajax: true
+            },
+            success: function (data) {
+                //if(data.code == "Y") {
+                //    my_alert("Information has been saved successfully.", "green");
+                //} else {
+                //    my_alert("There was an error processing your request. Please try again.");
+                //}
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function deselect_rows() {
+        table.rows({ selected: true }).deselect();
+    }
+
+</script>
+
+<script>
+var frm_name = "#frm_add ";
+
+    $(document).ready(function () {
+
+        $(frm_name + '#file_upload_picture').fileupload({
+            dataType: 'json',
+
+            url: '/File_Upload/Upload/',
+            formData: {  },
+            autoUpload: true,
+            done: function (e, data) {
+                var file_name_original = data.result.file_name_original;
+                var file_name_updated = data.result.file_name_updated;
+                var tbl_item_id = data.result.tbl_item_id;
+                //alert(file_name_updated);
+                $(frm_name +"#picture").html('<i data-tblitemid="' + tbl_item_id + '" class="img-del img-del-picture mdi mdi-close-circle"></i>' + '<img src="/Content/Uploads/' + file_name_updated + '">');
+                $(frm_name +"#picture").show();
+                $(frm_name +"#fu-picture-image").hide();
+            }, drop: function (e, data) {
+            }, add: function (e, data) {
+                //var tbl_item_id = "@ViewBag.article_job_id_enc" + "_picture";
+
+                var tbl_item_id = article_job_id_enc + "_picture";
+                //alert(tbl_item_id);
+
+                data.formData = {
+                    'tbl_item_id': tbl_item_id,
+                    'section_name': "article"
+                };
+                data.submit();
+            },
+
+            }).on('fileuploadprogressall', function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                //$('#progress_bar'+ii).css('width', progress + '%');
+            });
+        $(document).on("click", ".img-del-picture", function () {
+            this_elem = $(this)
+            //$(this_elem).closest("tr").remove();
+            delete_option_picture();
+        });
+
+
+        //var this_elem = "";
+        function delete_option_picture() {
+
+            swal({
+                title: "Message",
+                text: "Are you sure?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes",
+                closeOnConfirm: true
+            },
+                function () {
+                    preloader("show", "");
+                    delete_picture();
+                });
+        }
+
+        function delete_picture() {
+
+            var tbl_item_id = $(this_elem).attr("data-tblitemid");
+            var url = "/File_Upload/Delete";
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "JSON",
+                data: { tbl_item_id: tbl_item_id, is_admin: "Y" },
+                success: function (data) {
+
+                    preloader("hide", "");
+                    if (data.status == "Y") {
+                        my_alert("Picture has been deleted successfully.", "green");
+                        $(frm_name + "#picture").hide();
+                        $(frm_name + "#fu-picture-image").show();
+                    } else {
+                        my_alert("There was an error processing your request. Please try again.", "red");
+                    }
+                },
+                error: function () {
+                    preloader("hide", "");
+                }
+            });
+        }
+    });
+
+    function random_number(limit) {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+        for (var i = 0; i < limit; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+</script>
+
+<style type="text/css">
+    .status_row {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+
+    .status_row_published {
+        background-color: #00A47C;
+    }
+
+    .status_row_unpublished {
+        background-color: #EF2E30;
+    }
+
+    .mdi-drag-variant {
+        cursor: move;
+    }
+
+    .ml-2, .mx-2 {
+        margin-left: 0px !important;
+        margin-right: 5px !important;
+    }
+</style>
+
+<script lan="javascript">
+    function strip_html(html) {
+        var tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return $.trim(tmp.textContent) || $.trim(tmp.innerText) || "";
+    }
+</script>

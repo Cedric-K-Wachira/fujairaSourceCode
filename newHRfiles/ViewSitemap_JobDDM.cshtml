@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+    ViewBag.css = "";
+}
+@using System.Text.RegularExpressions;
+@{
+    <option value="">[Root]</option> 
+    int serial_no = 0;
+    string[] sitemap_job_arr = Regex.Split(ViewBag.sitemap_job_str_, ",");
+    foreach (string sitemap_job_item in sitemap_job_arr)
+    {
+        if (string.IsNullOrEmpty(sitemap_job_item)) { continue; }
+
+        string[] sitemap_job_item_arr = Regex.Split(sitemap_job_item, "~");
+        string tbl_sitemap_job_id = sitemap_job_item_arr[0];
+        string sitemap_job_name_en = sitemap_job_item_arr[1];
+        string sitemap_job_name_ar = sitemap_job_item_arr[2];
+        string level = sitemap_job_item_arr[3];
+        string is_active = sitemap_job_item_arr[4];
+        string sort_order = sitemap_job_item_arr[5];
+        serial_no = serial_no + 1;
+        string sitemap_job_levels_all_str = "";
+        for (int j = 0; j < Convert.ToInt32(level); j++)
+        {
+            sitemap_job_levels_all_str = sitemap_job_levels_all_str + " |— ";
+        }
+        <option value="@tbl_sitemap_job_id">@sitemap_job_levels_all_str @sitemap_job_name_en</option>
+    }
+}
