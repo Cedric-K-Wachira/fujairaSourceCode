@@ -1,0 +1,496 @@
+if (code.Equals("c1")) { return "إخطارات"; } // Notifications
+if (code.Equals("c2")) { return "اليوم"; } // today
+if (code.Equals("c3")) { return "جميع الأنظمة التشغيلية."; } // All systems operational.
+if (code.Equals("c4")) { return "تحميل الملف بنجاح."; } // File upload successful.
+if (code.Equals("c5")) { return "لقد تم رفض عطلتك"; } // Your holiday has been denied
+if (code.Equals("c6")) { return "إضافة حساب"; } // Add Account
+if (code.Equals("c7")) { return "إعادة تعيين كلمة المرور"; } // Reset Password
+if (code.Equals("c8")) { return "مساعدة"; } // Help
+if (code.Equals("c9")) { return "الخروج"; } // Logout
+if (code.Equals("c10")) { return "إدارة المرشحين"; } // Candidates Management
+if (code.Equals("c11")) { return "عرض جميع منشورات المرشح."; } // View all candidate postings.
+if (code.Equals("c12")) { return "مجموع المرشحين"; } // Total Candidates
+if (code.Equals("c13")) { return "حذف"; } // Delete
+if (code.Equals("c14")) { return "الجديد"; } // New
+if (code.Equals("c15")) { return "تصحيح"; } // Edit
+if (code.Equals("c16")) { return "نشر"; } // Publish
+if (code.Equals("c17")) { return "إلغاء النشر"; } // Unpublish
+if (code.Equals("c18")) { return "لغة"; } // Language
+if (code.Equals("c19")) { return "مواطن دولة الإمارات العربية المتحدة"; } // UAE Citizen
+if (code.Equals("c20")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c21")) { return "عمر"; } // Age
+if (code.Equals("c22")) { return "معطل"; } // Is Disabled
+if (code.Equals("c23")) { return "حالة المرشح"; } // Candidate Status
+if (code.Equals("c24")) { return "موبايل 1"; } // Mobile 1
+if (code.Equals("c25")) { return "موبايل 2"; } // Mobile 2
+if (code.Equals("c26")) { return "معهد"; } // 	Institute
+if (code.Equals("c27")) { return "التعليم"; } // Education
+if (code.Equals("c28")) { return "مستوى"; } // Level
+if (code.Equals("c29")) { return "أبناء"; } // Sons
+if (code.Equals("c30")) { return "الشفرة"; } // Code
+if (code.Equals("c31")) { return "الحالة"; } // Status
+if (code.Equals("c32")) { return "مدير مرشح"; } // Candidate Manager
+if (code.Equals("c33")) { return "إضافة مرشح جديد"; } // Add New Candidate
+if (code.Equals("c34")) { return "تحميل الصورة"; } // Upload Picture
+if (code.Equals("c35")) { return "التعاقد"; } // Hired
+if (code.Equals("c36")) { return "أرشيف"; } // Archieve
+if (code.Equals("c37")) { return "نشيط"; } // Active
+if (code.Equals("c38")) { return "تاريخ"; } // Date
+if (code.Equals("c39")) { return "مكان"; } // Place
+if (code.Equals("c40")) { return "تم توضيفه عن طريق"; } // Hired By
+if (code.Equals("c41")) { return "تسجيل البيانات"; } // Register Data
+if (code.Equals("c42")) { return "ملاحظات"; } // Notes
+if (code.Equals("c43")) { return "بيانات شخصية"; } // Personal Data
+if (code.Equals("c44")) { return "المؤهلات العلمية"; } // Academic Qualifications
+if (code.Equals("c45")) { return "تجربة"; } // Experience
+if (code.Equals("c46")) { return "الدورات"; } // Courses
+if (code.Equals("c47")) { return "مرفقات"; } // Attachments
+if (code.Equals("c48")) { return "اسم"; } // Name
+if (code.Equals("c49")) { return "الاسم الثاني"; } // Second Name
+if (code.Equals("c50")) { return "الاسم الثالث"; } // Third Name
+if (code.Equals("c51")) { return "الكنية"; } // Last Name
+if (code.Equals("c52")) { return "معرف الإمارات"; } // Emirates ID 
+if (code.Equals("c53")) { return "البريد الإلكتروني"; } // Email
+if (code.Equals("c54")) { return "كلمه السر"; } // Password
+if (code.Equals("c55")) { return "تأكيد كلمة المرور"; } // Confirm Password
+if (code.Equals("c56")) { return "جنسية"; } // Nationality
+if (code.Equals("c57")) { return "أبناء مواطني دولة الإمارات العربية المتحدة"; } // UAE Citizens Sons
+if (code.Equals("c58")) { return "حالة التأشيرة"; } // Visa Status
+if (code.Equals("c59")) { return "جواز سفر"; } // Passport
+if (code.Equals("c60")) { return "جنس"; } // Gender
+if (code.Equals("c61")) { return "الذكر"; } // Male
+if (code.Equals("c62")) { return "إناثا"; } // Female
+if (code.Equals("c63")) { return "تاريخ الولادة"; } // Birth Date 
+if (code.Equals("c64")) { return "الحالة الحالة الإجتماعية"; } // Marital Status
+if (code.Equals("c65")) { return "الإمارة"; } // Emirate
+if (code.Equals("c66")) { return "أبو ظبي"; } // Abu Dhabi
+if (code.Equals("c67")) { return "دبي"; } // Dubai
+if (code.Equals("c68")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c69")) { return "رأس الخيمة"; } // Ras Al Khaimah
+if (code.Equals("c70")) { return "الشارقة"; } // Sharjah
+if (code.Equals("c71")) { return "أم القيوين"; } // Umm Al Quwain
+if (code.Equals("c72")) { return "رقم الجوال 1"; } // Mobile No 1
+if (code.Equals("c73")) { return "رقم الجوال 2"; } // Mobile No 2
+if (code.Equals("c74")) { return "رخصة قيادة"; } // Driver License
+if (code.Equals("c75")) { return "هل انت معاق"; } // Are You Disabled?
+if (code.Equals("c76")) { return "نعم فعلا"; } // Yes
+if (code.Equals("c77")) { return "الحالة الوظيفية"; } // Employment Status
+if (code.Equals("c78")) { return "أريد أن أكمل دراستي"; } // I want to complete my studies
+if (code.Equals("c79")) { return "لا"; } // No
+if (code.Equals("c80")) { return "المستوى التعليمي"; } // Educational Level
+if (code.Equals("c81")) { return "المستوى التعليمي"; } // Educational Institute
+if (code.Equals("c82")) { return "تخصص"; } // Speciality
+if (code.Equals("c83")) { return "تفاصيل التخصص"; } // Speciality Details
+if (code.Equals("c84")) { return "سنة التخرج"; } // Year of Graduation
+if (code.Equals("c85")) { return "كيان"; } // Entity
+if (code.Equals("c86")) { return "عنوان وظيفي"; } // Job Title
+if (code.Equals("c87")) { return "بلد"; } // Country
+if (code.Equals("c88")) { return "مدينة"; } // City
+if (code.Equals("c89")) { return "من عند"; } // From
+if (code.Equals("c90")) { return "إلى"; } // To
+if (code.Equals("c91")) { return "سبب الاستقالة"; } // Reason For Resigning
+if (code.Equals("c92")) { return "اسم الدورة التدريبية"; } // Course Name
+if (code.Equals("c93")) { return "موقع الدورة"; } // Course Location
+if (code.Equals("c94")) { return "طول المسار"; } // Course Length
+if (code.Equals("c95")) { return "حفظ"; } // Save
+if (code.Equals("c96")) { return "اللغات"; } // Languages
+if (code.Equals("c97")) { return "يرجى تحديد سجل واحد على الأقل للمتابعة."; } // Please select at least one record to proceed.
+if (code.Equals("c98")) { return "جلستك غير صالحة أو انتهت صلاحيتها. يرجى تسجيل الدخول مرة أخرى."; } // Your session is invalid or it has expired. Kindly log in again.
+if (code.Equals("c99")) { return "تم حذف المعلومات بنجاح."; } // Information has been deleted successfully.
+if (code.Equals("c100")) { return "اسم المرشح فارغ. الرجاء إدخال اسم المرشح."; } // Candidate Name is blank. Please enter Candidate Name.
+if (code.Equals("c101")) { return "اسم المرشح الثاني فارغ. الرجاء إدخال الاسم الثاني للمرشح."; } // Candidate Second Name is blank. Please enter Candidate Second Name.
+if (code.Equals("c102")) { return "تم حفظ المعلومات بنجاح. يرجى ملء التفاصيل في علامات تبويب أخرى لإكمال عملية التسجيل."; } // Information has been saved successfully. Please fill out details in other tabs to complete the registration process.
+if (code.Equals("c103")) { return "العنوان فارغ. الرجاء إدخال العنوان."; } // Title is blank. Please enter Title.
+if (code.Equals("c104")) { return "الوصف فارغ. الرجاء إدخال الوصف."; } // Description is blank. Please enter Description.
+if (code.Equals("c105")) { return "يرجى تقديم الملاحظات."; } // Please provide notes.
+if (code.Equals("c106")) { return "يوجد بالفعل رابط قراءة المزيد ... تم إدراجه. يُسمح بهذا الرابط فقط. استخدم {pagebreak} لتقسيم الصفحة لأعلى."; } // There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.
+if (code.Equals("c107")) { return "تم حفظ المعلومات بنجاح."; } // Information has been saved successfully.
+if (code.Equals("c108")) { return "تم حذف الصورة بنجاح. "،" green"; } // Picture has been deleted successfully.
+if (code.Equals("c109")) { return "كان هناك خطأ في معالجة طلبك. حاول مرة اخرى."; } // There was an error processing your request. Please try again.
+if (code.Equals("c110")) { return "إدارة المادة"; } // Article Management
+if (code.Equals("c111")) { return "عرض جميع المقالات"; } // View all articles
+if (code.Equals("c112")) { return "مجموع المقالات"; } // Total Articles
+if (code.Equals("c113")) { return "طلب"; } // Order
+if (code.Equals("c114")) { return "عنوان"; } // Title
+if (code.Equals("c115")) { return "وصف"; } // Description
+if (code.Equals("c116")) { return "عمل"; } // Action
+if (code.Equals("c117")) { return "مدير المادة"; } // Article Manager
+if (code.Equals("c118")) { return "إضافة مقال جديد"; } // Add New Article
+if (code.Equals("c119")) { return "الفئة"; } // Category
+if (code.Equals("c120")) { return "تحديد"; } // SELECT
+if (code.Equals("c121")) { return "نص المادة"; } // Article Text
+if (code.Equals("c122")) { return "خضع"; } // Submit
+if (code.Equals("c123")) { return "تحرير المادة"; } // Edit Article
+if (code.Equals("c124")) { return "البريد الإلكتروني فارغ. يرجى إدخال البريد الإلكتروني."; } // Email is blank.Please enter email.
+if (code.Equals("c125")) { return "النقر"; } // clicked
+if (code.Equals("c126")) { return "تسجيل الدخول"; } // Login
+if (code.Equals("c127")) { return "تذكرنى"; } // Remember Me
+if (code.Equals("c128")) { return "نجاح"; } // Success
+if (code.Equals("c129")) { return "حسنا"; } // Okay
+if (code.Equals("c130")) { return "وجه الفتاة"; } // Oops
+if (code.Equals("c131")) { return "بريد إلكتروني خاطئ."; } // Invalid Email.
+if (code.Equals("c132")) { return "تنسيق البريد الإلكتروني غير صالح."; } // Invalid Email format.
+if (code.Equals("c133")) { return "كلمة المرور فارغة الرجاء إدخال كلمة المرور"; } // Password is blank. Please enter password.
+if (code.Equals("c134")) { return "البريد الإلكتروني أو كلمة السر خاطئة"; } // Invalid Email or Password
+if (code.Equals("c135")) { return "المستوى التعليمي"; } // Educational Level
+if (code.Equals("c136")) { return "عرض جميع المستويات التعليمية"; } // View all educational levels
+if (code.Equals("c137")) { return "مجموع المستويات التعليمية"; } // Total Educational Levels
+if (code.Equals("c138")) { return "إدارة المستوى التعليمي"; } // Educational Level Management
+if (code.Equals("c139")) { return "أضف مستوى تعليمي جديد"; } // Add New Educational Level
+if (code.Equals("c140")) { return "تحرير المستوى التعليمي"; } // Edit Educational Level
+if (code.Equals("c141")) { return "اسم المستوى [En]"; } // Level Name [En]
+if (code.Equals("c142")) { return "اسم المستوى"; } // Level Name [Ar]
+if (code.Equals("c143")) { return "اسم المستوى [En] فارغ. الرجاء إدخال اسم المستوى [En]."; } // Level Name [En] is blank. Please enter Level Name [En].
+if (code.Equals("c144")) { return "اسم المستوى [Ar] فارغ. الرجاء إدخال اسم المستوى."; } // Level Name [Ar] is blank. Please enter Level Name [Ar].
+if (code.Equals("c145")) { return "التخصص الأكاديمي"; } // Academic Speciality
+if (code.Equals("c146")) { return "الاحصائيات الحية"; } // Live Statistics
+if (code.Equals("c147")) { return "مجموع مواطني دولة الإمارات"; } // Total UAE Nationals
+if (code.Equals("c148")) { return "إدارة التطبيقات"; } // Apps Management
+if (code.Equals("c149")) { return "عرض جميع التطبيقات"; } // View all apps
+if (code.Equals("c150")) { return "مجموع التطبيقات"; } // Total Apps
+if (code.Equals("c151")) { return "العنوان"; } // Title [En]
+if (code.Equals("c152")) { return "العنوان"; } // Title [Ar]
+if (code.Equals("c153")) { return "عنوان URL [IOS]"; } // URL [IOS]
+if (code.Equals("c154")) { return "عنوان URL [Android]"; } // URL [Android]
+if (code.Equals("c155")) { return "إضافة تطبيقات جديدة"; } // Add New Apps
+if (code.Equals("c156")) { return "إدارة التطبيقات"; } // Apps Management
+if (code.Equals("c157")) { return "تحرير التطبيقات"; } // Edit Apps
+if (code.Equals("c158")) { return "العنوان [En] فارغ. الرجاء إدخال العنوان [En]."; } // Title [En] is blank. Please enter Title [En].
+if (code.Equals("c159")) { return "إدارة الوظائف"; } // Jobs Management
+if (code.Equals("c160")) { return "عرض جميع إعلانات الوظائف"; } // View all job postings
+if (code.Equals("c161")) { return "مجموع الوظائف"; } // Total Jobs
+if (code.Equals("c162")) { return "صاحب العمل"; } // Employer
+if (code.Equals("c163")) { return "تخصص"; } // Specialization
+if (code.Equals("c164")) { return "حالة النشر"; } // Publication Status
+if (code.Equals("c165")) { return "عنوان المقال"; } // Article Title
+if (code.Equals("c166")) { return "إدارة المادة"; } // Article Management
+if (code.Equals("c167")) { return "إضافة مقال جديد"; } // Add New Article
+if (code.Equals("c168")) { return "وصف قصير"; } // Short Description
+if (code.Equals("c169")) { return "وصف"; } // Description
+if (code.Equals("c170")) { return "الاسم المستعار"; } // Alias
+if (code.Equals("c171")) { return "عنوان المقال فارغ. الرجاء إدخال عنوان المقال."; } // Article Title is blank. Please enter Article Title.
+if (code.Equals("c172")) { return "شكل"; } // Form
+if (code.Equals("c173")) { return "الاسم الاول"; } // First Name
+if (code.Equals("c174")) { return "أفسال"; } // Afsal
+if (code.Equals("c175")) { return "الرحمن"; } // Rahman
+if (code.Equals("c176")) { return "رقم الهوية الإماراتية"; } // Emirates ID No
+if (code.Equals("c177")) { return "784-1985-1649452-6"; } // 784-1985-1649452-6
+if (code.Equals("c178")) { return "sample@gmail.com"; } // sample@gmail.com
+if (code.Equals("c179")) { return "الإمارات العربية المتحدة"; } // United Arab Emirates
+if (code.Equals("c180")) { return "رقم جواز السفر"; } // Passport Number
+if (code.Equals("c181")) { return "P3845852035"; } // P3845852035
+if (code.Equals("c182")) { return "25 مارس 1985"; } // 25 march 1985
+if (code.Equals("c183")) { return "غير مرتبطة"; } // Single
+if (code.Equals("c184")) { return "الفجيرة"; } // Fujairah
+if (code.Equals("c185")) { return "رقم الجوال 1"; } // Mobile No. 1
+if (code.Equals("c186")) { return "00971 00 0000 000"; } // 00971 00 0000 000
+if (code.Equals("c187")) { return "رقم الجوال 2"; } // Mobile No. 2
+if (code.Equals("c188")) { return "00971 00 0000 000"; } // 00971 00 0000 000
+if (code.Equals("c189")) { return "لا شيء"; } // None
+if (code.Equals("c190")) { return "الدبلوم التقني الثانوي"; } // Technical Secondary Diploma
+if (code.Equals("c191")) { return "كلية جامعة سكاي لاين"; } // Skyline University College
+if (code.Equals("c192")) { return "تخصص"; } // Specialty
+if (code.Equals("c193")) { return "2017-2018"; } // 2017-2018
+if (code.Equals("c194")) { return "مسؤول العلاقات"; } // Relations Officer
+if (code.Equals("c195")) { return "أسباب الاستقالة"; } // Reasons for resigning
+if (code.Equals("c196")) { return "سأرحل لأنني أريد تغيير مهنتي من صناعتي الحالية إلى صناعة مختلفة."; } // I am leaving because I want to make a career change from my current industry to a different one.
+if (code.Equals("c197")) { return "عربى"; } // Arabic
+if (code.Equals("c198")) { return "الإنجليزية"; } // English
+if (code.Equals("c199")) { return "الأردية"; } // Urdu
+if (code.Equals("c200")) { return "يرجى كتابة تفاصيل محددة حول مهاراتك"; } // Please write specific details about your skills
+if (code.Equals("c201")) { return "أنا الشخص الذي يعمل بجد لتحقيق أهدافي. لطالما كانت القدرة على التغلب على العقبات ومتابعة الأمور حتى الانتهاء نقطة قوية بالنسبة لي ، وهذا هو السبب في أنني تمكنت من الازدهار في موضوع درجة تنافسية من هذا القبيل."; } // I'm a driven person who works hard to attain my goals. The ability to overcome obstacles and follow things through to completion has always been a strong point of mine, which is why I've managed to thrive in such a competitive degree subject. 
+if (code.Equals("c202")) { return "عرض جميع البلدان."; } // View all countries.
+if (code.Equals("c203")) { return "مجموع الدول."; } // Total Countries.
+if (code.Equals("c204")) { return "اسم البلد [En]"; } // Country Name [En]
+if (code.Equals("c205")) { return "اسم البلد"; } // Country Name [Ar]
+if (code.Equals("c206")) { return "الرقم الدولي"; } // Country Code
+if (code.Equals("c207")) { return "إدارة البلد"; } // Country Management
+if (code.Equals("c208")) { return "أضف بلد جديد"; } // Add New Country
+if (code.Equals("c209")) { return "تحرير البلد"; } // Edit Country
+if (code.Equals("c210")) { return "اسم البلد [En] فارغ. الرجاء إدخال اسم البلد [En]."; } // Country Name [En] is blank. Please enter Country Name [En].
+if (code.Equals("c211")) { return "إضافة مقال جديد"; } // Add New Article
+if (code.Equals("c212")) { return "انقر لإضافة مقال جديد"; } // Click to add a new article
+if (code.Equals("c213")) { return "مدير القائمة"; } // Menu Manager
+if (code.Equals("c214")) { return "انقر لعرض جميع القوائم"; } // Click to view all menus
+if (code.Equals("c215")) { return "مدير المادة"; } // Article Manager
+if (code.Equals("c216")) { return "انقر هنا لإدارة المقالات"; } // Click here to manage the articles
+if (code.Equals("c217")) { return "مدير المستخدم"; } // User Manager
+if (code.Equals("c218")) { return "انقر هنا لإدارة جميع المستخدمين"; } // Click here to manage all users
+if (code.Equals("c219")) { return "مدير فئة"; } // Category Manager
+if (code.Equals("c220")) { return "انقر هنا لإدارة الفئات"; } // Click here to manage the categories
+if (code.Equals("c221")) { return "مدير اللغة"; } // Language Manager
+if (code.Equals("c222")) { return "انقر هنا لإدارة بيانات اللغة"; } // Click here to manage language data
+if (code.Equals("c223")) { return "مدير الإعلام"; } // Media Manager
+if (code.Equals("c224")) { return "انقر هنا لإدارة ملفات الوسائط"; } // Click here to manage the media files
+if (code.Equals("c225")) { return "التكوين العالمي"; } // Global Configuration
+if (code.Equals("c226")) { return "انقر هنا لإدارة التكوينات العالمية"; } // Click here to manage the global configurations
+if (code.Equals("c227")) { return "وصول وسائل الإعلام"; } // Media Reach
+if (code.Equals("c228")) { return "نشاط أكثر من المعتاد."; } // More activity than usual.
+if (code.Equals("c229")) { return "وحدات جديدة"; } // New Modules
+if (code.Equals("c230")) { return "نشاط أقل من المعتاد."; } // Less activity than usual.
+if (code.Equals("c231")) { return "حالة المشروع"; } // Project Status
+if (code.Equals("c232")) { return "شيء آخر هنا"; } // Something else here
+if (code.Equals("c233")) { return "العلامة التجارية وتصميم المنتجات"; } // Branding & Product Design
+if (code.Equals("c234")) { return "5 أعضاء"; } // 5 Members
+if (code.Equals("c235")) { return "عرض مشروع"; } // View Project
+if (code.Equals("c236")) { return "اشخاص"; } // People
+if (code.Equals("c237")) { return "شيئا ما"; } // Something
+if (code.Equals("c238")) { return "اليكس جونسون"; } // Alex Johnson
+if (code.Equals("c239")) { return "مصمم بصري"; } // Visual Designer
+if (code.Equals("c240")) { return "بيكيت براون"; } // Beckett Brown
+if (code.Equals("c241")) { return "مدير المشروع"; } // Project Manager
+if (code.Equals("c242")) { return "بريل كوت"; } // Brielle Cote
+if (code.Equals("c243")) { return "مطور ويب"; } // Web Developer
+if (code.Equals("c244")) { return "ليام ليفك"; } // Liam Lévesque
+if (code.Equals("c245")) { return "مصمم المنتج"; } // Product Designer
+if (code.Equals("c246")) { return "باركر روي"; } // Parker Roy
+if (code.Equals("c247")) { return "إتبع"; } // Follow
+if (code.Equals("c248")) { return "تكلف ألواح"; } // Costing Slabs
+if (code.Equals("c249")) { return "عمل"; } // Action
+if (code.Equals("c250")) { return "عمل آخر"; } // Another action
+if (code.Equals("c251")) { return "ميزانية المشروع"; } // Project Budget
+if (code.Equals("c252")) { return "يشمل الضرائب والخصوم الأخرى"; } // Includes Tax and other liabilities
+if (code.Equals("c253")) { return "تكاليف الاستضافة"; } // Hosting Costs
+if (code.Equals("c254")) { return "خادم و CDN استضافة"; } // Server and CDN Hosting
+if (code.Equals("c255")) { return "المدفوعات"; } // Payments
+if (code.Equals("c256")) { return "البنية التحتية والإيجار"; } // Infrastructure and Rent
+if (code.Equals("c257")) { return "الخدمات اللوجستية"; } // Logistics
+if (code.Equals("c258")) { return "اللوجستية الإقليمية الشاملة"; } // Overall Regional Logistics
+if (code.Equals("c259")) { return "بحث"; } // Search
+if (code.Equals("c260")) { return "النتائج"; } // results
+if (code.Equals("c261")) { return "اريك تشن"; } // Eric Chen
+if (code.Equals("c262")) { return "مطور"; } // Developer
+if (code.Equals("c263")) { return "شون فالديز"; } // Sean Valdez
+if (code.Equals("c264")) { return "تسويق"; } // Marketing
+if (code.Equals("c265")) { return "ماري أرنولد"; } // Marie Arnold
+if (code.Equals("c266")) { return "وثيقة SRS"; } // SRS Document
+if (code.Equals("c267")) { return "لوحة القيادة"; } // DASHBOARD
+if (code.Equals("c268")) { return "نظرة عامة"; } // Overview
+if (code.Equals("c269")) { return "تذاكر"; } // Tickets
+if (code.Equals("c270")) { return "عرض جميع المعاهد التعليمية."; } // View all educational institutes.
+if (code.Equals("c271")) { return "مجموع المعاهد التعليمية"; } // Total Educational Institutes
+if (code.Equals("c272")) { return "المعهد التربوي"; } // Educational Institute [En]
+if (code.Equals("c273")) { return "المعهد التربوي"; } // Educational Institute [Ar]
+if (code.Equals("c274")) { return "إدارة المعهد التربوي"; } // Educational Institute Management
+if (code.Equals("c275")) { return "إضافة معهد تعليمي جديد"; } // Add New Educational Institute
+if (code.Equals("c276")) { return "تحرير المعهد التربوي"; } // Edit Educational Institute
+if (code.Equals("c277")) { return "المعهد التعليمي [En] فارغ. الرجاء إدخال المعهد التربوي [En]."; } // Educational Institute [En] is blank. Please enter Educational Institute [En].
+if (code.Equals("c278")) { return "المستوى التعليمي"; } // Educational Level [En]
+if (code.Equals("c279")) { return "المستوى التعليمي"; } // Educational Level [Ar]
+if (code.Equals("c280")) { return "المستوى التعليمي [En] فارغ. الرجاء إدخال المستوى التعليمي [En]."; } // Educational Level [En] is blank. Please enter Educational Level [En].
+if (code.Equals("c281")) { return "عرض كل الإمارة."; } // View all emirate.
+if (code.Equals("c282")) { return "مجموع الإمارة"; } // Total Emirate
+if (code.Equals("c283")) { return "الإمارة [و]"; } // Emirate [En]
+if (code.Equals("c284")) { return "الإمارة"; } // Emirate [Ar]
+if (code.Equals("c285")) { return "إدارة الإمارة"; } // Emirate Management
+if (code.Equals("c286")) { return "أضف إمارة جديدة"; } // Add New Emirate
+if (code.Equals("c287")) { return "خضع"; } // Submit
+if (code.Equals("c288")) { return "تحرير الإمارة"; } // Edit Emirate
+if (code.Equals("c289")) { return "طيران الإمارات [و] فارغة. الرجاء إدخال الإمارة."; } // Emirate [En] is blank. Please enter Emirate [En].
+if (code.Equals("c290")) { return "الإمارة فارغة. الرجاء إدخال الإمارة."; } // Emirate [Ar] is blank. Please enter Emirate [Ar].
+if (code.Equals("c291")) { return "عرض كل صاحب العمل."; } // View all employer.
+if (code.Equals("c292")) { return "مجموع صاحب العمل"; } // Total Employer
+if (code.Equals("c293")) { return "استخدم [في]"; } // Employer [En]
+if (code.Equals("c294")) { return "صاحب العمل"; } // Employer [Ar]
+if (code.Equals("c295")) { return "إدارة صاحب العمل"; } // Employer Management
+if (code.Equals("c296")) { return "إضافة صاحب عمل جديد"; } // Add New Employer
+if (code.Equals("c297")) { return "إدارة صاحب العمل"; } // Employer Management
+if (code.Equals("c298")) { return "تحرير صاحب العمل"; } // Edit Employer
+if (code.Equals("c299")) { return "صاحب العمل [En] فارغ. الرجاء إدخال صاحب العمل [En]."; } // Employer [En] is blank. Please enter Employer [En].
+if (code.Equals("c300")) { return "عرض كل حالة التوظيف."; } // View all employment status.
+if (code.Equals("c301")) { return "حالة التوظيف الكلية"; } // Total Employment Status
+if (code.Equals("c302")) { return "الرقم التسلسلي"; } // Serial No
+if (code.Equals("c303")) { return "حالة التوظيف [En]"; } // Employment Status [En]
+if (code.Equals("c304")) { return "الوضع الوظيفي"; } // Employment Status [Ar]
+if (code.Equals("c305")) { return "إدارة حالة التوظيف"; } // Employment Status Management
+if (code.Equals("c306")) { return "إضافة حالة توظيف جديدة"; } // Add New Employment Status
+if (code.Equals("c307")) { return "تحرير حالة التوظيف"; } // Edit Employment Status
+if (code.Equals("c308")) { return "حالة التوظيف [En] فارغة. الرجاء إدخال حالة التوظيف [En]."; } // Employment Status [En] is blank. Please enter Employment Status [En].
+if (code.Equals("c309")) { return "حالة التوظيف [Ar] فارغة. الرجاء إدخال حالة التوظيف."; } // Employment Status [Ar] is blank. Please enter Employment Status [Ar].
+if (code.Equals("c310")) { return "الاحصائيات الحية"; } // Live Statistics
+if (code.Equals("c311")) { return "معاق"; } // Disabled
+if (code.Equals("c312")) { return "روابط خارجية"; } // External Links
+if (code.Equals("c313")) { return "عرض جميع الروابط الخارجية."; } // View all external links.
+if (code.Equals("c314")) { return "مجموع الروابط الخارجية"; } // Total External Links
+if (code.Equals("c315")) { return "الروابط الخارجية"; } // External Links [En]
+if (code.Equals("c316")) { return "الروابط الخارجية"; } // External Links [Ar]
+if (code.Equals("c317")) { return "URL"; } // URL
+if (code.Equals("c318")) { return "صورة"; } // Image
+if (code.Equals("c319")) { return "إدارة الروابط الخارجية"; } // External Links Management
+if (code.Equals("c320")) { return "إضافة روابط خارجية جديدة"; } // Add New External Links
+if (code.Equals("c321")) { return "الروابط الخارجية URL"; } // External Links URL
+if (code.Equals("c322")) { return "تحرير الروابط الخارجية"; } // Edit External Links
+if (code.Equals("c323")) { return "الروابط الخارجية [En] فارغة. الرجاء إدخال الروابط الخارجية [En]."; } // External Links [En] is blank. Please enter External Links [En]. 
+if (code.Equals("c324")) { return "ردود الفعل"; } // Feedback
+if (code.Equals("c325")) { return "عرض كل التعليقات."; } // View all feedback.
+if (code.Equals("c326")) { return "مجموع ردود الفعل"; } // Total Feedback
+if (code.Equals("c327")) { return "عنوان IP"; } // IP Address
+if (code.Equals("c328")) { return "إدارة ردود الفعل"; } // Feedback Management
+if (code.Equals("c329")) { return "إضافة ملاحظات جديدة"; } // Add New Feedback
+if (code.Equals("c330")) { return "تحرير التعليق"; } // Edit Feedback
+if (code.Equals("c331")) { return "ردود الفعل فارغة. الرجاء إدخال الملاحظات."; } // Feedback is blank. Please enter Feedback.
+if (code.Equals("c332")) { return "نوع الأنطباع"; } // Feedback Type
+if (code.Equals("c333")) { return "عرض كل نوع التعليقات."; } // View all feedback type.
+if (code.Equals("c334")) { return "مجموع ردود الفعل النوع"; } // Total Feedback Type
+if (code.Equals("c335")) { return "نوع التعليقات"; } // Feedback Type [En]
+if (code.Equals("c336")) { return "نوع التعليقات"; } // Feedback Type [Ar]
+if (code.Equals("c337")) { return "ردود الفعل إدارة النوع"; } // Feedback Type Management
+if (code.Equals("c338")) { return "إضافة نوع ملاحظات جديد"; } // Add New Feedback Type
+if (code.Equals("c339")) { return "تحرير نوع التعليقات"; } // Edit Feedback Type
+if (code.Equals("c340")) { return "نوع التعليقات [En] فارغ. الرجاء إدخال نوع التعليقات [En]."; } // Feedback Type [En] is blank. Please enter Feedback Type [En].
+if (code.Equals("c341")) { return "تصنيف الوظيفة"; } // Job Category 
+if (code.Equals("c342")) { return "عرض كل فئة الوظيفة."; } // View all job category.
+if (code.Equals("c343")) { return "مجموع فئة الوظيفة"; } // Total Job Category
+if (code.Equals("c344")) { return "فئة الوظيفة"; } // Job Category [En]
+if (code.Equals("c345")) { return "فئة الوظيفة"; } // Job Category [Ar]
+if (code.Equals("c346")) { return "إدارة فئة الوظيفة"; } // Job Category Management
+if (code.Equals("c347")) { return "إضافة فئة وظيفة جديدة"; } // Add New Job Category
+if (code.Equals("c348")) { return "تحرير فئة الوظيفة"; } // Edit Job Category
+if (code.Equals("c349")) { return "فئة الوظيفة [En] فارغة. الرجاء إدخال فئة الوظيفة [En]."; } // Job Category [En] is blank. Please enter Job Category [En].
+if (code.Equals("c350")) { return "فئة الوظيفة [Ar] فارغة. الرجاء إدخال فئة الوظيفة."; } // Job Category [Ar] is blank. Please enter Job Category [Ar].
+if (code.Equals("c351")) { return "عرض جميع اللغات."; } // View all languages.
+if (code.Equals("c352")) { return "مجموع اللغات"; } // Total Languages
+if (code.Equals("c353")) { return "اللغة [En] فارغة. الرجاء إدخال اللغة [En]."; } // Language [En] is blank. Please enter Language [En].
+if (code.Equals("c354")) { return "اللغة [Ar] فارغة. الرجاء إدخال اللغة"; } //  Language [Ar] is blank. Please enter Language [Ar].
+if (code.Equals("c355")) { return "عرض كل الحالة الزوجية."; } //  View all marital status.
+if (code.Equals("c356")) { return "الحالة الاجتماعية الكلية"; } //  Total Marital Status
+if (code.Equals("c357")) { return "الحالة الزوجية"; } //  Marital Status [En]
+if (code.Equals("c358")) { return "الحالة الزوجية"; } // Marital Status [Ar]
+if (code.Equals("c359")) { return "إدارة الحالة الاجتماعية"; } //  Marital Status Management  
+if (code.Equals("c360")) { return "الحالة الاجتماعية [En] فارغة. الرجاء إدخال الحالة الاجتماعية [En]."; } //  Marital Status [En] is blank. Please enter Marital Status [En].  
+if (code.Equals("c361")) { return "الحالة الزواجية فارغة. الرجاء إدخال الحالة الاجتماعية."; } //  Marital Status [Ar] is blank. Please enter Marital Status [Ar].  
+if (code.Equals("c362")) { return "الحالة الاجتماعية [En] فارغة. الرجاء إدخال الحالة الاجتماعية [En]."; } //  Marital Status [En] is blank. Please enter Marital Status [En]. 
+if (code.Equals("c363")) { return "الحالة الزواجية فارغة. الرجاء إدخال الحالة الاجتماعية."; } //  Marital Status [Ar] is blank. Please enter Marital Status [Ar].
+if (code.Equals("c364")) { return "إدارة وسائل الإعلام"; } //    Media Management
+if (code.Equals("c365")) { return "عرض جميع ملفات الوسائط."; } //    View all media files.
+if (code.Equals("c366")) { return "مجموع المقالات"; } //    Total Articles
+if (code.Equals("c367")) { return "رفع"; } //    Upload
+if (code.Equals("c368")) { return "إنشاء دليل"; } //    Create Directory
+if (code.Equals("c369")) { return "مثال 1"; } //    Example 1
+if (code.Equals("c370")) { return "مثال 2"; } //    Example 2
+if (code.Equals("c371")) { return "مثال 3"; } //    Example 3
+if (code.Equals("c372")) { return "مثال 4"; } //    Example 4 
+if (code.Equals("c373")) { return "مثال 0"; } //    Example 0  
+if (code.Equals("c374")) { return "وسائل الإعلام"; } //    Media 
+if (code.Equals("c375")) { return "اسم الدليل فارغ. الرجاء إدخال اسم الدليل."; } //    Directory name is blank. Please enter directory name.  
+if (code.Equals("c376")) { return "اسم الدليل يحتوي على أحرف غير صالحة."; } //    Directory name contains invalid characters.  
+if (code.Equals("c377")) { return "تم إنشاء الدليل بنجاح."; } //    Directory has been created successfully.  
+if (code.Equals("c378")) { return "لا يمكن تحميل الملف. حاول مرة اخرى."; } //    File could not be uploaded. Please try again. 
+if (code.Equals("c379")) { return "مثال سهل الشجرة"; } //  Easy Tree Example    
+if (code.Equals("c380")) { return "تم رفع الملف بنجاح."; } //  File has been uploaded successfully.
+if (code.Equals("c381")) { return "لا يمكن تحميل الملف. حاول مرة اخرى."; } //  File could not be uploaded. Please try again.
+if (code.Equals("c382")) { return "قائمة طعام"; } //   Menu    
+if (code.Equals("c383")) { return "عرض كل القائمة [تذييل]."; } //   View all menu [footer].    
+if (code.Equals("c384")) { return "القائمة الكاملة [تذييل]"; } //   Total Menu [Footer]
+if (code.Equals("c385")) { return "القائمة [En]"; } //    Menu [En]
+if (code.Equals("c386")) { return "القائمة"; } //    Menu [Ar]
+if (code.Equals("c387")) { return "حلقة الوصل"; } //    Link
+if (code.Equals("c388")) { return "إدارة القائمة [تذييل]"; } //    Menu Management [Footer]
+if (code.Equals("c389")) { return "أضف قائمة جديدة"; } //    Add New Menu
+if (code.Equals("c390")) { return "عنوان القائمة"; } //    Menu URL
+if (code.Equals("c391")) { return "عدل القائمة"; } //    Edit Menu
+if (code.Equals("c392")) { return "القائمة [En] فارغة. الرجاء إدخال القائمة [En]."; } //    Menu [En] is blank. Please enter Menu [En].
+if (code.Equals("c393")) { return "عرض كل القائمة."; } //  View all menu.    
+if (code.Equals("c394")) { return "القائمة الكاملة"; } //  Total Menu 
+if (code.Equals("c395")) { return "إدارة القائمة"; } //  Menu Management  
+if (code.Equals("c396")) { return "أضف قائمة جديدة"; } //  Add New Menu  
+if (code.Equals("c397")) { return "الأبوين"; } //  Parent  
+if (code.Equals("c398")) { return "القائمة [Ar] فارغة. الرجاء إدخال القائمة"; } //   Menu [Ar] is blank. Please enter Menu [Ar]. 
+if (code.Equals("c399")) { return "لا يمكن تخصيص القائمة الرئيسية لنفسها."; } //   Parent menu cannot be self assigned to itself. 
+if (code.Equals("c400")) { return "تخصص"; } //    Speciality
+if (code.Equals("c401")) { return "عرض جميع التخصصات."; } //    View all speciality.
+if (code.Equals("c402")) { return "التخصص الكلي"; } //    Total Speciality
+if (code.Equals("c403")) { return "التخصص [En]"; } //    Speciality [En]
+if (code.Equals("c404")) { return "التخصص"; } //    Speciality [Ar]
+if (code.Equals("c405")) { return "إدارة التخصص"; } //    Speciality Management
+if (code.Equals("c406")) { return "إضافة تخصص جديد"; } //    Add New Speciality
+if (code.Equals("c407")) { return "تحرير التخصص"; } //    Edit Speciality
+if (code.Equals("c408")) { return "التخصص [En] فارغ. الرجاء إدخال التخصص [En]."; } //    speciality [En] is blank. Please enter Speciality [En].
+if (code.Equals("c409")) { return "عرض جميع التخصصات."; } //  View all specialization.  
+if (code.Equals("c410")) { return "التخصص الكلي"; } //    	Total Specialization 
+if (code.Equals("c411")) { return "التخصص [En]"; } //  Specialization [En]
+if (code.Equals("c412")) { return "التخصص"; } //  Specialization [Ar]
+if (code.Equals("c413")) { return "إدارة التخصص"; } //  Specialization Management  
+if (code.Equals("c414")) { return "إضافة التخصص الجديد"; } //  Add New Specialization  
+if (code.Equals("c415")) { return "تحرير التخصص"; } //  Edit Specialization  
+if (code.Equals("c416")) { return "التخصص [En] فارغ. الرجاء إدخال التخصص [En]."; } // Specialization [En] is blank. Please enter Specialization [En].   
+if (code.Equals("c417")) { return "التخصص [Ar] فارغ. الرجاء إدخال التخصص."; } // Specialization [Ar] is blank. Please enter Specialization [Ar]. 
+if (code.Equals("c418")) { return "عرض كل حالة التأشيرة."; } // View all visa status.   
+if (code.Equals("c419")) { return "حالة التأشيرة الكلية"; } //  Total Visa Status  
+if (code.Equals("c420")) { return "عرض الحالة [واحد]"; } // Visa Status [En]   
+if (code.Equals("c421")) { return "حالة التأشيرة"; } // Visa Status [Ar]   
+if (code.Equals("c422")) { return "إدارة حالة التأشيرة"; } //  Visa Status Management
+if (code.Equals("c423")) { return "إضافة حالة تأشيرة جديدة"; } //  Add New Visa Status  
+if (code.Equals("c424")) { return "عرض الحالة [واحد]"; } // Visa Status [En]   
+if (code.Equals("c425")) { return "حالة التأشيرة [En] فارغة. الرجاء إدخال حالة التأشيرة [En]."; } // Visa Status [En] is blank. Please enter Visa Status [En].   
+if (code.Equals("c426")) { return "حالة التأشيرة فارغة. الرجاء إدخال حالة التأشيرة."; } // Visa Status [Ar] is blank. Please enter Visa Status [Ar].
+if (code.Equals("c427")) { return "عنوان المقال"; } //  Article Title
+if (code.Equals("c428")) { return "تاريخ النشر"; } // Publishing Date
+if (code.Equals("c429")) { return "لافتات"; } // Banners
+if (code.Equals("c430")) { return "عرض جميع الشعارات."; } // View all banners.
+if (code.Equals("c431")) { return "لافتات كاملة"; } // Total Banners
+if (code.Equals("c432")) { return "راية رابط [En]"; } // Banner Link [En]
+if (code.Equals("c433")) { return "راية الرابط"; } // Banner Link [Ar]
+if (code.Equals("c434")) { return "إدارة الشعارات"; } // Banners Management
+if (code.Equals("c435")) { return "إضافة لافتات جديدة"; } // Add New Banners
+if (code.Equals("c436")) { return "تحرير الشعارات"; } // Edit Banners
+if (code.Equals("c437")) { return "إدارة الوظيفة المرشح"; } // Candidate Job Management
+if (code.Equals("c438")) { return "إضافة مرشح جديد الوظيفة"; } // Add New Candidate Job
+if (code.Equals("c439")) { return "وظيفة المرشح [En]"; } // Candidate Job [En]
+if (code.Equals("c440")) { return "وظيفة المرشح"; } // Candidate Job [Ar]
+if (code.Equals("c441")) { return "عنوان الوظيفة المرشح"; } // Candidate Job URL
+if (code.Equals("c442")) { return "تحرير المرشح الوظيفة"; } // Edit Candidate Job
+if (code.Equals("c443")) { return "الاتصال الفئة"; } // Contact Category
+if (code.Equals("c444")) { return "عرض كل فئة الاتصال."; } // View all contact category.
+if (code.Equals("c445")) { return "مجموع فئة الاتصال"; } // Total Contact Category
+if (code.Equals("c446")) { return "فئة الاتصال"; } // Contact Category [En]
+if (code.Equals("c447")) { return "فئة الاتصال"; } // Contact Category [Ar]
+if (code.Equals("c448")) { return "إضافة فئة اتصال جديدة"; } // Add New Contact Category
+if (code.Equals("c449")) { return "تحرير فئة الاتصال"; } // Edit Contact Category
+if (code.Equals("c450")) { return "أدارة الحدث"; } // Event Management
+if (code.Equals("c451")) { return "عرض جميع الأحداث."; } // View all events.
+if (code.Equals("c452")) { return "مجموع الأحداث"; } // Total Events
+if (code.Equals("c453")) { return "Event_Job الإدارة"; } // Event_Job Management
+if (code.Equals("c454")) { return "أضف حدثًا جديدًا"; } // Add New Event_Job
+if (code.Equals("c455")) { return "نعم فعلا"; } // Yes
+if (code.Equals("c456")) { return "لا"; } // No
+if (code.Equals("c457")) { return "تحرير Event_Job"; } // Edit Event_Job
+if (code.Equals("c458")) { return "عنوان الحدث"; } // Event Title
+if (code.Equals("c459")) { return "متميز"; } // Featured
+if (code.Equals("c460")) { return "تاريخ البدء"; } // Start Date
+if (code.Equals("c461")) { return "تاريخ الانتهاء"; } // End Date
+if (code.Equals("c462")) { return "مرجع المرجعية"; } //  Reference Link
+if (code.Equals("c463")) { return "وظيفة اللغة"; } // Language Job
+if (code.Equals("c464")) { return "وظائف اللغة"; } // language jobs
+if (code.Equals("c465")) { return "مجموع وظائف اللغة"; } // Total Language Jobs
+if (code.Equals("c466")) { return "وظيفة اللغة [En]"; } // Language Job [En]
+if (code.Equals("c467")) { return "وظيفة اللغة"; } // Language Job [Ar]
+if (code.Equals("c468")) { return "إدارة اللغات"; } // Language_Job Management
+if (code.Equals("c469")) { return "أضف لغة جديدة"; } // Add New Language_Job
+if (code.Equals("c470")) { return "تحرير Language_Job"; } // Edit Language_Job
+if (code.Equals("c471")) { return "رسالة الأخبار"; } // News Letter
+if (code.Equals("c472")) { return "عرض كل خطاب الأخبار."; } // View all news letter.
+if (code.Equals("c473")) { return "مجموع رسائل الأخبار"; } // Total News Letters
+if (code.Equals("c474")) { return "رسالة بريد إلكتروني"; } // News Letter Email
+if (code.Equals("c475")) { return "لغة"; } // Language
+if (code.Equals("c476")) { return "إدارة رسائل الأخبار"; } // News Letter Management
+if (code.Equals("c477")) { return "إضافة رسالة أخبار جديدة"; } // Add New News Letter
+if (code.Equals("c478")) { return "تحرير رسالة الأخبار"; } // Edit News Letter
+if (code.Equals("c479")) { return "إدارة الإخطار"; } // Notification Management
+if (code.Equals("c480")) { return "عرض كل الإخطار."; } // View all notification.
+if (code.Equals("c481")) { return "الإخطار الكلي"; } // Total Notification
+if (code.Equals("c482")) { return "خريطة الموقع الفئة"; } // Sitemap Category
+if (code.Equals("c483")) { return "عرض كل فئة sitemap_job."; } // View all sitemap_job category.
+if (code.Equals("c484")) { return "مجموع خريطة الموقع الفئة"; } // Total Sitemap Category
+if (code.Equals("c485")) { return "خريطة الموقع الفئة [En]"; } // Sitemap Category [En]
+if (code.Equals("c486")) { return "خريطة الموقع الفئة"; } // Sitemap Category [Ar]
+if (code.Equals("c487")) { return "إضافة فئة خريطة الموقع الجديدة"; } // Add New Sitemap Category
+if (code.Equals("c488")) { return "خريطة الموقع إدارة الفئات"; } // Sitemap Category Management
+if (code.Equals("c489")) { return "تحرير فئة خريطة الموقع"; } // Edit Sitemap Category
+if (code.Equals("c490")) { return "خريطة الموقع"; } // Sitemap
+if (code.Equals("c491")) { return "عرض الكل sitemap_."; } // View all sitemap_.
+if (code.Equals("c492")) { return "إجمالي خريطة الموقع"; } // Total Sitemap
+if (code.Equals("c493")) { return "خريطة الموقع [En]"; } // Sitemap [En]
+if (code.Equals("c494")) { return "خريطة الموقع"; } // Sitemap [Ar]
+if (code.Equals("c495")) { return "رابط [En]"; } // Link [En]
+if (code.Equals("c496")) { return "رابط"; } // Link [Ar]
