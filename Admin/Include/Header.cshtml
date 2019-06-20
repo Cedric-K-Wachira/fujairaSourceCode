@@ -1,0 +1,166 @@
+﻿@{
+    string TITLE_ADMIN = @ApplicationInstance.Application["TITLE_ADMIN"].ToString();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>@TITLE_ADMIN</title>
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~")Content/admin/img/logo.png" />
+    <link rel="icon" href="@Url.Content("~")Content/admin/img/logo.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/pace/pace.css">
+    <script src="@Url.Content("~")Content/admin/vendor/pace/pace.min.js"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/vendor/jquery-scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/daterangepicker/daterangepicker.css">
+    @*<link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/timepicker/bootstrap-timepicker.min.css">*@
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/fonts/jost/jost.css">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/fonts/materialdesignicons/materialdesignicons.min.css">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/fonts/feather/feather-icons.css">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/css/atmos.min.css">
+
+    <link href="@Url.Content("~")Content/admin/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~")Content/admin/bootstrap-sweetalert/sweetalert.min.js"></script>
+
+    <link href="@Url.Content("~")Content/admin/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~")Content/admin/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+
+    <!-- Additional library for page -->
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=5875n6vweiv3bt80hrsrcw5y2tpt6q4uj90en6ir8elbo297"></script>
+    <script src="@Url.Content("~")Content/js/trans.js"></script>
+
+    <script language="javascript">
+        function my_alert(msg, obj) {
+
+            swal(trans(lan_g, "j17", "Message"), msg, "success");
+
+            //if ($.trim(obj) == "green") {
+            //    $("#'").html(msg);
+            //    $("#modalSuccess").modal('show');
+            //} else {
+            //    $("#p_message_error").html(msg);
+            //    $("#modalError").modal('show');
+            //}
+        }
+
+        function preloader(status, message) {
+            if (status == "show") {
+                $("#preloader").show();
+                setTimeout(function () { $("#preloader").hide(); }, 6000);
+                return;
+            }
+
+            if (status == "hide") {
+                $("#preloader").hide();
+                return;
+            }
+            return;
+        }
+
+    </script>
+
+    <style>
+        .container {
+            max-width: 1600px;
+        }
+
+        table.dataTable thead th, table.dataTable thead td {
+            border-bottom: none !important;
+        }
+
+        table.dataTable tfoot th, table.dataTable tfoot td {
+            border-top: none !important;
+        }
+
+        .row {
+            margin: 0px !important;
+        }
+
+        #tbl_listing_filter input {
+            float: right;
+            width: 70% !important;
+        }
+
+        #tbl_listing_length select {
+            float: left;
+            width: 40% !important;
+            margin-right: 2px;
+        }
+
+        .modal-content {
+            background-color: #EEEEEE
+        }
+
+        #preloader {
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9999999;
+            display: none;
+        }
+
+        #tbl_listing_length select {
+            height: 35px;
+            width: 50px !important;
+            margin-right: 10px;
+        }
+
+        button.dt-button, div.dt-button, a.dt-button {
+            background: none !important;
+        }
+
+        .picture-box img {
+            max-height: 130px;
+        }
+
+        .img-del-picture {
+            font-size: 26px;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .card-header {
+            position: relative;
+        }
+
+        .delete-btn {
+            position: absolute;
+            right: 34px;
+            top: 11px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        body.stop-scrolling {
+            overflow-y: auto !important;
+        }
+
+        .modal {
+            overflow-y: auto !important;
+        }
+
+        /*.hide-div {
+            display:none;
+        }*/
+    </style>
+
+</head>
+<body class="sidebar-pinned">
+
+<div id="preloader" class="spinner-grow" style="display: none" role="status"></div>

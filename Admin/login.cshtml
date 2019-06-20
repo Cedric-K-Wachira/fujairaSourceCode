@@ -1,0 +1,237 @@
+﻿@using FujairahHR.Models;
+@{
+    Layout = null;
+}
+@{
+    string TITLE_ADMIN = @ApplicationInstance.Application["TITLE_ADMIN"].ToString();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>@TITLE_ADMIN</title>
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~")Content/admin/img/logo.png" />
+    <link rel="icon" href="@Url.Content("~")Content/admin/img/logo.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/pace/pace.css">
+    <script src="@Url.Content("~")Content/admin/vendor/pace/pace.min.js"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/vendor/jquery-scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="@Url.Content("~")Content/admin/vendor/timepicker/bootstrap-timepicker.min.css">
+    <link href="https:/fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/fonts/materialdesignicons/materialdesignicons.min.css">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/fonts/feather/feather-icons.css">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")Content/admin/css/atmos.min.css">
+
+    <!-- Additional library for page -->
+    <script language="javascript">
+    function validateForm() {
+		if ( validate_email() == false || validate_password() == false) {
+			return false;
+		} else {
+			ajax_validate_and_login_user();
+		}
+	}
+
+	function validate_email() {
+		var regExp = / /g;
+		var str = $('#email').val();
+		str = str.replace(regExp,'');
+		if (str.length <= 0) {
+			my_alert("@CF.trans_code("en", "c124", "Email is blank.Please enter email.")");
+		return false;
+		}
+
+		if (!isNaN(str)) {
+			my_alert("@CF.trans_code("en", "c131", "Invalid Email.")");
+			return false;
+		}
+        		
+		if(str.indexOf("@Html.Raw('@')", 0) == -1) {
+            my_alert("@CF.trans_code("en", "c132", "Invalid Email format.")", "red");
+			return false;
+		}
+	}
+
+	function validate_password() {
+		var regExp = / /g;
+		var str = $('#password').val();
+		str = str.replace(regExp,'');
+		if (str.length <= 0) {
+			my_alert("@CF.trans_code("en", "c133", "Password is blank. Please enter password.")");
+		return false;
+		}
+	}
+
+	function ajax_validate_and_login_user() {
+        //window.location.href = "@Url.Content("~")Admin/Dashboard";
+        //return;
+
+		var remember_me = "N";
+		if ($('#remember_me').prop('checked')) {
+			remember_me = "Y";
+		}
+
+		$.ajax({
+		type: "POST",
+		url: "@Url.Content("~")AdminUser/ajax_validate_and_login_user",
+		data: {
+			email: $('#email').val(),
+			password: $('#password').val(),
+			remember_me: remember_me,
+			is_ajax: true
+		},
+        success: function (data) {
+            var str = data.code;
+            if (str.indexOf("*N*") == 0) {
+                my_alert("@CF.trans_code("en", "c134", "Invalid Email or Password")");
+            } else if (str.indexOf("*Y*") == 0) {
+                window.location.href = "@Url.Content("~")Admin/Dashboard";
+            }
+		},
+		error: function() {
+		},
+		complete: function() {
+		}
+		});
+	}
+    </script>
+    <script language="javascript">
+        function my_alert(msg, obj) {
+            if (obj == "green") {
+                $("#p_message_success").html(msg);
+                $("#modalSuccess").modal('show');
+            } else {
+                $("#p_message_error").html(msg);
+                $("#modalError").modal('show');
+            }
+        }
+    </script>
+</head>
+<body class="jumbo-page">
+    <main class="admin-main">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-4  bg-white">
+                    <div class="row align-items-center m-h-100">
+                        <div class="mx-auto col-md-8">
+                            <div class="p-b-20 text-center">
+                                <p> <img src="@Url.Content("~")Content/admin/images/logo.png" width="80" alt=""> </p>
+                                <p class="admin-brand-content">
+                                    <?=PROJECT?>
+                                </p>
+                            </div>
+                            <h3 class="text-center p-b-20 fw-400">@CF.trans_code("en", "c126", "Login")</h3>
+                            <form class="needs-validation" action="#">
+                                <div class="form-row">
+                                    <div class="form-group floating-label col-md-12">
+                                        <label>@CF.trans_code("en", "c53", "Email")</label>
+                                        <input type="email" id="email" name="email" required class="form-control" placeholder="Email" value="admin@timeline.ae">
+                                    </div>
+                                    <div class="form-group floating-label col-md-12">
+                                        <label>@CF.trans_code("en", "c54", "Password")</label>
+                                        <input type="password" id="password" name="password" placeholder="Password" required class="form-control" value="123456">
+                                    </div>
+                                </div>
+                                <button type="button" onClick="validateForm()" class="btn btn-primary btn-block btn-lg">@CF.trans_code("en", "c126", "Login")</button>
+                            </form>
+                            <p class="text-right p-t-10">
+                                <label>
+                                    <input id="remember_me" name="remember_me" value="Y" type="checkbox"> @CF.trans_code("en", "c127", "Remember Me")
+                                </label>
+                                <!--<a href="#!" class="text-underline">Forgot Password?</a>-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-md-block bg-cover" style="background-im@CF.trans_code("en", "c21", "Age"): url('@Url.Content("~")Content/admin/img/login.svg');"> </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <div class="px-3 pt-3 text-center">
+                        <div class="event-type success">
+                            <div class="event-indicator ">
+                                <i class="mdi mdi-check text-white" style="font-size: 60px"></i>
+                            </div>
+                        </div>
+                        <h3 class="pt-3">@CF.trans_code("en", "c128", "Success")!</h3>
+                        <p id="p_message_success" class="text-muted">
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <a href="#" class="btn btn-primary" data-dismiss="modal" aria-label="Close">@CF.trans_code("en", "c129", "Okay")</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Ends -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <div class="px-3 pt-3 text-center">
+                        <div class="event-type error">
+                            <div class="event-indicator ">
+                                <i class="mdi mdi-close text-white" style="font-size: 60px"></i>
+                            </div>
+                        </div>
+                        <h3 class="pt-3">@CF.trans_code("en", "c130", "Oops")!</h3>
+                        <p id="p_message_error" class="text-muted">
+                        </p>
+                        <!--
+                        <div>
+                            <a href="#" class="badge badge-danger">Error Code:503</a>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <a href="#" class="btn btn-primary" data-dismiss="modal" aria-label="Close">@CF.trans_code("en", "c129", "Okay")</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Ends -->
+
+    <script src="@Url.Content("~")Content/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/popper/popper.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/select2/js/select2.full.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/listjs/listjs.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/moment/moment.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="@Url.Content("~")Content/admin/js/atmos.min.js"></script>
+    <!--page specific scripts for demo-->
+
+</body>
+</html>

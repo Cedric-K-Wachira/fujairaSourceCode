@@ -1,0 +1,831 @@
+﻿@using FujairahHR.Models;
+@{
+    var data_rs = (List<Dictionary<string, string>>)ViewBag.data_rs;
+}
+
+@*<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">*@
+@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">*@
+<link rel="stylesheet" href="@Url.Content("~")Content/admin/css/easyTree.css">
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="@Url.Content("~")Content/admin/js/easyTree.js"></script>
+
+<main class="admin-main">
+    <!---->
+    <!--site header begins-->
+    <header class="admin-header">
+        <a href="#" class="sidebar-toggle" data-toggleclass="sidebar-open" data-target="body"> </a>
+        @*<nav class=" mr-auto my-auto">
+            <ul class="nav align-items-center">
+                <li class="nav-item"> <a class="nav-link  " data-target="#siteSearchModal" data-toggle="modal" href="#"> <i class=" mdi mdi-magnify mdi-24px align-middle"></i> </a> </li>
+            </ul>
+        </nav>*@
+        <nav class=" ml-auto">
+            <ul class="nav align-items-center">
+                @*<li class="nav-item" >
+                    <div class="dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-24px mdi-bell-outline"></i> <span class="notification-counter"></span> </a>
+                        <div class="dropdown-menu notification-container dropdown-menu-right">
+                            <div class="d-flex p-all-15 bg-white justify-content-between border-bottom "> <a href="#!" class="mdi mdi-18px mdi-settings text-muted"></a> <span class="h5 m-0">@CF.trans_code("en", "c1", "Notifications")</span> <a href="#!" class="mdi mdi-18px mdi-notification-clear-all text-muted"></a> </div>
+                            <div class="notification-events bg-gray-300">
+                                <div class="text-overline m-b-5">@CF.trans_code("en", "c2", "today")</div>
+                                <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-circle text-success"></i>@CF.trans_code("en", "c3", "All systems operational.")</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-upload-multiple "></i>@CF.trans_code("en", "c4", "File upload successful.")</div>
+                                    </div>
+                                </a> <a href="#" class="d-block m-b-10">
+                                    <div class="card">
+                                        <div class="card-body"> <i class="mdi mdi-cancel text-danger"></i>@CF.trans_code("en", "c5", "Your holiday has been denied")</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>*@
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-sm avatar-online"> <span class="avatar-title rounded-circle bg-dark">V</span> </div>
+                    </a>
+                    <div class="dropdown-menu  dropdown-menu-right">
+                        @*<a class="dropdown-item" href="#">@CF.trans_code("en", "c6", "Add Account")</a> <a class="dropdown-item" href="#">@CF.trans_code("en", "c7", "Reset Password")</a> <a class="dropdown-item" href="#">@CF.trans_code("en", "c8", "Help")</a>
+                        <div class="dropdown-divider"></div>*@
+                        <a class="dropdown-item" href="@Url.Content("~")Admin/logout">@CF.trans_code("en", "c9", "Logout")</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--site header ends -->
+    <!---->
+    <section class="admin-content">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row p-b-60 p-t-60">
+
+                    <div class="col-md-4 text-white p-b-30">
+                        <div class="media">
+                            <div class="avatar avatar mr-3">
+                                <div class="avatar-title bg-success rounded-circle mdi mdi-newspaper">
+
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h1>Media Management </h1>
+                                <p class="opacity-75">
+                                    View all media files.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center m-b-30 ml-auto">
+                        <div class="rounded text-white bg-white-translucent">
+                            <div class="p-all-15">
+                                <div class="row">
+                                    <div class="col-md-12 my-2 m-md-0">
+                                        <div class="text-overline    opacity-75">@CF.trans_code("en", "c112", "Total Articles")</div>
+                                        <h3 class="m-0 text-success" id="total_records"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 text-white">
+
+                        <div style="text-align:right; padding-top:40px;  ">
+                            @*<button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-warning" onclick="javascript:ajax_delete()">
+                                    <i class="mdi mid-close"></i>@CF.trans_code("en", "c13", "Delete")
+                                </button>
+                                <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-warning" onclick="javascript:show_add_form()">
+                                    <i class="mdi mdi-plus"></i>@CF.trans_code("en", "c14", "New")
+                                </button>
+                                <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-info" onclick="javascript:show_edit_form()">
+                                    <i class="mdi mdi-border-color"></i>@CF.trans_code("en", "c14", "New")
+                                </button>
+                                <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-success" onclick="javascript:ajax_activate()">
+                                    <i class="mdi mdi-arrow-up"></i>@CF.trans_code("en", "c16", "Publish")
+                                </button>
+                                <button style="width:110px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-danger" onclick="javascript:ajax_deactivate()">
+                                    <i class="mdi mdi-arrow-down"></i>@CF.trans_code("en", "c17", "Unpublish")
+                                </button>*@
+
+                            <span style="position:relative; top:-10px;">
+                                <label for="file_upload" class="btn btn-primary btn-bordered">Upload</label>
+                                <input type="file" id="file_upload" class="btn-default" style="display:none" />
+                            </span>
+
+                            <button style="width:160px" type="button" class="btn  m-b-30 ml-2 mr-2 btn-danger" onclick="javascript:ajax_create_directory()">
+                                <i class="mdi mdi-arrow-down"></i> Create Directory
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style type="text/css">
+            .container-file {
+                float: left;
+                width: 80px;
+                height: 70px;
+                max-height: 70px;
+                border: 1px solid #DBE3EB;
+                text-align: center;
+                cursor: pointer;
+                position: relative;
+                text-align: center;
+                padding-top: 6px;
+                margin-right: 8px;
+                margin-top: 10px;
+            }
+
+            .file-img, .folder-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .delete-file, .delete-folder {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: -7px;
+                left: -7px;
+                cursor: pointer;
+            }
+
+            .container-file-text {
+                margin-top: 3px;
+                color: #26344E;
+                font-size: 11px;
+            }
+
+            .media-breadcrumb {
+                font-size: 13px;
+            }
+
+            .media-breadcrumb {
+                float: left;
+                padding: 10px;
+                width: 100%;
+                clear: both;
+                padding-left:0px;
+                position:relative;
+                left:-10px;
+            }
+
+            .media-breadcrumb div {
+                display: inline-block;
+                float: left;
+                color: #808080;
+                cursor: pointer;
+            }
+
+            .media-breadcrumb div:hover {
+                color: red;
+            }
+
+            .media-breadcrumb h1.mdi-greater-than {
+                display: inline-block;
+                float: left;
+                font-size: 8px;
+                padding: 5px 4px 0px 4px;
+            }
+
+            .modal-header, .modal-footer {
+                background-color: #FFFFFF;
+            }
+
+            .modal-footer {
+                text-align: center;
+            }
+
+            .modal-body {
+                text-align: center;
+            }
+
+            .modal-footer button {
+                margin: 0 auto;
+            }
+
+            h5.modal-title {
+                margin: 0 auto;
+            }
+            .container {
+                width:100% !important;
+            }
+            
+            .easy-tree li.li_selected > span, .easy-tree li.li_selected > span > a {
+                background: red !important;
+                color:#FFFFFF !important;
+            }
+            .easy-tree {
+                font-size: 12px;
+                background-color: #091941;
+            }
+
+            .container {
+                max-width:100% !important;
+            }
+
+            .glyphicon-folder-close {
+                background-im@CF.trans_code("en", "c21", "Age"): url(/Content/admin/images/folder_close.png);
+                background-size: 18px;
+                width: 20px;
+                display: inline-block;
+                height: 16px;
+                background-repeat: no-repeat;
+                background-position:left bottom;
+                float:left;
+            }
+            .glyphicon-folder-open {
+                background-im@CF.trans_code("en", "c21", "Age"): url(/Content/admin/images/folder_open.png);
+                background-size: 18px;
+                width: 20px;
+                display: inline-block;
+                height: 16px;
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                float: left;
+            }
+            .easy-tree-toolbar{
+                display:none;
+            }
+        </style>
+
+
+        <!--DT START-->
+        <div class="container  pull-up">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" style="height:600px; overflow-y:auto;">
+
+                            <div class="row">
+                                <div class="col-lg-3" id="treeview_section">
+                                    <div class="col-md-12">
+                                        <div class="easy-tree" id="tree_view">
+                                            @Html.Raw(ViewBag.tree_view)
+                                            @*<ul>
+                                                    <li>Example 1</li>
+                                                    <li>Example 2</li>
+                                                    <li>
+                                                        Example 3
+                                                        <ul>
+                                                            <li>Example 1</li>
+                                                            <li>
+                                                                Example 2
+                                                                <ul>
+                                                                    <li>Example 1</li>
+                                                                    <li>Example 2</li>
+                                                                    <li>Example 3</li>
+                                                                    <li>Example 4</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Example 3</li>
+                                                            <li>Example 4</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        Example 0
+                                                        <ul>
+                                                            <li>Example 1</li>
+                                                            <li>Example 2</li>
+                                                            <li>Example 3</li>
+                                                            <li>
+                                                                Example 4
+                                                                <ul>
+                                                                    <li>Example 1</li>
+                                                                    <li>Example 2</li>
+                                                                    <li>Example 3</li>
+                                                                    <li>Example 4</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>*@
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-9" id="folders_section">
+                                    <div class="media-breadcrumb" id="media-breadcrumb">
+                                        <h1 class="mdi mdi-greater-than"></h1><div class="folder-path" data-folderpath="/">Media</div>
+                                    </div>
+                                    <div id="media-data" style="display:inline-block; width:100%">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DT END-->
+    </section>
+</main>
+
+
+<script>
+
+    (function ($) {
+        function init() {
+            $('.easy-tree').EasyTree({
+                addable: true,
+                editable: true,
+                deletable: true
+            });
+        }
+
+        window.onload = init();
+    })(jQuery)
+</script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_create_directory" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-align-top-left" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Directory</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-left">
+                <form id="frm_add" name="frm_add">
+                    <div class="form-group">
+                        <label for="Directory Name">Directory Name</label>
+                        <input type="text" class="form-control" id="folder_name" placeholder="Enter directory name that you want to create.">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="ajax_create()">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="modal_image" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="image_title"></h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="image_large" src="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+
+<script type="text/javascript">
+
+    $('#tree_view a').click(function (e) {
+        e.preventDefault();
+        var folderpath = "/"+ $(this).closest("li").attr("data-folderpath");
+
+        get_all(folderpath);
+    });
+
+    $(document).ready(function () {
+        get_all("/");
+        //alert("data");
+    });
+
+    var folder_path_g = "";
+
+    function get_all(folder_path_) {
+        preloader("show", "");
+
+        folder_path_ = folder_path_.replace("//", "/");
+        folder_path_ = folder_path_.replace("///", "/");
+
+        folder_path_g = folder_path_;
+        //alert(folder_path_);
+
+        var url = "/Media/get_all";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "JSON",
+            data: {
+                folder_path: folder_path_
+            },
+            success: function (data) {
+                preloader("hide", "");
+
+                var folder_path = data.folder_path;
+
+                //  alert(data.tree_view);
+
+                $("#media-data").html("");
+                //$("#tree_view").html(data.tree_view);
+
+                var file_path = "";
+                for (var i = 0; i < data.files.length; i++) {
+                    var file_name = data.files[i].name;
+                    var file_size = data.files[i].size;
+
+                    var file_name_limit = limit_name(file_name, 8);
+
+                    if (file_name.indexOf("jpg") > 0 || file_name.indexOf("jpeg") > 0 || file_name.indexOf("png") > 0 || file_name.indexOf("bmp") > 0) {
+                        file_path = "/Content/uploads/media/" + folder_path + "/" + file_name;
+                    } else {
+                        file_path = "/Content/admin/images/" + get_icon_image(file_name_limit);
+                    }
+
+                    file_path = file_path.replace("///", "/");
+                    file_path = file_path.replace("//", "/");
+
+                    var elem =
+                        '<div title="' + file_size + ' Bytes" class="container-file" data-id="' + i + '" id="ctr' + i + '">' +
+                        '<img src="' + file_path + '" class="file-img" data-filename="' + file_name + '" data-filepath="' + folder_path + "/" + file_name + '" data-id="' + i + '" id="img' + i + '"/>' +
+                        '<img src="/Content/admin/images/delete.png" class="delete-file" data-id="' + i + '" id="del' + i + '" />' +
+                        '<div class="container-file-text">' + file_name_limit + '</div>' +
+                        '</div>';
+                    $("#media-data").html($("#media-data").html() + elem);
+                }
+
+                for (var i = 0; i < data.folders.length; i++) {
+                    var folder_name = data.folders[i].name;
+                    var folder_name_limit = limit_name(folder_name, 8);
+
+                    var elem =
+                        '<div title="' + folder_name + ' " class="container-file"  data-id="' + i + '" id="fctr' + i + '">' +
+                        '<img src="/Content/admin/images/folder.png" data-folderpath="' + folder_path + "/" + folder_name + '" class="folder-img" data-filename="' + folder_name + '"  data-id="' + i + '" id="fimg' + i + '"/>' +
+                        '<img src="/Content/admin/images/delete_folder.png" class="delete-folder" data-id="' + i + '" id="fdel' + i + '"/>' +
+                        '<div class="container-file-text">' + folder_name_limit + '</div>' +
+                        '</div>';
+                    //alert(elem);
+                    $("#media-data").html($("#media-data").html() + elem);
+                }
+
+                var breadcrumb = '<h1 class="mdi mdi-greater-than"></h1><div class="folder-path" data-folderpath="/">Media</div>';
+                if (folder_path_ == "/") {
+                    $("#media-breadcrumb").html(breadcrumb);
+                } else {
+                    $("#media-breadcrumb").html(breadcrumb);
+
+                    folder_path_ = folder_path_.replace("///", "/");
+                    folder_path_ = folder_path_.replace("//", "/");
+
+                    var folder_path_arr = folder_path_.split("/");
+                    var breadcrumb_str = "";
+
+                    for (var i = 0; i < folder_path_arr.length; i++) {
+
+                        if (folder_path_arr[i] == "") { continue; }
+
+                        breadcrumb_str = "/";
+                        for (var j = 0; j <= i; j++) {
+                            breadcrumb_str = breadcrumb_str + "/" + folder_path_arr[j];
+                        }
+
+                        breadcrumb_str = breadcrumb_str.replace("////", "/");
+                        breadcrumb_str = breadcrumb_str.replace("///", "/");
+                        breadcrumb_str = breadcrumb_str.replace("//", "/");
+
+                        breadcrumb = '<h1 class="mdi mdi-greater-than"></h1><div class="folder-path" data-folderpath="' + breadcrumb_str + '">' + folder_path_arr[i] + '</div>';
+                        $("#media-breadcrumb").html($("#media-breadcrumb").html() + breadcrumb);
+                    }
+                }
+            },
+            error: function () {
+                my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                preloader("hide", "");
+            }
+        });
+    }
+
+    $(document).on('click', '.folder-img', function () {
+        var folder_path = $(this).attr("data-folderpath");
+        get_all(folder_path);
+
+        folder_path = folder_path.replace("//", "/");
+
+        $(".li-treeview").each(function () {
+            $(this).removeClass("li_selected");
+            var folderpath = $(this).attr("data-folderpath");
+
+            folderpath = folderpath.replace("//", "/");
+
+            if (folder_path == folderpath) {
+                $(this).addClass("li_selected");
+            }
+        });
+
+
+    });
+
+    $(document).on('click', '.folder-path', function () {
+        var folder_path = $(this).attr("data-folderpath");
+        get_all(folder_path);
+
+        folder_path = folder_path.replace("//", "/");        
+
+        $(".li-treeview").each(function () {
+            $(this).removeClass("li_selected");
+            var folderpath = $(this).attr("data-folderpath");
+
+            folderpath = folderpath.replace("//", "/");            
+           
+            if (folder_path == folderpath) {
+                $(this).addClass("li_selected");
+            }
+        });
+    });
+
+    $(document).on('click', '.delete-folder', function () {
+        var id = $(this).attr("data-id");
+        var folder_path = $("#fimg" + id).attr("data-folderpath");
+        folder_path = folder_path.replace("///", "/");
+        folder_path = folder_path.replace("//", "/");
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "/media/delete_folder_ajax";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        folder_path: folder_path,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("@CF.trans_code("en", "c98", "Your session is invalid or it has expired. Kindly log in again.")");
+                        } else if (data.code == "Y") {
+
+                            get_all(folder_path_g);
+                            my_alert("@CF.trans_code("en", "c99", "Information has been deleted successfully.")", "green");
+
+                        } else {
+                            my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        //alert(folder_path);
+    });
+
+
+    $(document).on('click', '.delete-file', function () {
+        var id = $(this).attr("data-id");
+        var file_path = $("#img" + id).attr("data-filepath");
+        file_path = file_path.replace("///", "/");
+        file_path = file_path.replace("//", "/");
+
+        //alert(file_path);
+        //return;
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "/media/delete_file_ajax";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        file_path: file_path,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("@CF.trans_code("en", "c98", "Your session is invalid or it has expired. Kindly log in again.")");
+                        } else if (data.code == "Y") {
+
+                            get_all(folder_path_g);
+                            my_alert("@CF.trans_code("en", "c99", "Information has been deleted successfully.")", "green");
+
+                        } else {
+                            my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        //alert(folder_path);
+    });
+
+    $(document).on('click', '.file-img', function () {
+        var file_name = $(this).attr("data-filename");
+        var file_src = $(this).attr("src");
+
+        $("#image_title").html(file_name);
+        $("#image_large").attr("src", file_src);
+        $("#modal_image").modal("show");        
+    });
+
+    function ajax_create_directory() {
+        $("#modal_create_directory").modal("show");
+    }
+
+    function limit_name(file_name, text_length) {
+        if (file_name.length > text_length) {
+            return file_name.substr(0, text_length) + "..";
+        }
+        return file_name;
+    }
+
+    function ajax_delete_folder() {
+
+    }
+
+    function get_icon_image(file_name) {
+
+        if (file_name == "") { return "icon_text.png"; }
+        file_name = file_name.toLowerCase();
+
+        if (file_name.indexOf("docx") > 0) {
+            return "icon_docx.png";
+        } else if (file_name.indexOf("mpeg") > 0) {
+            return "icon_mpeg.png";
+        } else if (file_name.indexOf("pdf") > 0) {
+            return "icon_pdf.png";
+        } else if (file_name.indexOf("pptx") > 0) {
+            return "icon_pptx.png";
+        } else if (file_name.indexOf("rar") > 0) {
+            return "icon_rar.png";
+        } else if (file_name.indexOf("text") > 0) {
+            return "icon_text.png";
+        } else if (file_name.indexOf("zip") > 0) {
+            return "icon_zip.png";
+        } else {
+            return "icon_file.png";
+        }
+    }
+
+    function ajax_create() {
+        var str = "";
+        var regExp = / /g;
+
+        var folder_name = $("#frm_add #folder_name").val();
+
+        str = folder_name;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Directory name is blank. Please enter directory name.");
+            return false;
+        }
+
+        var regx = /^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-z0-9:’!?'"”“]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFA-Za-z0-9:’!?'"”)(“, _.-]*$/;
+        if (!regx.test(str)) {
+            my_alert("Directory name contains invalid characters.");
+            return false;
+        }
+
+        folder_path = folder_path_g + "/" + folder_name
+        folder_path = folder_path.replace("///", "/");
+        folder_path = folder_path.replace("//", "/");
+
+        $.ajax({
+            type: "POST",
+            url: "media/create_directory_ajax",
+            data: {
+                folder_path: folder_path,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+
+                    $("#modal_create_directory").modal('hide');
+                    my_alert("Directory has been created successfully.", "green");
+                    get_all(folder_path_g);
+
+                } else {
+                    my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")");
+                }
+
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        //preloader("show", "UPLOADING ...");
+
+        $('#file_upload').fileupload({
+            dataType: 'json',
+
+            url: '/media/upload',
+            formData: {},
+            autoUpload: true,
+            done: function (e, data) {
+                var code = data.result.code;
+                if (code == "Y") {
+                    get_all(folder_path_g);
+                    my_alert("File has been uploaded successfully.", "green");
+                } else if (code == "N") {
+                    my_alert("File could not be uploaded. Please try again.");
+                }
+                return;
+
+            }, drop: function (e, data) {
+            }, add: function (e, data) {
+
+                data.formData = {
+                    'folder_path': folder_path_g,
+                };
+                data.submit();
+            },
+
+        }).on('fileuploadprogressall', function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            //$('#progress_bar'+ii).css('width', progress + '%');
+        });
+    });
+</script>

@@ -1,0 +1,117 @@
+﻿@{ 
+    var active = "active";
+}
+<aside class="admin-sidebar">
+    <div class="admin-sidebar-brand">
+        <!-- begin sidebar branding-->
+        <img class="admin-brand-logo" src="@Url.Content("~")Content/admin/images/logo.png" width="40" alt="atmos Logo">
+        <!-- end sidebar branding-->
+        <div class="ml-auto">
+            <!-- sidebar pin-->
+            <a href="#" class="admin-pin-sidebar btn-ghost btn btn-rounded-circle"></a>
+            <!-- sidebar close for mobile device-->
+            <a href="#" class="admin-close-sidebar"></a>
+        </div>
+    </div>
+    <div class="admin-sidebar-wrapper js-scrollbar">
+        <ul class="menu">
+
+            <li class="menu-item @{if (ViewBag.menu == "menu_dashboard") { @active; } } "> <a href="/admin/Dashboard" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Dashboard'">Dashboard</span></span><span class="menu-icon"><i class="icon-placeholder fe fe-activity"></i></span></a></li>
+
+
+            <li class="menu-item  @{if (ViewBag.menu_main == "menu_statistics") { @Html.Raw("opened")} } ">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">
+                            Statistics
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-finance"></i>
+                    </span>
+                </a>
+                <!--submenu-->
+                <ul class="sub-menu" @{if (ViewBag.menu_main == "menu_statistics") { @Html.Raw("style='display:block'") } }>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_academic_speciality") { @active; } } ">
+                        <a href="/admin/statistics/academic_speciality" class=" menu-link">
+                            <span class="menu-label">
+                                <span class="menu-name">Academic Speciality </span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-library-books">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item @{if (ViewBag.menu == "menu_employment_status") { @active; } } ">
+                        <a href="/admin/statistics/employment_status" class=" menu-link">
+                            <span class="menu-label">
+                                <span class="menu-name">Employment Status </span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-float-right">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+
+            <li class="menu-item  @{if (ViewBag.menu_main == "menu_config") { @Html.Raw("opened")} } ">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">
+                            Configuration
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-finance"></i>
+                    </span>
+                </a>
+
+
+                <!--submenu-->
+                <ul class="sub-menu" @{if (ViewBag.menu_main == "menu_config") { @Html.Raw("style='display:block'")  } }>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_specialization_management") { @active; } } "> <a href="/admin/Specialization" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Specialization'">Specialization Mgmt</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_employer_management") { @active; } } "> <a href="/admin/Employer" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Employer'">Employer Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_country_management") { @active; } } "> <a href="/admin/Country" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Country'">Country Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_educational_institute_management") { @active; } } "> <a href="/admin/Educational_Institute" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Educational_Institute'">@CF.trans_code("en", "c81", "Educational Institute")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_educational_level_management") { @active; } } "> <a href="/admin/Educational_Level" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Educational_Level'">@CF.trans_code("en", "c80", "Educational Level")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_speciality_management") { @active; } } "> <a href="/admin/Speciality" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Speciality'">Speciality Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_visa_status_management") { @active; } } "> <a href="/admin/Visa_Status" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Visa_Status'">Visa Status</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_emirate_management") { @active; } } "> <a href="/admin/Emirate" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Emirate'">@CF.trans_code("en", "c65", "Emirate")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_employment_status") { @active; } } "> <a href="/admin/Employment_Status" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Employment_Status'">@CF.trans_code("en", "c77", "Employment Status")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_marital_status") { @active; } } "> <a href="/admin/Marital_Status" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Marital_Status'">@CF.trans_code("en", "c64", "Marital Status")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+
+                    <li class="menu-item @{if (ViewBag.menu == "menu_job") { @active; } } "> <a href="/admin/job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/job'">Job Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_language_job") { @active; } } "> <a href="/admin/language_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/language_job'">@CF.trans_code("en", "c96", "Languages")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_candidate_job") { @active; } } "> <a href="/admin/candidate_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/candidate_job'">Candidate Job</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_article_job") { @active; } } "> <a href="/admin/article_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/article_job'">Articles</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_sitemap_job_category_management") { @active; } } "> <a href="/admin/sitemap_job_category" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/sitemap_job_category'">Sitemap Category</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_sitemap_job_management") { @active; } } "> <a href="/admin/sitemap_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/sitemap_job'">Sitemap Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_news_letter_job_management") { @active; } } "> <a href="/admin/news_letter_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/news_letter_job'">News Letter</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_banner_job_management") { @active; } } "> <a href="/admin/banner_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/banner_job'">Banners Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_contact_job_category_management") { @active; } } "> <a href="/admin/contact_job_category" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/contact_job_category'">Contact Category</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_contact_job_management") { @active; } } "> <a href="/admin/contact_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/contact_job'">Contact</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_event_job_management") { @active; } } "> <a href="/admin/event_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/event_job'">Event Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_notification_job_management") { @active; } } "> <a href="/admin/notification_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/notification_job'">Noitification Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+
+                    <li class="menu-item @{if (ViewBag.menu == "menu_apps_job_management") { @active; } } "> <a href="/admin/apps_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/apps_job'">@CF.trans_code("en", "c148", "Apps Management")</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_external_links_job_management") { @active; } } "> <a href="/admin/external_links_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/external_links_job'">External Links Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_hall_booking_management") { @active; } } "> <a href="/admin/feedback_type_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/feedback_type_job'">Feedback Type</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                    <li class="menu-item @{if (ViewBag.menu == "menu_feedback_job_management") { @active; } } "> <a href="/admin/feedback_job" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/feedback_job'">Feedback</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+                </ul>
+            </li>
+
+
+            @*<li class="menu-item  "> <a href="Statistics" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='Statistics'">Statistics</span></span><span class="menu-icon"><i class="icon-placeholder fe fe-activity"></i></span></a></li>*@
+            @*<li class="menu-item @{if (ViewBag.menu == "menu_article_management") { @active; } } "> <a href="ArticleManagement" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='ArticleManagement'">Article Management</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>*@
+            <li class="menu-item @{if (ViewBag.menu == "menu_candidate_management") { @active; } } "> <a href="/admin/Candidate" class="open-dropdown menu-link"><span class="menu-label"><span class="menu-name" onClick="javascript:window.location.href='/admin/Candidate'">Job Seeker</span></span><span class="menu-icon"><i class="icon-placeholder mdi mdi-newspaper"></i></span></a></li>
+
+        </ul>
+    </div>
+</aside>

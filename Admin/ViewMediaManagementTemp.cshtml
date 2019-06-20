@@ -1,0 +1,460 @@
+﻿@using FujairahHR.Models;
+@{
+    var data_rs = (List<Dictionary<string, string>>)ViewBag.data_rs;
+}
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="@Url.Content("~")Content/admin/css/easyTree.css">
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="@Url.Content("~")Content/admin/js/easyTree.js"></script>
+
+<main class="admin-main">
+
+    <!---->
+    <section class="admin-content">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row p-b-60 p-t-60">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--DT START-->
+        <div class="container  pull-up">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" style="height:600px; overflow-y:auto;">
+
+                            <div class="col-md-3" style="margin-top:150px;">
+                                <h3 class="text-success">Easy Tree Example</h3>
+                                <div class="easy-tree">
+                                    <ul>
+                                        <li>Example 1</li>
+                                        <li>Example 2</li>
+                                        <li>
+                                            Example 3
+                                            <ul>
+                                                <li>Example 1</li>
+                                                <li>
+                                                    Example 2
+                                                    <ul>
+                                                        <li>Example 1</li>
+                                                        <li>Example 2</li>
+                                                        <li>Example 3</li>
+                                                        <li>Example 4</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Example 3</li>
+                                                <li>Example 4</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Example 0
+                                            <ul>
+                                                <li>Example 1</li>
+                                                <li>Example 2</li>
+                                                <li>Example 3</li>
+                                                <li>
+                                                    Example 4
+                                                    <ul>
+                                                        <li>Example 1</li>
+                                                        <li>Example 2</li>
+                                                        <li>Example 3</li>
+                                                        <li>Example 4</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DT END-->
+    </section>
+</main>
+
+<script>
+    (function ($) {
+        function init() {
+            $('.easy-tree').EasyTree({
+                addable: true,
+                editable: true,
+                deletable: true
+            });
+        }
+
+        window.onload = init();
+    })(jQuery)
+</script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        get_all("/");
+        //alert("data");
+    });
+
+    var folder_path_g = "";
+
+    function get_all(folder_path_) {
+        preloader("show", "");
+
+        folder_path_ = folder_path_.replace("//", "/");
+        folder_path_ = folder_path_.replace("///", "/");
+
+        folder_path_g = folder_path_;
+        //alert(folder_path_);
+
+        var url = "/Media/get_all";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "JSON",
+            data: {
+                folder_path: folder_path_
+            },
+            success: function (data) {
+                preloader("hide", "");
+
+                var folder_path = data.folder_path;
+
+                $("#media-data").html("");
+
+                var file_path = "";
+                for (var i = 0; i < data.files.length; i++) {
+                    var file_name = data.files[i].name;
+                    var file_size = data.files[i].size;
+
+                    var file_name_limit = limit_name(file_name, 8);
+
+                    if (file_name.indexOf("jpg") > 0 || file_name.indexOf("jpeg") > 0 || file_name.indexOf("png") > 0 || file_name.indexOf("bmp") > 0) {
+                        file_path = "/Content/uploads/media/" + folder_path + "/" + file_name;
+                    } else {
+                        file_path = "/Content/admin/images/" + get_icon_image(file_name_limit);
+                    }
+
+                    file_path = file_path.replace("///", "/");
+                    file_path = file_path.replace("//", "/");
+
+                    var elem =
+                        '<div title="' + file_size + ' Bytes" class="container-file" data-id="' + i + '" id="ctr' + i + '">' +
+                        '<img src="' + file_path + '" class="file-img" data-filename="' + file_name + '" data-filepath="' + folder_path + "/" + file_name + '" data-id="' + i + '" id="img' + i + '"/>' +
+                        '<img src="/Content/admin/images/delete.png" class="delete-file" data-id="' + i + '" id="del' + i + '" />' +
+                        '<div class="container-file-text">' + file_name_limit + '</div>' +
+                        '</div>';
+                    $("#media-data").html($("#media-data").html() + elem);
+                }
+
+                for (var i = 0; i < data.folders.length; i++) {
+                    var folder_name = data.folders[i].name;
+                    var folder_name_limit = limit_name(folder_name, 8);
+
+                    var elem =
+                        '<div title="' + folder_name + ' " class="container-file"  data-id="' + i + '" id="fctr' + i + '">' +
+                        '<img src="/Content/admin/images/folder.png" data-folderpath="' + folder_path + "/" + folder_name + '" class="folder-img" data-filename="' + folder_name + '"  data-id="' + i + '" id="fimg' + i + '"/>' +
+                        '<img src="/Content/admin/images/delete_folder.png" class="delete-folder" data-id="' + i + '" id="fdel' + i + '"/>' +
+                        '<div class="container-file-text">' + folder_name_limit + '</div>' +
+                        '</div>';
+                    //alert(elem);
+                    $("#media-data").html($("#media-data").html() + elem);
+                }
+
+                var breadcrumb = '<h1 class="mdi mdi-greater-than"></h1><div class="folder-path" data-folderpath="/">Media</div>';
+                if (folder_path_ == "/") {
+                    $("#media-breadcrumb").html(breadcrumb);
+                } else {
+                    $("#media-breadcrumb").html(breadcrumb);
+
+                    folder_path_ = folder_path_.replace("///", "/");
+                    folder_path_ = folder_path_.replace("//", "/");
+
+                    var folder_path_arr = folder_path_.split("/");
+                    var breadcrumb_str = "";
+
+                    for (var i = 0; i < folder_path_arr.length; i++) {
+
+                        if (folder_path_arr[i] == "") { continue; }
+
+                        breadcrumb_str = "/";
+                        for (var j = 0; j <= i; j++) {
+                            breadcrumb_str = breadcrumb_str + "/" + folder_path_arr[j];
+                        }
+
+                        breadcrumb_str = breadcrumb_str.replace("////", "/");
+                        breadcrumb_str = breadcrumb_str.replace("///", "/");
+                        breadcrumb_str = breadcrumb_str.replace("//", "/");
+
+                        breadcrumb = '<h1 class="mdi mdi-greater-than"></h1><div class="folder-path" data-folderpath="' + breadcrumb_str + '">' + folder_path_arr[i] + '</div>';
+                        $("#media-breadcrumb").html($("#media-breadcrumb").html() + breadcrumb);
+                    }
+                }
+            },
+            error: function () {
+                my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                preloader("hide", "");
+            }
+        });
+    }
+
+    $(document).on('click', '.folder-img', function () {
+        var folder_path = $(this).attr("data-folderpath");
+        get_all(folder_path);
+    });
+
+    $(document).on('click', '.folder-path', function () {
+        var folder_path = $(this).attr("data-folderpath");
+        get_all(folder_path);
+
+    });
+
+    $(document).on('click', '.delete-folder', function () {
+        var id = $(this).attr("data-id");
+        var folder_path = $("#fimg" + id).attr("data-folderpath");
+        folder_path = folder_path.replace("///", "/");
+        folder_path = folder_path.replace("//", "/");
+
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "/media/delete_folder_ajax";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        folder_path: folder_path,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("@CF.trans_code("en", "c98", "Your session is invalid or it has expired. Kindly log in again.")");
+                        } else if (data.code == "Y") {
+
+                            get_all(folder_path_g);
+                            my_alert("@CF.trans_code("en", "c99", "Information has been deleted successfully.")", "green");
+
+                        } else {
+                            my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        //alert(folder_path);
+    });
+
+
+    $(document).on('click', '.delete-file', function () {
+        var id = $(this).attr("data-id");
+        var file_path = $("#img" + id).attr("data-filepath");
+        file_path = file_path.replace("///", "/");
+        file_path = file_path.replace("//", "/");
+
+        //alert(file_path);
+        //return;
+
+        swal({
+            title: "Message",
+            text: "Are you sure?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            closeOnConfirm: true
+        },
+            function () {
+
+                preloader("show", "");
+
+                var url = "/media/delete_file_ajax";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "JSON",
+                    data: {
+                        file_path: file_path,
+                    },
+                    success: function (data) {
+                        preloader("hide", "");
+                        if (data.code == "SE") {
+                            my_alert("@CF.trans_code("en", "c98", "Your session is invalid or it has expired. Kindly log in again.")");
+                        } else if (data.code == "Y") {
+
+                            get_all(folder_path_g);
+                            my_alert("@CF.trans_code("en", "c99", "Information has been deleted successfully.")", "green");
+
+                        } else {
+                            my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        }
+                    },
+                    error: function () {
+                        my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")", "red");
+                        preloader("hide", "");
+                    }
+                });
+            });
+
+        //alert(folder_path);
+    });
+
+    $(document).on('click', '.file-img', function () {
+        var file_name = $(this).attr("data-filename");
+        var file_src = $(this).attr("src");
+        $("#image_title").html(file_name);
+        $("#image_large").attr("src", file_src);
+        $("#modal_image").modal("show");
+    });
+
+    function ajax_create_directory() {
+        $("#modal_create_directory").modal("show");
+    }
+
+    function limit_name(file_name, text_length) {
+        if (file_name.length > text_length) {
+            return file_name.substr(0, text_length) + "..";
+        }
+        return file_name;
+    }
+
+    function ajax_delete_folder() {
+
+    }
+
+    function get_icon_image(file_name) {
+
+        if (file_name == "") { return "icon_text.png"; }
+        file_name = file_name.toLowerCase();
+
+        if (file_name.indexOf("docx") > 0) {
+            return "icon_docx.png";
+        } else if (file_name.indexOf("mpeg") > 0) {
+            return "icon_mpeg.png";
+        } else if (file_name.indexOf("pdf") > 0) {
+            return "icon_pdf.png";
+        } else if (file_name.indexOf("pptx") > 0) {
+            return "icon_pptx.png";
+        } else if (file_name.indexOf("rar") > 0) {
+            return "icon_rar.png";
+        } else if (file_name.indexOf("text") > 0) {
+            return "icon_text.png";
+        } else if (file_name.indexOf("zip") > 0) {
+            return "icon_zip.png";
+        } else {
+            return "icon_file.png";
+        }
+    }
+
+    function ajax_create() {
+        var str = "";
+        var regExp = / /g;
+
+        var folder_name = $("#frm_add #folder_name").val();
+
+        str = folder_name;
+        str = str.replace(regExp, '');
+        if (str.length <= 0) {
+            my_alert("Directory name is blank. Please enter directory name.");
+            return false;
+        }
+
+        var regx = /^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-z0-9:’!?'"”“]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFA-Za-z0-9:’!?'"”)(“, _.-]*$/;
+        if (!regx.test(str)) {
+            my_alert("Directory name contains invalid characters.");
+            return false;
+        }
+
+        folder_path = folder_path_g + "/" + folder_name
+        folder_path = folder_path.replace("///", "/");
+        folder_path = folder_path.replace("//", "/");
+
+        $.ajax({
+            type: "POST",
+            url: "media/create_directory_ajax",
+            data: {
+                folder_path: folder_path,
+                is_ajax: true
+            },
+            success: function (data) {
+
+                if (data.code == "Y") {
+
+                    $("#modal_create_directory").modal('hide');
+                    my_alert("Directory has been created successfully.", "green");
+                    get_all(folder_path_g);
+
+                } else {
+                    my_alert("@CF.trans_code("en", "c109", "There was an error processing your request. Please try again.")");
+                }
+
+            },
+            error: function () {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        //preloader("show", "UPLOADING ...");
+
+        $('#file_upload').fileupload({
+            dataType: 'json',
+
+            url: 'media/upload',
+            formData: {},
+            autoUpload: true,
+            done: function (e, data) {
+                var code = data.result.code;
+                if (code == "Y") {
+                    get_all(folder_path_g);
+                    my_alert("File has been uploaded successfully.", "green");
+                } else if (code == "N") {
+                    my_alert("File could not be uploaded. Please try again.");
+                }
+                return;
+
+            }, drop: function (e, data) {
+            }, add: function (e, data) {
+
+                data.formData = {
+                    'folder_path': folder_path_g,
+                };
+                data.submit();
+            },
+
+        }).on('fileuploadprogressall', function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            //$('#progress_bar'+ii).css('width', progress + '%');
+        });
+    });
+</script>
+

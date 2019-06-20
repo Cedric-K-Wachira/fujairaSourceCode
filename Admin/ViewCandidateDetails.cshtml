@@ -1,0 +1,283 @@
+﻿@using FujairahHR.Models;
+@{
+    var data_rs = (List<Dictionary<string, string>>)ViewBag.data_rs;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+
+        .table_w {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+            .table_w tr th img {
+                border: 1px solid #e1e4eb;
+                padding: 4px;
+                margin-bottom: 13px;
+                border-radius: 100px;
+            }
+
+        tr:nth-child(odd) {
+            background: #fcfcfc;
+            border-left: #d9534f 5px solid;
+        }
+
+            tr:nth-child(odd) td {
+                border-left: #f0ad4e 5px solid;
+            }
+
+        tr:nth-child(even) td {
+            border-left: #d9534f 5px solid;
+        }
+
+        table tr:first-child {
+            background: #fff;
+        }
+
+        table tr:nth-child(2) td {
+            border-top: 1px solid #e2e5ea;
+        }
+
+        tr {
+            border-bottom: 1px solid #e2e5ea;
+        }
+
+        td {
+            border-bottom: 1px solid #e2e5ea;
+            padding: 5px;
+            height: 50px;
+            padding-bottom: 7px;
+            border-radius: 6px 0px 0 6px;
+            padding-left: 10px;
+        }
+
+        label {
+            color: #444444;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 0;
+            margin-top: 5px;
+            color: #1a1a1a;
+            font-size: 15px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table_w" border="0">
+        <tbody>
+            <tr>
+                <th colspan="4" align="center" valign="middle" scope="col"><img src="pic.jpg" alt="img"></th>
+            </tr>
+            <tr>
+                <td colspan="3" width="50%">
+                    <label>@CF.trans_code("en", "c173", "First Name")</label>
+                    <p>@CF.trans_code("en", "c174", "Afsal")</p>
+                </td>
+                <td width="50%">
+                    <label>@CF.trans_code("en", "c49", "Second Name")</label>
+                    <p>@CF.trans_code("en", "c175", "Rahman")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c50", "Third Name")</label>
+                    <p>@CF.trans_code("en", "c174", "Afsal")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c51", "Last Name")</label>
+                    <p>@CF.trans_code("en", "c175", "Rahman")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c176", "Emirates ID No").</label>
+                    <p>@CF.trans_code("en", "c177", "784-1985-1649452-6")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c53", "Email")</label>
+                    <p>sample@gmail.com</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c54", "Password")</label>
+                    <p>*********</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c56", "Nationality")</label>
+                    <p>@CF.trans_code("en", "c179", "United Arab Emirates")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c180", "Passport Number")</label>
+                    <p>@CF.trans_code("en", "c181", "P3845852035")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c60", "Gender")</label>
+                    <p>@CF.trans_code("en", "c61", "Male")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c63", "Birth Date")</label>
+                    <p>@CF.trans_code("en", "c182", "25 march 1985")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c64", "Marital Status")</label>
+                    <p>@CF.trans_code("en", "c183", "Single")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c65", "Emirate")</label>
+                    <p>@CF.trans_code("en", "c184", "Fujairah")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c88", "City")</label>
+                    <p>@CF.trans_code("en", "c184", "Fujairah")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c185", "Mobile No. 1")</label>
+                    <p>@CF.trans_code("en", "c186", "00971 00 0000 000")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c187", "Mobile No. 2")</label>
+                    <p>@CF.trans_code("en", "c186", "00971 00 0000 000")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>Drivers License</label>
+                    <p>@CF.trans_code("en", "c76", "Yes")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c75", "Are You Disabled?")</label>
+                    <p>@CF.trans_code("en", "c79", "No")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c77", "Employment Status")</label>
+                    <p>@CF.trans_code("en", "c189", "None")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c80", "Educational Level")</label>
+                    <p>@CF.trans_code("en", "c190", "Technical Secondary Diploma")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c81", "Educational Institute")</label>
+                    <p>@CF.trans_code("en", "c191", "Skyline University College")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c192", "Specialty")</label>
+                    <p>@CF.trans_code("en", "c189", "None")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c75", "Are You Disabled?")</label>
+                    <p>@CF.trans_code("en", "c189", "None")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c84", "Year of Graduation")</label>
+                    <p>@CF.trans_code("en", "c193", "2017-2018")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><p>@CF.trans_code("en", "c78", "I want to complete my studies")</p></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c84", "Year of Graduation")</label>
+                    <p>@CF.trans_code("en", "c194", "Relations Officer")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c87", "Country")</label>
+                    <p>@CF.trans_code("en", "c179", "United Arab Emirates")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c88", "City")</label>
+                    <p>@CF.trans_code("en", "c67", "Dubai")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>@CF.trans_code("en", "c89", "From")</label>
+                    <p>@CF.trans_code("en", "c67", "Dubai")</p>
+                </td>
+                <td>
+                    <label>@CF.trans_code("en", "c90", "To")</label>
+                    <p>@CF.trans_code("en", "c184", "Fujairah")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c195", "Reasons for resigning")</label>
+                    <p>@CF.trans_code("en", "c196", "I am leaving because I want to make a career change from my current industry to a different one.")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>Job name</label>
+                    <p>@CF.trans_code("en", "c190", "Technical Secondary Diploma")</p>
+                </td>
+                <td>
+                    <label>Job location</label>
+                    <p>@CF.trans_code("en", "c184", "Fujairah")</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>Job length </label>
+                    <p>@CF.trans_code("en", "c196", "I am leaving because I want to make a career change from my current industry to a different one.")</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%"><label>@CF.trans_code("en", "c96", "Languages")</label></td>
+                <td>@CF.trans_code("en", "c197", "Arabic")</td>
+                <td>@CF.trans_code("en", "c198", "English")</td>
+                <td>@CF.trans_code("en", "c199", "Urdu")</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label>@CF.trans_code("en", "c200", "Please write specific details about your skills")</label>
+                    <p>
+                        @CF.trans_code("en", "c201", "I'm a driven person who works hard to attain my goals. The ability to overcome obstacles and follow things through to completion has always been a strong point of mine, which is why I've managed to thrive in such a competitive degree subject. ")</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
